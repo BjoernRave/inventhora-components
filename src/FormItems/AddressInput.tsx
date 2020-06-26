@@ -6,7 +6,6 @@ import { countries } from '../lib/countries.json'
 import { SameLine } from '../lib/styles'
 import ComboBox from './Basic/ComboBox'
 import TextInput from './Basic/TextInput'
-import ZipInput from './ZipInput'
 
 const Wrapper = styled.div`
   margin-bottom: 10px;
@@ -14,6 +13,14 @@ const Wrapper = styled.div`
 
   > *:not(label) {
     margin: 8px 0;
+  }
+`
+
+const ZipInput = styled(TextInput)`
+  width: 30% !important;
+
+  @media (max-width: 767px) {
+    width: 100% !important;
   }
 `
 
