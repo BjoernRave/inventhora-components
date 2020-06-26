@@ -30,6 +30,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/pickers": "^4.0.0-alpha.8",
     "@storybook/addon-console": "^1.2.1",
+    "@storybook/theming": "^5.3.19",
     "@toast-ui/react-editor": "^2.2.0",
     "date-fns": "^2.14.0",
     "formik": "^2.1.4",
