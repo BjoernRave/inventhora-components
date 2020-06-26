@@ -1,7 +1,7 @@
-import { BaseTextFieldProps, TextField } from '@material-ui/core';
-import { useField } from 'formik';
-import React, { FC } from 'react';
-import { generateSlug } from '../../lib/utils';
+import { BaseTextFieldProps, TextField } from '@material-ui/core'
+import { useField } from 'formik'
+import React, { FC } from 'react'
+import { generateSlug } from '../../lib/utils'
 
 const TextInput: FC<Props> = ({
   name,
@@ -13,31 +13,30 @@ const TextInput: FC<Props> = ({
   ...rest
 }) => {
   const formName =
-    typeof index === 'number' && subName
-      ? `${name}[${index}].${subName}`
-      : name;
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
 
-  const [field, meta] = useField(formName);
+  const [field, meta] = useField(formName)
 
   return (
     <TextField
       id={generateSlug(formName)}
       {...rest}
       {...field}
-      type="text"
-      margin="none"
+      type='text'
+      margin='none'
       style={style ?? { width: '100%' }}
       variant={variant as any}
       helperText={meta.error ?? helperText}
       error={Boolean(meta.error)}
     />
-  );
-};
+  )
+}
 
-export default TextInput;
+export default TextInput
 
 export interface Props extends BaseTextFieldProps {
-  name: string;
-  index?: number;
-  subName?: string;
+  name: string
+  index?: number
+  subName?: string
+  InputProps?: any
 }
