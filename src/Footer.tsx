@@ -4,51 +4,40 @@ import Link from 'next-translate/Link'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import Wave from './Wave'
 
-const FooterWrapper = styled.footer`
-  position: relative;
-  margin-top: 150px;
-`
+const Wrapper = styled.div``
 
-const FooterWave = styled.img`
-  width: 100%;
+const Content = styled.footer`
+  background-color: #3c9f80;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
 
   @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 `
 
-const TopSection = styled.div`
+const SocialSection = styled.div`
+  color: white;
   display: flex;
-  width: 100%;
-  height: 360px;
+  align-items: flex-end;
 `
 
-const RightSection = styled.div`
+const SocialLink = styled.a`
+  color: white;
+  margin: 0 10px;
+`
+
+const ItemSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: absolute;
-  right: 20%;
-  bottom: 20%;
 
-  @media (max-width: 840px) {
-    right: 5%;
-  }
-`
-
-const Copyright = styled.span`
-  color: white;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  text-align: center;
-
-  @media (max-width: 840px) {
-    width: 300px;
+  @media (max-width: 767px) {
+    align-items: center;
   }
 `
 
@@ -63,35 +52,36 @@ const FooterLink = styled.a`
   }
 `
 
-const LeftSection = styled.div`
-  position: absolute;
-  color: white;
-  bottom: 20%;
-  left: 10%;
-`
-
-const SocialLink = styled.a`
-  color: white;
-  margin: 0 10px;
-`
-
-const MiddleSection = styled.div`
-  position: absolute;
-  bottom: 20%;
-  left: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`
-
-const Footer: FC<Props> = () => {
+const Footer2: FC<Props> = ({}) => {
   const { t } = useTranslation()
 
+  const items = [
+    [
+      { label: t('common:whatsNew'), path: '/changelog' },
+      { label: t('common:roadmap'), path: '/roadmap' },
+      { label: t('common:requestFeature'), path: 'feature-request' },
+    ],
+    [
+      {
+        label: t('common:privacyPolicy'),
+        path: '/privacy',
+      },
+      {
+        label: t('common:terms'),
+        path: '/terms',
+      },
+      {
+        label: t('common:cookies'),
+        path: '/cookies',
+      },
+    ],
+  ]
+
   return (
-    <FooterWrapper>
-      <TopSection>
-        <FooterWave alt='' src='/FooterWave.png' />
-        <LeftSection>
+    <Wrapper>
+      <Wave />
+      <Content>
+        <SocialSection>
           <SocialLink
             id='twitter-link'
             rel='noreferrer'
@@ -108,35 +98,21 @@ const Footer: FC<Props> = () => {
             href='https://www.linkedin.com/company/inventhora'>
             <LinkedInLogo fontSize='large' />
           </SocialLink>
-        </LeftSection>
-        <MiddleSection>
-          <Link href='/changelog'>
-            <FooterLink>{t('common:whatsNew')}</FooterLink>
-          </Link>
-          <Link href='/roadmap'>
-            <FooterLink>{t('common:roadmap')}</FooterLink>
-          </Link>
-          <Link href='/feature-request'>
-            <FooterLink>{t('common:requestFeature')}</FooterLink>
-          </Link>
-        </MiddleSection>
-        <RightSection>
-          <Link href='/privacy'>
-            <FooterLink>{t('common:privacyPolicy')}</FooterLink>
-          </Link>
-          <Link href='/terms'>
-            <FooterLink>{t('common:terms')}</FooterLink>
-          </Link>
-          <Link href='/cookies'>
-            <FooterLink>{t('common:cookiePolicy')}</FooterLink>
-          </Link>
-        </RightSection>
-      </TopSection>
-      <Copyright>{t('common:copyright')}</Copyright>
-    </FooterWrapper>
+        </SocialSection>
+        {items.map((item, ind) => (
+          <ItemSection key={ind}>
+            {item.map(({ label, path }, ind) => (
+              <Link key={ind} href={path}>
+                <FooterLink>{label}</FooterLink>
+              </Link>
+            ))}
+          </ItemSection>
+        ))}
+      </Content>
+    </Wrapper>
   )
 }
 
-export default Footer
+export default Footer2
 
 interface Props {}

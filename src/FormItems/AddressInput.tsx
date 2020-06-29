@@ -24,9 +24,32 @@ const ZipInput = styled(TextInput)`
   }
 `
 
-const AddressInput: FC<Props> = () => {
+const AddressInput: FC<Props> = ({ withBilling = true }) => {
   const { t, lang } = useTranslation()
   const [currentPage, setCurrentPage] = useState(0)
+
+  if (!withBilling) {
+    return (
+      <Wrapper>
+        <TextInput name='addressLine1' label={t('forms:addressLine1')} />
+        <TextInput name='addressLine2' label={t('forms:addressLine2')} />
+        <SameLine>
+          <TextInput name='city' label={t('forms:city')} />
+          <ZipInput name='zip' label={t('forms:zip')} />
+        </SameLine>
+        <SameLine>
+          <TextInput name='state' label={t('forms:state')} />
+          <ComboBox
+            label={t('forms:country')}
+            options={countries.map(
+              (country) => country.translations[lang] ?? country.translations.en
+            )}
+            name='country'
+          />
+        </SameLine>
+      </Wrapper>
+    )
+  }
 
   return (
     <Wrapper>
@@ -92,4 +115,6 @@ const AddressInput: FC<Props> = () => {
 
 export default AddressInput
 
-export interface Props {}
+export interface Props {
+  withBilling?: boolean
+}

@@ -6,7 +6,7 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-docs',
-    '@degjs/storybook-addon-taffy/register',
+    // '@degjs/storybook-addon-taffy/register',
     'storybook-addon-material-ui/register',
     'storybook-formik/register',
   ],
