@@ -1,4 +1,5 @@
 export { default as DeletionModal } from './DeletionModal'
+export { default as Footer } from './Footer'
 export { default as AddressInput } from './FormItems/AddressInput'
 export { default as Checkbox } from './FormItems/Basic/Checkbox'
 export { default as ComboBox } from './FormItems/Basic/ComboBox'

@@ -1,9 +1,9 @@
 import { FormGroup, FormLabel } from '@material-ui/core'
-import { Editor as TuiEditor } from '@toast-ui/react-editor'
 import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useRef } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import { isServer } from '../lib/utils'
 
 const EditorWrapper = styled(FormGroup)`
   width: 100%;
@@ -48,6 +48,7 @@ const WYSIWYGInput: FC<Props> = ({ name, subName, index, label, required }) => {
   const ref = useRef(null)
   const formName =
     typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+  const [component, setComponent] = useState(null)
 
   const [, meta, helper] = useField(formName)
 
@@ -55,42 +56,51 @@ const WYSIWYGInput: FC<Props> = ({ name, subName, index, label, required }) => {
   //   ref?.current?.getInstance().setMarkdown(meta.value)
   // }, [meta.value])
 
+  useEffect(() => {
+    if (!isServer) {
+      const { Editor } = require('@toast-ui/react-editor')
+      setComponent({ Component: Editor })
+    }
+  }, [])
+
   return (
     <EditorWrapper>
       <FormLabel style={{ marginBottom: 10 }}>
-        {label + required ? ' *' : ''}
+        {label + (required ? ' *' : '')}
       </FormLabel>
-      <TuiEditor
-        //@ts-ignore
-        onChange={() =>
-          helper.setValue(ref?.current?.getInstance().getMarkdown())
-        }
-        initialValue={meta.value}
-        ref={ref}
-        toolbarItems={[
-          'heading',
-          'bold',
-          'italic',
-          'strike',
-          'divider',
-          'hr',
-          'quote',
-          'divider',
-          'ul',
-          'ol',
-          'task',
-          'indent',
-          'outdent',
-          'divider',
-          'table',
-          'image',
-          'link',
-        ]}
-        language={lang}
-        hideModeSwitch
-        initialEditType='wysiwyg'
-        usageStatistics={false}
-      />
+
+      {component?.Component && (
+        <component.Component
+          onChange={() =>
+            helper.setValue(ref?.current?.getInstance().getMarkdown())
+          }
+          initialValue={meta.value}
+          ref={ref}
+          toolbarItems={[
+            'heading',
+            'bold',
+            'italic',
+            'strike',
+            'divider',
+            'hr',
+            'quote',
+            'divider',
+            'ul',
+            'ol',
+            'task',
+            'indent',
+            'outdent',
+            'divider',
+            'table',
+            'image',
+            'link',
+          ]}
+          language={lang}
+          hideModeSwitch
+          initialEditType='wysiwyg'
+          usageStatistics={false}
+        />
+      )}
     </EditorWrapper>
   )
 }

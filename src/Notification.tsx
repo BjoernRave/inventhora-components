@@ -13,10 +13,10 @@ import { NotificationType, TopBannerMessages } from './lib/types'
 const initialState: {
   notification: NotificationType
   setNotification: Dispatch<SetStateAction<NotificationType>>
-  showBanner: TopBannerMessages
-  setShowBanner: Dispatch<SetStateAction<TopBannerMessages>>
-  showChat: boolean
-  setShowChat: Dispatch<SetStateAction<boolean>>
+  showBanner?: TopBannerMessages
+  setShowBanner?: Dispatch<SetStateAction<TopBannerMessages>>
+  showChat?: boolean
+  setShowChat?: Dispatch<SetStateAction<boolean>>
 } = {
   notification: null,
   setNotification: null,

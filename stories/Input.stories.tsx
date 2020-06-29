@@ -1,6 +1,7 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
+import '@toast-ui/editor/dist/toastui-editor.css'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
@@ -20,6 +21,7 @@ import {
   TextInput,
   TextListInput,
   TimeInput,
+  WYSIWYGInput,
 } from '../src'
 
 export default {
@@ -152,5 +154,13 @@ export const FileUploadStory = (props) => (
   <FileUpload
     onUpload={action('on Upload')}
     multiple={boolean('Multiple Files?', true)}
+  />
+)
+
+export const WYSIWYGInputStory = (props) => (
+  <WYSIWYGInput
+    name='WYSIWYGInput'
+    label='WYSIWYGInput'
+    required={boolean('Required', false)}
   />
 )
