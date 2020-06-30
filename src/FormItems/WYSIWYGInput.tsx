@@ -1,7 +1,7 @@
 import { FormGroup, FormLabel } from '@material-ui/core'
 import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { isServer } from '../lib/utils'
 
@@ -66,7 +66,8 @@ const WYSIWYGInput: FC<Props> = ({ name, subName, index, label, required }) => {
   return (
     <EditorWrapper>
       <FormLabel style={{ marginBottom: 10 }}>
-        {label + (required ? ' *' : '')}
+        {label}
+        {required ? ' *' : ''}
       </FormLabel>
 
       {component?.Component && (
@@ -111,6 +112,6 @@ interface Props {
   name: string
   subName?: string
   index?: number
-  label: string
+  label: ReactNode
   required?: boolean
 }

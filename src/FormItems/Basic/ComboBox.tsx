@@ -1,11 +1,11 @@
-import { CircularProgress } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import { Autocomplete, createFilterOptions } from '@material-ui/lab';
-import { useField } from 'formik';
-import React, { FC } from 'react';
-import { generateSlug, getErrorMessage } from '../../lib/utils';
+import { CircularProgress } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
+import { Autocomplete, createFilterOptions } from '@material-ui/lab'
+import { useField } from 'formik'
+import React, { FC, ReactNode } from 'react'
+import { generateSlug, getErrorMessage } from '../../lib/utils'
 
-const filter = createFilterOptions();
+const filter = createFilterOptions()
 
 const ComboBox: FC<Props> = ({
   options,
@@ -25,11 +25,9 @@ const ComboBox: FC<Props> = ({
   ...rest
 }) => {
   const formName =
-    typeof index === 'number' && subName
-      ? `${name}[${index}].${subName}`
-      : name;
-  const [, meta, helper] = useField(formName);
-  const isLoading = loading || !Array.isArray(options);
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+  const [, meta, helper] = useField(formName)
+  const isLoading = loading || !Array.isArray(options)
   return (
     <Autocomplete
       id={generateSlug(formName)}
@@ -37,18 +35,18 @@ const ComboBox: FC<Props> = ({
       {...rest}
       value={meta.value || null}
       onChange={(_, value) => {
-        onChange && onChange(value);
+        onChange && onChange(value)
         if (onCreate && value && value.inputValue) {
-          onCreate(value.inputValue);
+          onCreate(value.inputValue)
         } else {
-          helper.setValue(value || '');
+          helper.setValue(value || '')
         }
       }}
       autoComplete
       debug
       onInputChange={(_e, value) => {
         if (freeSolo) {
-          helper.setValue(value || '');
+          helper.setValue(value || '')
         }
       }}
       selectOnFocus
@@ -58,25 +56,25 @@ const ComboBox: FC<Props> = ({
       loading={isLoading}
       filterOptions={(options, params) => {
         if (freeSolo) {
-          params.inputValue = meta.value;
+          params.inputValue = meta.value
         }
 
-        const filtered = filter(options, params);
+        const filtered = filter(options, params)
 
         if (onCreate && filtered.length === 0 && params.inputValue !== '') {
           filtered.push({
             inputValue: params.inputValue,
             inputTitle: `Add "${params.inputValue}"`,
-          });
+          })
         }
 
-        return filtered;
+        return filtered
       }}
       getOptionLabel={(option) => option?.inputTitle ?? getOptionLabel(option)}
       renderInput={(params) => (
         <TextField
-          margin="none"
-          variant="outlined"
+          margin='none'
+          variant='outlined'
           {...params}
           autoFocus={autoFocus}
           label={label}
@@ -90,7 +88,7 @@ const ComboBox: FC<Props> = ({
             endAdornment: (
               <>
                 {isLoading ? (
-                  <CircularProgress color="inherit" size={20} />
+                  <CircularProgress color='inherit' size={20} />
                 ) : null}
                 {params.InputProps.endAdornment}
               </>
@@ -99,24 +97,24 @@ const ComboBox: FC<Props> = ({
         />
       )}
     />
-  );
-};
+  )
+}
 
-export default ComboBox;
+export default ComboBox
 
 export interface Props {
-  freeSolo?: boolean;
-  getOptionLabel?: (option: any) => string;
-  options: any[];
-  name: string;
-  label: string;
-  helperText?: string;
-  required?: boolean;
-  index?: number;
-  subName?: string;
-  disabled?: boolean;
-  onCreate?: (input: string) => void;
-  autoFocus?: boolean;
-  onChange?: (value?: any) => void;
-  loading?: boolean;
+  freeSolo?: boolean
+  getOptionLabel?: (option: any) => string
+  options: any[]
+  name: string
+  label: ReactNode
+  helperText?: ReactNode
+  required?: boolean
+  index?: number
+  subName?: string
+  disabled?: boolean
+  onCreate?: (input: string) => void
+  autoFocus?: boolean
+  onChange?: (value?: any) => void
+  loading?: boolean
 }

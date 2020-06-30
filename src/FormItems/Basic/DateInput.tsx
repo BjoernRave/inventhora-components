@@ -1,11 +1,11 @@
-import { TextField } from '@material-ui/core';
-import { DatePicker } from '@material-ui/pickers';
-import { useField } from 'formik';
-import useTranslation from 'next-translate/useTranslation';
-import React, { FC } from 'react';
-import { Language } from '../../lib/types';
-import { dateFormat, generateSlug } from '../../lib/utils';
-import DateTimeProvider from './DateTimeProvider';
+import { TextField } from '@material-ui/core'
+import { DatePicker } from '@material-ui/pickers'
+import { useField } from 'formik'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC, ReactNode } from 'react'
+import { Language } from '../../lib/types'
+import { dateFormat, generateSlug } from '../../lib/utils'
+import DateTimeProvider from './DateTimeProvider'
 
 const DateInput: FC<Props> = ({
   name,
@@ -16,14 +16,12 @@ const DateInput: FC<Props> = ({
   required,
   disabled,
 }) => {
-  const { lang } = useTranslation();
+  const { lang } = useTranslation()
 
   const formName =
-    typeof index === 'number' && subName
-      ? `${name}[${index}].${subName}`
-      : name;
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
 
-  const [, meta, helper] = useField(formName);
+  const [, meta, helper] = useField(formName)
 
   return (
     <DateTimeProvider lang={lang as Language}>
@@ -32,24 +30,24 @@ const DateInput: FC<Props> = ({
         value={meta.value ?? null}
         onChange={(date: any) => {
           if (!date) {
-            return helper.setValue(null);
+            return helper.setValue(null)
           }
 
-          date.setHours(0);
-          date.setMinutes(0);
-          date.setSeconds(0);
-          date.setMilliseconds(0);
+          date.setHours(0)
+          date.setMinutes(0)
+          date.setSeconds(0)
+          date.setMilliseconds(0)
 
-          helper.setValue(date);
+          helper.setValue(date)
         }}
         clearable
         inputFormat={dateFormat}
         label={label}
         renderInput={(props) => (
           <TextField
-            margin="none"
+            margin='none'
             {...props}
-            variant="outlined"
+            variant='outlined'
             error={Boolean(meta.error)}
             helperText={meta.error ?? helperText}
             required={required}
@@ -59,17 +57,17 @@ const DateInput: FC<Props> = ({
         )}
       />
     </DateTimeProvider>
-  );
-};
+  )
+}
 
-export default DateInput;
+export default DateInput
 
 export interface Props {
-  name?: string;
-  index?: number;
-  subName?: string;
-  label: string;
-  helperText?: string;
-  required?: boolean;
-  disabled?: boolean;
+  name?: string
+  index?: number
+  subName?: string
+  label: ReactNode
+  helperText?: ReactNode
+  required?: boolean
+  disabled?: boolean
 }

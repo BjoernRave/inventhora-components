@@ -5,7 +5,7 @@ import {
   FormHelperText,
 } from '@material-ui/core'
 import { useField } from 'formik'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { generateSlug } from '../../lib/utils'
 
 const Checkbox: FC<Props> = ({
@@ -15,7 +15,7 @@ const Checkbox: FC<Props> = ({
   required,
   ...rest
 }) => {
-  const [field] = useField(name)
+  const [field, meta] = useField(name)
 
   return (
     <FormControlLabel
@@ -24,8 +24,13 @@ const Checkbox: FC<Props> = ({
       control={<MuiCheckbox {...rest} checked={field.value} {...field} />}
       label={
         <>
-          {label + (required ? ' *' : '')}
-          {helperText && <FormHelperText>{helperText}</FormHelperText>}
+          {label}
+          {required ? ' *' : ''}
+          {(helperText || meta.error) && (
+            <FormHelperText error={Boolean(meta.error)}>
+              {meta.error ?? helperText}
+            </FormHelperText>
+          )}
         </>
       }
     />
@@ -36,6 +41,6 @@ export default Checkbox
 
 export interface Props extends CheckboxProps {
   name: string
-  label: string
+  label: ReactNode
   helperText?: string
 }

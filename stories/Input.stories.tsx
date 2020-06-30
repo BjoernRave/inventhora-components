@@ -60,6 +60,7 @@ export const TextInputStory = (props) => (
     name='TextInput'
     label='TextInput'
     helperText='HelperText'
+    error={boolean('Has Error', false)}
     required={boolean('Required', false)}
   />
 )
