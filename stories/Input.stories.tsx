@@ -1,11 +1,12 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, withKnobs } from '@storybook/addon-knobs'
 import '@toast-ui/editor/dist/toastui-editor.css'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
 import {
+  AddressInput,
   Checkbox,
   ComboBox,
   DateInput,
@@ -13,9 +14,11 @@ import {
   EmailInput,
   FileUpload,
   getTheme,
+  MultiCreate,
   NumberInput,
   Option,
   PasswordInput,
+  ProductAmountInput,
   SelectInput,
   TextAreaInput,
   TextInput,
@@ -27,6 +30,16 @@ import {
 export default {
   title: 'Inputs',
   decorators: [withKnobs, withA11y, withFormik, muiTheme([getTheme])],
+  parameters: {
+    formik: {
+      initialValues: {
+        ProductAmountInput: [
+          { id: '1', name: 'unit', baseAmount: 1, amount: null },
+        ],
+        MultiCreateStory: [],
+      },
+    },
+  },
 }
 
 const exampleOptions: Option[] = [
@@ -164,3 +177,61 @@ export const WYSIWYGInputStory = (props) => (
     required={boolean('Required', false)}
   />
 )
+
+export const AddressInputStory = (props) => (
+  <AddressInput withBilling={boolean('With Billing Address', true)} />
+)
+
+export const ProductAmountInputStory = (props) => (
+  <ProductAmountInput
+    type={boolean('Is Outgoing', true) ? 'outgoing' : 'incoming'}
+    max={number('Max Amount', 100)}
+    name='ProductAmountInput'
+    product={{
+      units: [
+        { id: '2', name: 'Palette', baseAmount: 32 },
+        { id: '3', name: 'Palette', baseAmount: 100 },
+      ],
+    }}
+  />
+)
+
+export const MultiCreateStory = (props) => {
+  return (
+    <>
+      <MultiCreate
+        name={'MultiCreateStory'}
+        fields={[
+          {
+            name: 'name',
+            label: 'unitName',
+          },
+          {
+            name: 'baseAmount',
+            label: 'baseAmount',
+          },
+        ]}
+        title={'Create a Unit'}
+        onDelete={action}
+        helperText={'unitExplanation'}>
+        <TextInput
+          autoFocus
+          name={'MultiCreateStory'}
+          index={0}
+          subName='name'
+          required
+          label={'unitName'}
+          helperText={'unitNameHelper'}
+        />
+        <NumberInput
+          name={'MultiCreateStory'}
+          index={0}
+          subName='baseAmount'
+          required
+          label={'baseAmount'}
+          helperText={'baseAmountHelper'}
+        />
+      </MultiCreate>
+    </>
+  )
+}

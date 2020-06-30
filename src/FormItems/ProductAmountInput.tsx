@@ -60,6 +60,7 @@ const ProductAmountInput: FC<Props> = ({ max, product, type, name }) => {
         return (
           <AmountWrapper key={index}>
             <TextField
+              label={t('forms:amount')}
               value={unit.amount}
               onChange={(e) => {
                 const newUnits = Array.from(meta.value)

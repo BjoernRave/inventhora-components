@@ -5,6 +5,16 @@ import DateTimeProvider from '../src/FormItems/Basic/DateTimeProvider'
 
 const Wrapper = styled.div`
   margin: 50px 20px;
+
+  form {
+    > *:not(label) {
+      margin: 8px 0;
+    }
+
+    > button {
+      margin: 20px 0;
+    }
+  }
 `
 
 const StorybookWrapper = (storyfn) => {

@@ -1,12 +1,13 @@
 import LinkedInLogo from '@material-ui/icons/LinkedIn'
 import TwitterLogo from '@material-ui/icons/Twitter'
-import Link from 'next-translate/Link'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import Wave from './Wave'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-top: 50px;
+`
 
 const Content = styled.footer`
   background-color: #3c9f80;
@@ -52,7 +53,7 @@ const FooterLink = styled.a`
   }
 `
 
-const Footer2: FC<Props> = ({}) => {
+const Footer: FC<Props> = (props) => {
   const { t } = useTranslation()
 
   const items = [
@@ -71,14 +72,14 @@ const Footer2: FC<Props> = ({}) => {
         path: '/terms',
       },
       {
-        label: t('common:cookies'),
+        label: t('common:cookiePolicy'),
         path: '/cookies',
       },
     ],
   ]
 
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Wave />
       <Content>
         <SocialSection>
@@ -102,9 +103,9 @@ const Footer2: FC<Props> = ({}) => {
         {items.map((item, ind) => (
           <ItemSection key={ind}>
             {item.map(({ label, path }, ind) => (
-              <Link key={ind} href={path}>
-                <FooterLink>{label}</FooterLink>
-              </Link>
+              <FooterLink key={ind} href={`https://inventhora.com${path}`}>
+                {label}
+              </FooterLink>
             ))}
           </ItemSection>
         ))}
@@ -113,6 +114,6 @@ const Footer2: FC<Props> = ({}) => {
   )
 }
 
-export default Footer2
+export default Footer
 
 interface Props {}
