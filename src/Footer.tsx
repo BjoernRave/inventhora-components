@@ -3,6 +3,7 @@ import TwitterLogo from '@material-ui/icons/Twitter'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import Link from './Link'
 import Wave from './Wave'
 
 const Wrapper = styled.div`
@@ -47,6 +48,19 @@ const FooterLink = styled.a`
   cursor: pointer;
   margin: 15px 0;
   font-size: 18px;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+  }
+`
+
+const StyledLink = styled(Link)`
+  color: white;
+  cursor: pointer;
+  margin: 15px 0;
+  font-size: 18px;
+  text-decoration: none;
 
   :hover {
     text-decoration: underline;
@@ -60,7 +74,7 @@ const Footer: FC<Props> = (props) => {
     [
       { label: t('common:whatsNew'), path: '/changelog' },
       { label: t('common:roadmap'), path: '/roadmap' },
-      { label: t('common:requestFeature'), path: 'feature-request' },
+      { label: t('common:requestFeature'), path: '/feature-request' },
     ],
     [
       {
@@ -102,11 +116,21 @@ const Footer: FC<Props> = (props) => {
         </SocialSection>
         {items.map((item, ind) => (
           <ItemSection key={ind}>
-            {item.map(({ label, path }, ind) => (
-              <FooterLink key={ind} href={`https://inventhora.com${path}`}>
-                {label}
-              </FooterLink>
-            ))}
+            {item.map(({ label, path }, ind) => {
+              if (process.env.BASE_URL === 'https://inventhora.com') {
+                return (
+                  <StyledLink key={ind} href={path}>
+                    {label}
+                  </StyledLink>
+                )
+              }
+
+              return (
+                <FooterLink key={ind} href={`https://inventhora.com${path}`}>
+                  {label}
+                </FooterLink>
+              )
+            })}
           </ItemSection>
         ))}
       </Content>
