@@ -8,13 +8,15 @@ import Wave from './Wave'
 
 const Wrapper = styled.div`
   margin-top: 50px;
+  position: relative;
 `
 
 const Content = styled.footer`
   background-color: #3c9f80;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 20px;
+  margin-top: -20px;
+  padding-bottom: 50px;
 
   @media (max-width: 767px) {
     flex-direction: column-reverse;
@@ -67,8 +69,24 @@ const StyledLink = styled(Link)`
   }
 `
 
+const Copyright = styled.span`
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  text-align: center;
+
+  @media (max-width: 840px) {
+    width: 300px;
+  }
+`
+
 const Footer: FC<Props> = (props) => {
-  const { t } = useTranslation()
+  const { t, lang } = useTranslation()
 
   const items = [
     [
@@ -126,7 +144,9 @@ const Footer: FC<Props> = (props) => {
               }
 
               return (
-                <FooterLink key={ind} href={`https://inventhora.com${path}`}>
+                <FooterLink
+                  key={ind}
+                  href={`https://inventhora.com/${lang}${path}`}>
                   {label}
                 </FooterLink>
               )
@@ -134,6 +154,7 @@ const Footer: FC<Props> = (props) => {
           </ItemSection>
         ))}
       </Content>
+      <Copyright>{t('common:copyright')}</Copyright>
     </Wrapper>
   )
 }

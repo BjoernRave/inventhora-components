@@ -1,9 +1,9 @@
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs } from '@storybook/addon-knobs'
-import React from 'react'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
+import React, { useState } from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
-import { getTheme } from '../src'
+import { getTheme, Table } from '../src'
 import Footer from '../src/Footer'
 
 export default {
@@ -12,3 +12,24 @@ export default {
 }
 
 export const FooterStory = (props) => <Footer />
+
+export const TableStory = (props) => {
+  const [selected, setSelected] = useState(null)
+  return (
+    <Table
+      selected={selected}
+      onRowClick={(row) => setSelected(row.id)}
+      data={[
+        { name: 'Shoe', amount: 10 },
+        { name: 'Table', amount: 20 },
+        { name: 'Trouser', amount: 22 },
+        { name: 'Ball', amount: 19 },
+      ]}
+      columns={[
+        { accessor: 'name', Header: 'Name' },
+        { accessor: 'amount', Header: 'Amount' },
+      ]}
+      withSearch={boolean('With Search?', true)}
+    />
+  )
+}

@@ -15,7 +15,13 @@ import { AmountWrapper } from '../lib/styles'
 import { removeFromObjectArray } from '../lib/utils'
 import NumberInput from './Basic/NumberInput'
 
-const ProductAmountInput: FC<Props> = ({ max, product, type, name }) => {
+const ProductAmountInput: FC<Props> = ({
+  max,
+  product,
+  type,
+  name,
+  required,
+}) => {
   const { t } = useTranslation()
 
   const [, meta, helpers] = useField<Amount[]>(name)
@@ -35,7 +41,7 @@ const ProductAmountInput: FC<Props> = ({ max, product, type, name }) => {
         subName='amount'
         label={t('forms:amount')}
         helperText={t('forms:amountHelper')}
-        required
+        required={required}
         InputProps={
           type && type !== 'incoming'
             ? {
@@ -60,6 +66,7 @@ const ProductAmountInput: FC<Props> = ({ max, product, type, name }) => {
         return (
           <AmountWrapper key={index}>
             <TextField
+              required={required}
               label={t('forms:amount')}
               value={unit.amount}
               onChange={(e) => {
@@ -173,4 +180,5 @@ export interface Props {
   type: string
   product: Partial<any>
   name: string
+  required?: boolean
 }

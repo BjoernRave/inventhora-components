@@ -185,6 +185,7 @@ export const AddressInputStory = (props) => (
 
 export const ProductAmountInputStory = (props) => (
   <ProductAmountInput
+    required={boolean('Required', false)}
     type={boolean('Is Outgoing', true) ? 'outgoing' : 'incoming'}
     max={number('Max Amount', 100)}
     name='ProductAmountInput'

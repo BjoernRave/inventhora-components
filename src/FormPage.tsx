@@ -58,6 +58,8 @@ const FormPage: FC<Props> = ({
   singleCreationLink,
   isLeftAligned,
   style,
+  enableReinitialize,
+  hideSubmit,
 }) => {
   const { t } = useTranslation()
 
@@ -81,6 +83,7 @@ const FormPage: FC<Props> = ({
           {t('forms:requiredNotice')}
         </span>
         <Formik
+          enableReinitialize={enableReinitialize}
           validateOnChange={false}
           validateOnBlur={false}
           initialValues={initialValues}
@@ -95,9 +98,14 @@ const FormPage: FC<Props> = ({
             return (
               <Form>
                 {children}
-                <SubmitButton type='submit' loading={isSubmitting} size='large'>
-                  {edit ? t('common:update') : t('common:create')}
-                </SubmitButton>
+                {!hideSubmit && (
+                  <SubmitButton
+                    type='submit'
+                    loading={isSubmitting}
+                    size='large'>
+                    {edit ? t('common:update') : t('common:create')}
+                  </SubmitButton>
+                )}
               </Form>
             )
           }}
@@ -122,4 +130,6 @@ interface Props {
   singleCreationLink?: string
   isLeftAligned?: boolean
   style?: any
+  enableReinitialize?: boolean
+  hideSubmit?: boolean
 }

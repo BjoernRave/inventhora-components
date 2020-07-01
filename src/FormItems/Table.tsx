@@ -1,85 +1,121 @@
-import MaUTable from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import React, { FC } from 'react';
-import { Column, Row, useTable } from 'react-table';
-import styled, { css } from 'styled-components';
+import { InputAdornment, TextField } from '@material-ui/core'
+import MaUTable from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import SearchIcon from '@material-ui/icons/Search'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC, useCallback } from 'react'
+import { Column, Row, useGlobalFilter, useTable } from 'react-table'
+import styled from 'styled-components'
 
-const ClickStyles = css`
-  :hover {
-    background-color: #fafafa;
-    cursor: pointer;
-  }
-`;
+const StyledRow = styled(TableRow)`
+  cursor: pointer;
+`
 
-const StyledRow = styled(TableRow)<{ hover: number }>`
-  ${({ hover }) => hover === 1 && ClickStyles};
-`;
-
-const Table: FC<Props> = ({ columns, data, actions, onRowClick }) => {
-  const { getTableProps, headerGroups, rows, prepareRow } = useTable(
+const Table: FC<Props> = ({
+  columns,
+  data,
+  actions,
+  onRowClick,
+  withSearch,
+  selected,
+  maxHeight,
+}) => {
+  const { t } = useTranslation()
+  const {
+    getTableProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    setGlobalFilter,
+  } = useTable(
     {
       columns,
       data: data ?? [],
     },
-    hooks => {
-      hooks.allColumns.push(columns => [
-        ...columns,
-        ...(actions ? actions : []),
-      ]);
-    }
-  );
+    useGlobalFilter,
+    useCallback(
+      () => (hooks) => {
+        hooks.allColumns.push((columns) => [
+          ...columns,
+          ...(actions ? actions : []),
+        ])
+      },
+      [actions]
+    )
+  )
 
   return (
-    <MaUTable stickyHeader {...getTableProps()}>
-      <TableHead>
-        {headerGroups.map((headerGroup, ind) => (
-          <TableRow key={ind} {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <TableCell
-                style={{ backgroundColor: 'white', fontWeight: 'bolder' }}
-                key={column.id}
-                {...column.getHeaderProps()}
-              >
-                {column.render('Header')}
-              </TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableHead>
-      <TableBody>
-        {rows.map(row => {
-          prepareRow(row);
-          return (
-            //@ts-ignore
-            <StyledRow
-              hover={onRowClick ? 1 : 0}
-              onClick={() => onRowClick && onRowClick(row)}
-              key={row.id}
-              {...row.getRowProps()}
-            >
-              {row.cells.map((cell, ind) => {
-                return (
-                  <TableCell key={ind} {...cell.getCellProps()}>
-                    {cell.render('Cell')}
+    <>
+      {withSearch && (
+        <TextField
+          style={{ width: '100%' }}
+          variant='outlined'
+          label={t('common:search')}
+          onChange={(e) => setGlobalFilter(e.target.value)}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position='end'>
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      <div style={{ overflow: 'auto', maxHeight, width: '100%' }}>
+        <MaUTable stickyHeader {...getTableProps()}>
+          <TableHead>
+            {headerGroups.map((headerGroup, ind) => (
+              <TableRow key={ind} {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <TableCell
+                    style={{ backgroundColor: 'white', fontWeight: 'bolder' }}
+                    key={column.id}
+                    {...column.getHeaderProps()}>
+                    {column.render('Header')}
                   </TableCell>
-                );
-              })}
-            </StyledRow>
-          );
-        })}
-      </TableBody>
-    </MaUTable>
-  );
-};
+                ))}
+              </TableRow>
+            ))}
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => {
+              prepareRow(row)
 
-export default Table;
+              return (
+                <StyledRow
+                  selected={selected === row.id ? 1 : 0}
+                  hover
+                  onClick={() => onRowClick && onRowClick(row)}
+                  key={row.id}
+                  {...row.getRowProps()}>
+                  {row.cells.map((cell, ind) => {
+                    return (
+                      <TableCell key={ind} {...cell.getCellProps()}>
+                        {cell.render('Cell')}
+                      </TableCell>
+                    )
+                  })}
+                </StyledRow>
+              )
+            })}
+          </TableBody>
+        </MaUTable>
+      </div>
+    </>
+  )
+}
+
+export default Table
 
 export interface Props {
-  columns: Column[];
-  data: {}[];
-  actions?: any;
-  onRowClick?: (row: Row) => void;
+  columns: Column[]
+  data: {}[]
+  actions?: any
+  onRowClick?: (row: Row) => void
+  selected?: string
+  withSearch?: boolean
+  maxHeight?: number
 }
