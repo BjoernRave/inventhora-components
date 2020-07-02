@@ -10,8 +10,8 @@ import React, { FC, useCallback } from 'react'
 import { Column, Row, useGlobalFilter, useTable } from 'react-table'
 import styled from 'styled-components'
 
-const StyledRow = styled(TableRow)`
-  cursor: pointer;
+const StyledRow = styled(TableRow)<{ selected: boolean }>`
+  cursor: ${({ selected }) => selected && 'pointer'};
 `
 
 const Table: FC<Props> = ({
@@ -86,7 +86,7 @@ const Table: FC<Props> = ({
 
               return (
                 <StyledRow
-                  selected={selected === row.id ? 1 : 0}
+                  selected={selected === row.id}
                   hover
                   onClick={() => onRowClick && onRowClick(row)}
                   key={row.id}

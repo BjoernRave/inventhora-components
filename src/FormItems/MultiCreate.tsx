@@ -9,17 +9,17 @@ import {
   FormHelperText,
   IconButton,
   Tooltip,
-} from '@material-ui/core';
-import PlusIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
-import { useField } from 'formik';
-import useTranslation from 'next-translate/useTranslation';
-import React, { FC, useState } from 'react';
-import styled from 'styled-components';
-import { generateSlug, getErrorMessage } from '../lib/utils';
-import SubmitButton from './Basic/SubmitButton';
-import Table from './Table';
+} from '@material-ui/core'
+import PlusIcon from '@material-ui/icons/Add'
+import DeleteIcon from '@material-ui/icons/Delete'
+import EditIcon from '@material-ui/icons/Edit'
+import { useField } from 'formik'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC, useState } from 'react'
+import styled from 'styled-components'
+import { generateSlug, getErrorMessage } from '../lib/utils'
+import Table from '../Table'
+import SubmitButton from './Basic/SubmitButton'
 
 const StyledDialogContent = styled(DialogContent)`
   > *:not(label) {
@@ -36,12 +36,12 @@ const StyledDialogContent = styled(DialogContent)`
   @media (min-width: 767px) {
     min-width: 767px;
   }
-`;
+`
 
 const HelperText = styled.span`
   align-self: flex-start;
   color: rgba(0, 0, 0, 0.54);
-`;
+`
 
 const MultiCreate: FC<Props> = ({
   children,
@@ -52,19 +52,19 @@ const MultiCreate: FC<Props> = ({
   onDelete,
   helperText,
 }) => {
-  const { t } = useTranslation();
-  const [isCreating, setIsCreating] = useState(false);
-  const [isUpdating, setIsUpdating] = useState(false);
+  const { t } = useTranslation()
+  const [isCreating, setIsCreating] = useState(false)
+  const [isUpdating, setIsUpdating] = useState(false)
 
-  const [, meta, helper] = useField(name);
-  let tableData;
+  const [, meta, helper] = useField(name)
+  let tableData
 
   if (isCreating) {
-    const data = Array.from(meta.value);
-    data.pop();
-    tableData = data;
+    const data = Array.from(meta.value)
+    data.pop()
+    tableData = data
   } else {
-    tableData = meta.value;
+    tableData = meta.value
   }
   return (
     <>
@@ -85,9 +85,8 @@ const MultiCreate: FC<Props> = ({
                     <Tooltip title={t('forms:edit')}>
                       <IconButton
                         onClick={() => {
-                          setIsUpdating(true);
-                        }}
-                      >
+                          setIsUpdating(true)
+                        }}>
                         <EditIcon />
                       </IconButton>
                     </Tooltip>
@@ -95,14 +94,13 @@ const MultiCreate: FC<Props> = ({
                       <IconButton
                         onClick={() => {
                           if (tableData[row.index]?.id) {
-                            onDelete(tableData[row.index].id);
+                            onDelete(tableData[row.index].id)
                           } else {
-                            const updatedData = Array.from(tableData);
-                            updatedData.splice(row.index, 1);
-                            helper.setValue(updatedData);
+                            const updatedData = Array.from(tableData)
+                            updatedData.splice(row.index, 1)
+                            helper.setValue(updatedData)
                           }
-                        }}
-                      >
+                        }}>
                         <DeleteIcon />
                       </IconButton>
                     </Tooltip>
@@ -115,10 +113,10 @@ const MultiCreate: FC<Props> = ({
       )}
       <FormControl style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
         <Fab
-          variant="extended"
-          color="secondary"
-          type="button"
-          size="medium"
+          variant='extended'
+          color='secondary'
+          type='button'
+          size='medium'
           style={
             meta.error
               ? {
@@ -127,10 +125,9 @@ const MultiCreate: FC<Props> = ({
               : {}
           }
           onClick={() => {
-            setIsCreating(true);
-            helper.setValue([...meta.value, {}]);
-          }}
-        >
+            setIsCreating(true)
+            helper.setValue([...meta.value, {}])
+          }}>
           <PlusIcon style={{ margin: '0 5px 0 -5px' }} />
           {title}
         </Fab>
@@ -145,23 +142,21 @@ const MultiCreate: FC<Props> = ({
         onClose={
           isCreating
             ? () => {
-                setIsCreating(false);
-                const newArray = Array.from(meta.value);
-                newArray.pop();
-                helper.setValue(newArray);
+                setIsCreating(false)
+                const newArray = Array.from(meta.value)
+                newArray.pop()
+                helper.setValue(newArray)
               }
             : () => {
-                setIsUpdating(false);
+                setIsUpdating(false)
               }
         }
         id={generateSlug(title)}
         aria-labelledby={`${generateSlug(title)}-label`}
-        maxWidth="xl"
-      >
+        maxWidth='xl'>
         <DialogTitle
           style={{ paddingBottom: 0 }}
-          id={`${generateSlug(title)}-label`}
-        >
+          id={`${generateSlug(title)}-label`}>
           {title}
         </DialogTitle>
         <StyledDialogContent id={`${generateSlug(title)}-content`}>
@@ -173,16 +168,15 @@ const MultiCreate: FC<Props> = ({
             onClick={
               isCreating
                 ? () => {
-                    const newArray = Array.from(meta.value);
-                    newArray.pop();
-                    helper.setValue(newArray);
-                    setIsCreating(false);
+                    const newArray = Array.from(meta.value)
+                    newArray.pop()
+                    helper.setValue(newArray)
+                    setIsCreating(false)
                   }
                 : () => {
-                    setIsUpdating(false);
+                    setIsUpdating(false)
                   }
-            }
-          >
+            }>
             {t('forms:cancel')}
           </Button>
           <SubmitButton
@@ -190,23 +184,22 @@ const MultiCreate: FC<Props> = ({
               isCreating
                 ? () => setIsCreating(false)
                 : () => setIsUpdating(false)
-            }
-          >
+            }>
             {t('forms:submit')}
           </SubmitButton>
         </DialogActions>
       </Dialog>
     </>
-  );
-};
+  )
+}
 
-export default MultiCreate;
+export default MultiCreate
 
 export interface Props {
-  fields: { name: string; label: string }[];
-  title: string;
-  name: string;
-  formatFunction?: any;
-  onDelete?: (id: string) => void;
-  helperText?: string;
+  fields: { name: string; label: string }[]
+  title: string
+  name: string
+  formatFunction?: any
+  onDelete?: (id: string) => void
+  helperText?: string
 }

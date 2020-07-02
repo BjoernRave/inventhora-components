@@ -1,4 +1,5 @@
 import { FormGroup, FormLabel, InputAdornment } from '@material-ui/core'
+import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import { SameLine } from '../lib/styles'
@@ -6,6 +7,8 @@ import NumberInput from './Basic/NumberInput'
 
 const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
   const { t } = useTranslation()
+
+  const [, meta, helper] = useField(name)
 
   return (
     <FormGroup style={{ width: '100%' }}>
@@ -17,7 +20,11 @@ const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
           allowDecimals
           index={index}
           subName={typeof index === 'number' && `${subName}.height`}
-          name={name}
+          name={typeof index === 'number' ? name : `${name}.height`}
+          onChange={(e) =>
+            e.target.value === '' &&
+            helper.setValue({ ...meta.value, depth: '', width: '' })
+          }
           label={t('table:height')}
           InputProps={{
             endAdornment: (
@@ -27,9 +34,14 @@ const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
         />
         <NumberInput
           index={index}
+          disabled={!Boolean(meta?.value?.height)}
           allowDecimals
+          onChange={(e) =>
+            e.target.value === '' &&
+            helper.setValue({ ...meta.value, depth: '' })
+          }
           subName={typeof index === 'number' && `${subName}.width`}
-          name={name}
+          name={typeof index === 'number' ? name : `${name}.width`}
           label={t('table:width')}
           InputProps={{
             endAdornment: (
@@ -39,9 +51,10 @@ const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
         />
         <NumberInput
           index={index}
+          disabled={!Boolean(meta?.value?.width)}
           allowDecimals
           subName={typeof index === 'number' && `${subName}.depth`}
-          name={name}
+          name={typeof index === 'number' ? name : `${name}.depth`}
           label={t('table:depth')}
           InputProps={{
             endAdornment: (

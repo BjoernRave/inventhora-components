@@ -11,6 +11,7 @@ import {
   ComboBox,
   DateInput,
   DateTimeInput,
+  DimensionsInput,
   EmailInput,
   FileUpload,
   getTheme,
@@ -37,6 +38,7 @@ export default {
           { id: '1', name: 'unit', baseAmount: 1, amount: null },
         ],
         MultiCreateStory: [],
+        DimensionsInput: {},
       },
     },
   },
@@ -162,6 +164,10 @@ export const CheckboxStory = (props) => (
     helperText='HelperText'
     required={boolean('Required', false)}
   />
+)
+
+export const DimensionsInputStory = (props) => (
+  <DimensionsInput name='DimensionsInput' lengthUnit='cm' />
 )
 
 export const FileUploadStory = (props) => (

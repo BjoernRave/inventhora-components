@@ -1,6 +1,5 @@
 import {
   IconButton,
-  InputAdornment,
   MenuItem,
   Select,
   TextField,
@@ -42,15 +41,6 @@ const ProductAmountInput: FC<Props> = ({
         label={t('forms:amount')}
         helperText={t('forms:amountHelper')}
         required={required}
-        InputProps={
-          type && type !== 'incoming'
-            ? {
-                startAdornment: (
-                  <InputAdornment position='start'>-</InputAdornment>
-                ),
-              }
-            : {}
-        }
       />
     )
   }
@@ -115,15 +105,6 @@ const ProductAmountInput: FC<Props> = ({
               type='text'
               style={{ width: '100%' }}
               variant='outlined'
-              InputProps={
-                type && type !== 'incoming'
-                  ? {
-                      startAdornment: (
-                        <InputAdornment position='start'>-</InputAdornment>
-                      ),
-                    }
-                  : {}
-              }
             />
             <Select
               style={
