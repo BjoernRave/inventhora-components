@@ -6,12 +6,12 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import SearchIcon from '@material-ui/icons/Search'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useCallback } from 'react'
+import React, { FC } from 'react'
 import { Column, Row, useGlobalFilter, useTable } from 'react-table'
 import styled from 'styled-components'
 
-const StyledRow = styled(TableRow)<{ selected: boolean }>`
-  cursor: ${({ selected }) => selected && 'pointer'};
+const StyledRow = styled(TableRow)<{ hover: boolean }>`
+  cursor: ${({ hover }) => hover && 'pointer'};
 `
 
 const Table: FC<Props> = ({
@@ -36,15 +36,12 @@ const Table: FC<Props> = ({
       data: data ?? [],
     },
     useGlobalFilter,
-    useCallback(
-      () => (hooks) => {
-        hooks.allColumns.push((columns) => [
-          ...columns,
-          ...(actions ? actions : []),
-        ])
-      },
-      [actions]
-    )
+    (hooks) => {
+      hooks.allColumns.push((columns) => [
+        ...columns,
+        ...(actions ? actions : []),
+      ])
+    }
   )
 
   return (
@@ -87,7 +84,7 @@ const Table: FC<Props> = ({
               return (
                 <StyledRow
                   selected={selected === row.id}
-                  hover
+                  hover={Boolean(onRowClick)}
                   onClick={() => onRowClick && onRowClick(row)}
                   key={row.id}
                   {...row.getRowProps()}>

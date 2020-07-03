@@ -17,8 +17,10 @@ export const TableStory = (props) => {
   const [selected, setSelected] = useState(null)
   return (
     <Table
-      selected={selected}
-      onRowClick={(row) => setSelected(row.id)}
+      selected={boolean('Selectable', false) ? selected : null}
+      onRowClick={
+        boolean('Selectable', false) ? (row) => setSelected(row.id) : null
+      }
       data={[
         { name: 'Shoe', amount: 10 },
         { name: 'Table', amount: 20 },
