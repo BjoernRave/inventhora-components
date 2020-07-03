@@ -42,8 +42,6 @@ const ComboBox: FC<Props> = ({
           helper.setValue(value || '')
         }
       }}
-      autoComplete
-      debug
       onInputChange={(_e, value) => {
         if (freeSolo) {
           helper.setValue(value || '')
