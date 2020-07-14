@@ -7,6 +7,7 @@ import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
 import {
   AddressInput,
+  ButtonGroup,
   Checkbox,
   ComboBox,
   DateInput,
@@ -25,6 +26,7 @@ import {
   TextInput,
   TextListInput,
   TimeInput,
+  WithCreationOption,
   WYSIWYGInput,
 } from '../src'
 
@@ -44,7 +46,7 @@ export default {
   },
 }
 
-const exampleOptions: Option[] = [
+const exampleOptions2: Option[] = [
   {
     label: 'Option 1',
     value: 'option1',
@@ -52,6 +54,21 @@ const exampleOptions: Option[] = [
   {
     label: 'Option 2',
     value: 'option2',
+  },
+]
+
+const exampleOptions3: Option[] = [
+  {
+    label: 'Option 1',
+    value: 'option1',
+  },
+  {
+    label: 'Option 2',
+    value: 'option2',
+  },
+  {
+    label: 'Option 3',
+    value: 'option3',
   },
 ]
 
@@ -118,7 +135,7 @@ export const ComboBoxStory = (props) => (
     name='ComboboxInput'
     label='ComboboxInput'
     helperText='HelperText'
-    options={exampleOptions}
+    options={exampleOptions2}
     getOptionLabel={(option) => option.label}
   />
 )
@@ -129,7 +146,7 @@ export const SelectInputStory = (props) => (
     name='SelectInput'
     label='SelectInput'
     helperText='HelperText'
-    options={exampleOptions}
+    options={exampleOptions2}
   />
 )
 
@@ -157,6 +174,7 @@ export const DateTimeInputStory = (props) => (
     required={boolean('Required', false)}
   />
 )
+
 export const CheckboxStory = (props) => (
   <Checkbox
     name='Checkbox'
@@ -164,6 +182,34 @@ export const CheckboxStory = (props) => (
     helperText='HelperText'
     required={boolean('Required', false)}
   />
+)
+
+export const ButtonGroupStory = (props) => (
+  <>
+    <ButtonGroup
+      label='ButtonGroupInput2'
+      name='ButtonGroupInput2'
+      helperText='ButtonGroupHelper2'
+      options={exampleOptions2}
+      required={boolean('Required', false)}
+    />
+    <ButtonGroup
+      label='ButtonGroupInput3'
+      name='ButtonGroupInput3'
+      helperText='ButtonGroupHelper3'
+      options={exampleOptions3}
+      required={boolean('Required', false)}
+    />
+  </>
+)
+
+export const WithCreationOptionStory = (props) => (
+  <WithCreationOption
+    title='CreationOption'
+    canCreate={boolean('Can Create', true)}
+    onCreate={() => console.log('creating')}>
+    <TextInput label='WithCreationOption' name='WithCreationOption' />
+  </WithCreationOption>
 )
 
 export const DimensionsInputStory = (props) => (

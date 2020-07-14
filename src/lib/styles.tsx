@@ -1,7 +1,7 @@
-import { Button, CircularProgress, Container, Paper } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
-import React, { FC, ReactNode } from 'react';
-import styled from 'styled-components';
+import { Button, CircularProgress, Container, Paper } from '@material-ui/core'
+import { createMuiTheme } from '@material-ui/core/styles'
+import React, { FC, ReactNode } from 'react'
+import styled from 'styled-components'
 
 export const getTheme = createMuiTheme({
   palette: {
@@ -58,7 +58,7 @@ export const getTheme = createMuiTheme({
       },
     },
   },
-});
+})
 
 export const Loader = styled(CircularProgress)`
   position: fixed;
@@ -71,32 +71,18 @@ export const Loader = styled(CircularProgress)`
     top: 5px;
     left: 80px;
   }
-`;
-
-export const WithCreationOption = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  > div:first-child {
-    width: 100%;
-  }
-
-  > button {
-    margin-left: 10px;
-  }
-`;
+`
 
 export const Title = styled.h1`
   margin: 0;
-`;
+`
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-`;
+`
 
 export const SameLine = styled.div`
   display: inline-flex;
@@ -119,12 +105,12 @@ export const SameLine = styled.div`
       }
     }
   }
-`;
+`
 
 export const BoldText = styled.span`
   font-weight: bold;
   margin-right: 5px;
-`;
+`
 
 const InfoWrapper = styled.li`
   list-style: none;
@@ -136,32 +122,32 @@ const InfoWrapper = styled.li`
   svg {
     margin-right: 5px;
   }
-`;
+`
 
 export const Info: FC<{
-  name: string;
-  value: string | ReactNode;
-  Icon?: any;
+  name: string
+  value: string | ReactNode
+  Icon?: any
 }> = ({ name, value, Icon }) => {
-  if (!value) return null;
+  if (!value) return null
 
   return (
     <InfoWrapper>
       {Icon && <Icon />}
       {name}: <BoldText>{' ' + value}</BoldText>
     </InfoWrapper>
-  );
-};
+  )
+}
 
 export const StyledPaper = styled(Paper)`
   padding: 20px;
-`;
+`
 
 export const PageWrapper: FC<{
-  title: string;
-  maxWidth?: string;
-  actionLabel?: ReactNode;
-  onClick?: () => void;
+  title: string
+  maxWidth?: string
+  actionLabel?: ReactNode
+  onClick?: () => void
 }> = ({ children, title, maxWidth = 'md', actionLabel, onClick }) => {
   return (
     <Container maxWidth={maxWidth as any}>
@@ -169,7 +155,7 @@ export const PageWrapper: FC<{
         {actionLabel && onClick ? (
           <Header>
             <Title>{title}</Title>
-            <Button variant="contained" color="secondary" onClick={onClick}>
+            <Button variant='contained' color='secondary' onClick={onClick}>
               {actionLabel}
             </Button>
           </Header>
@@ -179,8 +165,8 @@ export const PageWrapper: FC<{
         {children}
       </StyledPaper>
     </Container>
-  );
-};
+  )
+}
 
 export const AmountWrapper = styled.div`
   display: flex;
@@ -195,9 +181,9 @@ export const AmountWrapper = styled.div`
     width: 20%;
     margin-left: 10px;
   }
-`;
+`
 
 export const ABlank = styled.a`
   text-decoration: none;
   color: inherit;
-`;
+`

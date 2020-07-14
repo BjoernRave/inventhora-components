@@ -3,8 +3,8 @@ import TwitterLogo from '@material-ui/icons/Twitter'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import Wave from './lib/svgs/Wave'
 import Link from './Link'
-import Wave from './Wave'
 
 const Wrapper = styled.div`
   margin-top: 50px;

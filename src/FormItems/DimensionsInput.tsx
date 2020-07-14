@@ -1,17 +1,26 @@
-import { FormGroup, FormLabel, InputAdornment } from '@material-ui/core'
+import { FormControl, FormLabel, InputAdornment } from '@material-ui/core'
 import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import { SameLine } from '../lib/styles'
 import NumberInput from './Basic/NumberInput'
 
-const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
+const DimensionsInput: FC<Props> = ({
+  lengthUnit,
+  name,
+  subName,
+  index,
+  required,
+}) => {
   const { t } = useTranslation()
 
   const [, meta, helper] = useField(name)
 
   return (
-    <FormGroup style={{ width: '100%' }}>
+    <FormControl
+      required={required}
+      error={Boolean(meta.error)}
+      style={{ width: '100%' }}>
       <FormLabel style={{ marginBottom: 20 }}>
         {t('table:dimensions')}
       </FormLabel>
@@ -63,7 +72,7 @@ const DimensionsInput: FC<Props> = ({ lengthUnit, name, subName, index }) => {
           }}
         />
       </SameLine>
-    </FormGroup>
+    </FormControl>
   )
 }
 
@@ -74,4 +83,5 @@ export interface Props {
   name: string
   subName?: string
   index?: number
+  required?: boolean
 }

@@ -51,8 +51,8 @@ const NumberInput: FC<Props> = ({
         if (
           allowDecimals &&
           (e.keyCode === 190 || e.keyCode === 188) &&
-          meta.value.split('.').length < 2 &&
-          meta.value.split(',').length < 2
+          meta?.value?.split('.')?.length < 2 &&
+          meta?.value?.split(',')?.length < 2
         ) {
           return
         }

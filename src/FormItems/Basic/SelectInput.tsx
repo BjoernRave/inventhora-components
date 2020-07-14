@@ -30,21 +30,16 @@ const SelectInput: FC<Props> = ({
 
   return (
     <FormControl
+      error={Boolean(meta.error)}
+      required={required}
       variant='outlined'
       id={generateSlug(formName)}
       style={{ width: '100%' }}>
-      <InputLabel
-        error={Boolean(meta.error)}
-        required={required}
-        id={`${generateSlug(formName)}-label`}>
-        {label}
-      </InputLabel>
+      <InputLabel id={`${generateSlug(formName)}-label`}>{label}</InputLabel>
       <Select
         margin='none'
         variant='outlined'
         label={label}
-        required={required}
-        error={Boolean(meta.error)}
         labelId={`${generateSlug(formName)}-label`}
         {...rest}
         {...field}
@@ -63,7 +58,7 @@ const SelectInput: FC<Props> = ({
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText variant='outlined' error={Boolean(meta.error)}>
+      <FormHelperText variant='outlined'>
         {meta.error ?? helperText}
       </FormHelperText>
     </FormControl>

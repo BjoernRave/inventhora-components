@@ -27,6 +27,7 @@ const TextListInput: FC<Props> = ({
   subName,
   helperText,
   style,
+  required,
   ...rest
 }) => {
   const { t } = useTranslation()
@@ -42,13 +43,12 @@ const TextListInput: FC<Props> = ({
   return (
     <>
       <FormControl
+        error={Boolean(meta.error)}
+        required={required}
         variant='outlined'
         id={generateSlug(formName)}
         style={style ?? { width: '100%' }}>
-        <InputLabel
-          variant='outlined'
-          error={Boolean(meta.error)}
-          htmlFor={`${subName ?? name}-input`}>
+        <InputLabel variant='outlined' htmlFor={`${subName ?? name}-input`}>
           {label}
         </InputLabel>
         <OutlinedInput
@@ -78,7 +78,6 @@ const TextListInput: FC<Props> = ({
           type='text'
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          error={Boolean(meta.error)}
           id={`${subName ?? name}-input`}
           onKeyDown={(e) => {
             if (e.keyCode === 13 && Boolean(input)) {
@@ -103,7 +102,7 @@ const TextListInput: FC<Props> = ({
             />
           ))}
         </div>
-        <FormHelperText variant='outlined' error={Boolean(meta.error)}>
+        <FormHelperText variant='outlined'>
           {meta.error ?? helperText}
         </FormHelperText>
       </FormControl>
@@ -119,4 +118,5 @@ export interface Props extends InputProps {
   subName?: string
   label: ReactNode
   helperText?: ReactNode
+  required?: boolean
 }

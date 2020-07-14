@@ -27,7 +27,7 @@ const ComboBox: FC<Props> = ({
   const formName =
     typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
   const [, meta, helper] = useField(formName)
-  const isLoading = loading || !Array.isArray(options)
+  const isLoading = !disabled && (loading || !Array.isArray(options))
   return (
     <Autocomplete
       id={generateSlug(formName)}
