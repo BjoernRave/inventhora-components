@@ -1,10 +1,7 @@
 import { format, isDate, parse } from 'date-fns'
 import { IncomingMessage } from 'http'
 import { NextPageContext } from 'next'
-import { NextRouter } from 'next/router'
-import qs from 'qs'
 import { useEffect, useState } from 'react'
-import { SortingRule } from 'react-table'
 import { UAParser } from 'ua-parser-js'
 import { DateFormat, ResponseHandle, TopBannerMessages } from './types'
 
@@ -54,48 +51,6 @@ export const uniquifyObjectArray = (a: any[] | undefined, id: string) => {
 
 export const capitalizeString = (string: string) => {
   return string[0].toUpperCase() + string.slice(1, string.length)
-}
-
-export const transformFilter = (filters: { id: string; value: string }[]) => {
-  return filters.reduce((prev, { id, value }) => {
-    if (id.includes('.')) {
-      const keys = id.split('.')
-      return {
-        ...prev,
-        [keys[0]]: { [keys[1]]: Array.isArray(value) ? { in: value } : value },
-      }
-    } else {
-      return { ...prev, [id]: Array.isArray(value) ? { in: value } : value }
-    }
-  }, {})
-}
-
-export const transformSortOrder = (sortBy: SortingRule<any>[]) => ({
-  [sortBy[0].id]: sortBy[0].desc ? 'desc' : 'asc',
-})
-
-export const getFilterFromUrl = (router: NextRouter): any => {
-  const parsed: any = qs.parse((router.query as any) as string)
-  return Object.keys(parsed).map((ind) =>
-    isValidDate(new Date(parsed[ind] as string))
-      ? new Date(parsed[ind] as string)
-      : parsed[ind]
-  )
-}
-
-export const saveFilterInUrl = (
-  router: NextRouter,
-  filter: { id: string; value: any }[]
-) => {
-  if (filter.length > 0) {
-    router.replace(
-      `${router.pathname}?${qs.stringify(filter)}`,
-      `${router.pathname}?${qs.stringify(filter)}`,
-      { shallow: true }
-    )
-  } else if (filter.length === 0) {
-    router.replace(router.pathname, router.pathname, { shallow: true })
-  }
 }
 
 export const isValidDate = (d: any) => {
@@ -202,12 +157,6 @@ export const isMobile = (ctx: NextPageContext) => {
   const device = uaParser.getDevice().type
 
   return device === 'mobile' || device === 'tablet'
-}
-
-export const parseStringifiedArray = (stringifed: string) => {
-  const parsed = qs.parse(stringifed)
-
-  return Object.keys(parsed).map((i) => parsed[i])
 }
 
 export const getBannerMessage = (settings: Partial<any>): TopBannerMessages => {

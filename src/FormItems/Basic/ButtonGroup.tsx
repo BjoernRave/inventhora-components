@@ -31,9 +31,11 @@ const ButtonGroup: FC<Props> = ({
 }) => {
   const [, meta, helper] = useField(name)
 
+  const id = name ? generateSlug(name) : generateSlug(label)
+
   return (
     <FormControl required={required} fullWidth component='fieldset'>
-      <FormLabel component='legend' htmlFor={generateSlug(name)}>
+      <FormLabel component='legend' htmlFor={id}>
         {label}
       </FormLabel>
       <ButtonWrapper
@@ -41,7 +43,7 @@ const ButtonGroup: FC<Props> = ({
         variant='contained'
         size={size}
         color='primary'
-        id={generateSlug(name)}>
+        id={id}>
         {options.map((option, ind) => {
           return (
             <Button

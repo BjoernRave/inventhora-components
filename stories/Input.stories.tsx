@@ -14,7 +14,7 @@ import {
   DateTimeInput,
   DimensionsInput,
   EmailInput,
-  FileUpload,
+  FileInput,
   getTheme,
   MultiCreate,
   NumberInput,
@@ -41,6 +41,7 @@ export default {
         ],
         MultiCreateStory: [],
         DimensionsInput: {},
+        FileInputStory: boolean('Multiple Files?', true) ? [] : null,
       },
     },
   },
@@ -216,9 +217,12 @@ export const DimensionsInputStory = (props) => (
   <DimensionsInput name='DimensionsInput' lengthUnit='cm' />
 )
 
-export const FileUploadStory = (props) => (
-  <FileUpload
-    onUpload={action('on Upload')}
+export const FileInputStory = (props) => (
+  <FileInput
+    label='FileInputStory'
+    deleteMutation={null}
+    isImages={boolean('Is Image Upload?', false)}
+    name='FileInputStory'
     multiple={boolean('Multiple Files?', true)}
   />
 )
