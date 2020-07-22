@@ -3,7 +3,7 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
-import { getTheme, Table } from '../src'
+import { DocumentViewer, getTheme, ImageViewer, Table } from '../src'
 import Footer from '../src/Footer'
 
 export default {
@@ -35,3 +35,26 @@ export const TableStory = (props) => {
     />
   )
 }
+
+export const ImageViewerStory = (props) => (
+  <ImageViewer
+    onDelete={boolean('Can Delete?', false) ? () => {} : null}
+    images={[
+      { url: '/image1.jpg' },
+      { url: '/image2.jpg' },
+      { url: '/image3.jpg' },
+    ]}
+  />
+)
+
+export const DocumentViewerStory = (props) => (
+  <DocumentViewer
+    canDownload={boolean('Can Download', true)}
+    onDelete={boolean('Can Delete?', true) ? () => {} : null}
+    documents={[
+      { url: '/image1.jpg', name: 'Document1' },
+      { url: '/image2.jpg', name: 'Document2' },
+      { url: '/image3.jpg', name: 'Document3' },
+    ]}
+  />
+)

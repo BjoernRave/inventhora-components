@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "1.6.6",
+  "version": "1.6.8",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -19,26 +19,26 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s ./.storybook/images",
+    "build-storybook": "build-storybook ",
     "deploy:storybook": "storybook-to-ghpages "
   },
   "dependencies": {
     "react-dropzone": "^11.0.2",
     "ua-parser-js": "^0.7.21",
-    "@toast-ui/react-editor": "^2.2.0",
+    "@toast-ui/react-editor": "^2.3.0",
     "next": "^9.4.4",
-    "date-fns": "^2.14.0",
+    "date-fns": "^2.15.0",
     "formik": "^2.1.5",
     "graphql": "^15.3.0",
     "next-translate": "^0.17.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
-    "@material-ui/pickers": "^4.0.0-alpha.9",
+    "@material-ui/pickers": "^4.0.0-alpha.10",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.8.0",
-    "react-table": "^7.2.2",
+    "react-table": "^7.3.2",
     "styled-components": "^5.1.1",
     "urql": "^1.9.8"
   },
@@ -60,7 +60,7 @@
     "@storybook/react": "^5.3.19",
     "@storybook/storybook-deployer": "^2.8.6",
     "@storybook/theming": "^5.3.19",
-    "@types/node": "^14.0.23",
+    "@types/node": "^14.0.24",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.1",
@@ -79,6 +79,6 @@
     "ts-loader": "^8.0.1",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }

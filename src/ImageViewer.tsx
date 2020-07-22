@@ -1,5 +1,6 @@
+import { Backdrop } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 const PreviewsWrapper = styled.div`
@@ -62,22 +63,48 @@ const PreviewWrapper = styled.div<{ isdeleting: number }>`
   ${({ isdeleting }) => isdeleting === 1 && hoverStyles};
 `
 
-const ImageViewer: FC<Props> = ({ images, onDelete }) => {
-  return (
-    <PreviewsWrapper>
-      {images.map((image, index) => (
-        <PreviewWrapper
-          isdeleting={onDelete ? 1 : 0}
-          onClick={() => onDelete && onDelete(image)}
-          key={index}>
-          <UploadPreview
-            src={image?.name ? URL.createObjectURL(image) : image.url}
-          />
+const FullScreenImage = styled.img`
+  position: fixed;
+  width: auto;
+  height: 95%;
+  top: 2.5%;
+`
 
-          {onDelete && <StyledIcon fontSize='large' />}
-        </PreviewWrapper>
-      ))}
-    </PreviewsWrapper>
+const ImageViewer: FC<Props> = ({ images, onDelete }) => {
+  const [isFullScreen, setIsFullScreen] = useState(null)
+  return (
+    <>
+      <PreviewsWrapper>
+        {images.map((image, index) => (
+          <PreviewWrapper
+            isdeleting={onDelete ? 1 : 0}
+            onClick={() =>
+              onDelete ? onDelete(image) : setIsFullScreen(image)
+            }
+            key={index}>
+            <UploadPreview
+              src={image?.name ? URL.createObjectURL(image) : image.url}
+            />
+
+            {onDelete && <StyledIcon fontSize='large' />}
+          </PreviewWrapper>
+        ))}
+      </PreviewsWrapper>
+      {isFullScreen && (
+        <Backdrop
+          style={{ margin: 0, zIndex: 99999 }}
+          onClick={() => setIsFullScreen(null)}
+          open>
+          <FullScreenImage
+            src={
+              isFullScreen?.name
+                ? URL.createObjectURL(isFullScreen)
+                : isFullScreen.url
+            }
+          />
+        </Backdrop>
+      )}
+    </>
   )
 }
 
