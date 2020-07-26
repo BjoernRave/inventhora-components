@@ -13,10 +13,10 @@ const Discover: FC<Props> = ({}) => {
         gradientTransform='matrix(61.806 0 0 -61.806 9157.9 3440.7)'
         gradientUnits='userSpaceOnUse'
         r='1'>
-        <stop offset='0' stop-color='#ffeee0' />
-        <stop offset='.005618' stop-color='#ffeee0' />
-        <stop offset='.26718' stop-color='#ffeee0' />
-        <stop offset='1' stop-color='#f48120' />
+        <stop offset='0' stopColor='#ffeee0' />
+        <stop offset='.005618' stopColor='#ffeee0' />
+        <stop offset='.26718' stopColor='#ffeee0' />
+        <stop offset='1' stopColor='#f48120' />
       </radialGradient>
       <g transform='matrix(.13333 0 0 -.13333 -1074.6 1302.1)'>
         <path
@@ -27,7 +27,7 @@ const Discover: FC<Props> = ({}) => {
           d='m8404 8981.6h867.7c23.08 0 41.81 18.73 41.81 41.82v293.53c-83.28-52.79-397.26-234.8-909.51-335.35'
           fill='#f58220'
         />
-        <g clip-path='url(#a)' transform='translate(-456.37 5932.8)'>
+        <g clipPath='url(#a)' transform='translate(-456.37 5932.8)'>
           <path
             d='m9158 3501.8c-34.57 0-62.6-26.99-62.6-60.31 0-35.43 26.8-61.9 62.6-61.9 34.86 0 62.4 26.82 62.4 61.21 0 34.16-27.36 61-62.4 61'
             fill='url(#b)'

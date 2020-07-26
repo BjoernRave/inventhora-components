@@ -1,7 +1,6 @@
 import { TextField } from '@material-ui/core'
 import { CardElement, useElements } from '@stripe/react-stripe-js'
 import { useField } from 'formik'
-import useTranslation from 'next-translate/useTranslation'
 import React, {
   FC,
   useEffect,
@@ -43,6 +42,10 @@ const StripeInput = ({
   )
 }
 
+const Wrapper = styled.div`
+  width: 100%;
+`
+
 const MethodsWrapper = styled.div`
   display: flex;
   margin-bottom: 20px;
@@ -55,8 +58,7 @@ const MethodsWrapper = styled.div`
   }
 `
 
-const PaymentInput: FC<Props> = ({ name, required }) => {
-  const { t } = useTranslation()
+const PaymentInput: FC<Props> = ({ name, required, label }) => {
   const elements = useElements()
   const [error, setError] = useState('')
   const [isReady, setIsReady] = useState(false)
@@ -65,12 +67,15 @@ const PaymentInput: FC<Props> = ({ name, required }) => {
 
   useEffect(() => {
     if (isReady) {
-      helper.setValue(elements.getElement(CardElement))
+      helper.setValue({
+        type: 'card',
+        element: elements.getElement(CardElement),
+      })
     }
   }, [isReady])
 
   return (
-    <>
+    <Wrapper>
       <MethodsWrapper>
         <Maestro />
         <Visa />
@@ -84,7 +89,7 @@ const PaymentInput: FC<Props> = ({ name, required }) => {
       <TextField
         error={Boolean(error)}
         helperText={Boolean(error) && error}
-        label={t('common:creditCard')}
+        label={label}
         variant='outlined'
         required={required}
         fullWidth
@@ -97,7 +102,7 @@ const PaymentInput: FC<Props> = ({ name, required }) => {
           },
         }}
       />
-    </>
+    </Wrapper>
   )
 }
 
@@ -106,4 +111,5 @@ export default PaymentInput
 interface Props {
   name: string
   required?: boolean
+  label: string
 }

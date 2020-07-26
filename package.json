@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "1.6.8",
+  "version": "1.6.11",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "storybook": "start-storybook -p 6006 -s ./.storybook/images",
-    "build-storybook": "build-storybook ",
+    "build-storybook": "build-storybook -s ./.storybook/images",
     "deploy:storybook": "storybook-to-ghpages "
   },
   "dependencies": {

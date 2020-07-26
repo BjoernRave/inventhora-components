@@ -1,4 +1,5 @@
 import { Snackbar } from '@material-ui/core'
+import Slide from '@material-ui/core/Slide'
 import { Alert } from '@material-ui/lab'
 import React, {
   createContext,
@@ -44,6 +45,8 @@ const Notification: FC<Props> = () => {
 
   return (
     <Snackbar
+      key={Slide.name}
+      TransitionComponent={(props) => <Slide {...props} direction='down' />}
       anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       open={Boolean(notification?.message)}>
       <Alert variant='filled' severity={notification?.state}>

@@ -2,7 +2,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
-import { DocumentViewer, getTheme, SubmitButton } from '../src'
+import { DocumentViewer, getTheme, StripeLogo, SubmitButton } from '../src'
 
 export default {
   title: 'General',
@@ -25,3 +25,5 @@ export const DocumentViewerStory = (props) => (
     documents={exampleFiles}
   />
 )
+
+export const StripeLogoStory = (props) => <StripeLogo />
