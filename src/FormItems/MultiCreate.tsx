@@ -4,7 +4,6 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  Fab,
   FormControl,
   FormHelperText,
   IconButton,
@@ -112,11 +111,11 @@ const MultiCreate: FC<Props> = ({
         </>
       )}
       <FormControl style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
-        <Fab
-          variant='extended'
+        <Button
+          variant='contained'
           color='secondary'
           type='button'
-          size='medium'
+          size='large'
           style={
             meta.error
               ? {
@@ -128,9 +127,11 @@ const MultiCreate: FC<Props> = ({
             setIsCreating(true)
             helper.setValue([...meta.value, {}])
           }}>
+          {' '}
           <PlusIcon style={{ margin: '0 5px 0 -5px' }} />
           {title}
-        </Fab>
+        </Button>
+
         {meta.error && (
           <FormHelperText error={Boolean(meta.error)}>
             {getErrorMessage(meta.error)}

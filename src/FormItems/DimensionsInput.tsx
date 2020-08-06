@@ -14,7 +14,10 @@ const DimensionsInput: FC<Props> = ({
 }) => {
   const { t } = useTranslation()
 
-  const [, meta, helper] = useField(name)
+  const formName =
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+
+  const [, meta, helper] = useField(formName)
 
   return (
     <FormControl

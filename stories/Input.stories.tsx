@@ -268,6 +268,10 @@ export const MultiCreateStory = (props) => {
             name: 'baseAmount',
             label: 'baseAmount',
           },
+          {
+            name: 'dimensions',
+            label: 'Dimensions',
+          },
         ]}
         title={'Create a Unit'}
         onDelete={action}
@@ -288,6 +292,12 @@ export const MultiCreateStory = (props) => {
           required
           label={'baseAmount'}
           helperText={'baseAmountHelper'}
+        />
+        <DimensionsInput
+          name={'MultiCreateStory'}
+          index={0}
+          subName='dimensions'
+          lengthUnit='cm'
         />
       </MultiCreate>
     </>

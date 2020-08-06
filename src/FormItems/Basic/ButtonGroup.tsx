@@ -23,13 +23,18 @@ const ButtonGroup: FC<Props> = ({
   options,
   value,
   name,
+  subName,
+  index,
   onClick,
   label,
   helperText,
   required,
   size = 'large',
 }) => {
-  const [, meta, helper] = useField(name)
+  const formName =
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+
+  const [, meta, helper] = useField(formName)
 
   const id = name ? generateSlug(name) : generateSlug(label)
 
@@ -49,12 +54,12 @@ const ButtonGroup: FC<Props> = ({
             <Button
               disabled={
                 (value && value === option.value) ||
-                (name && option.value === meta.value)
+                (formName && option.value === meta.value)
               }
               key={ind}
               onClick={() => {
                 onClick && onClick(option.value)
-                name && helper.setValue(option.value)
+                formName && helper.setValue(option.value)
               }}>
               {option.label}
             </Button>
@@ -77,4 +82,6 @@ interface Props {
   helperText?: string
   required?: boolean
   size?: 'small' | 'medium' | 'large'
+  index?: number
+  subName?: string
 }
