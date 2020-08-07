@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "1.6.17",
+  "version": "1.7.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -21,7 +21,7 @@
     "prepare": "tsdx build",
     "storybook": "start-storybook -p 6006 -s ./.storybook/images",
     "build-storybook": "build-storybook -s ./.storybook/images",
-    "deploy:storybook": "storybook-to-ghpages "
+    "deploy:storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "react-dropzone": "^11.0.2",
@@ -38,7 +38,7 @@
     "@material-ui/pickers": "4.0.0-alpha.10",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.8.0",
-    "react-table": "^7.3.3",
+    "react-table": "^7.5.0",
     "styled-components": "^5.1.1",
     "urql": "^1.10.0"
   },
@@ -46,7 +46,7 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@degjs/storybook-addon-taffy": "^1.0.4",
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
@@ -63,7 +63,7 @@
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
-    "@types/styled-components": "^5.1.1",
+    "@types/styled-components": "^5.1.2",
     "babel-loader": "^8.1.0",
     "dotenv": "^8.2.0",
     "eslint-plugin-prettier": "^3.1.4",

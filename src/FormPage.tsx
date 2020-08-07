@@ -91,6 +91,8 @@ const FormPage: FC<Props> = ({
           validate={validate}
           onSubmit={onSubmit}>
           {({ isSubmitting, errors, values }) => {
+            console.log(errors)
+
             if (Object.keys(errors).length > 0) {
               console.log(errors)
             }

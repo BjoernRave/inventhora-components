@@ -10,9 +10,24 @@ import { useField } from 'formik'
 import { Amount } from 'lib/types'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
-import { AmountWrapper } from '../lib/styles'
+import styled from 'styled-components'
 import { removeFromObjectArray } from '../lib/utils'
 import NumberInput from './Basic/NumberInput'
+
+const AmountWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  > div:first-child {
+    width: 100%;
+  }
+
+  > div:nth-child(2) {
+    width: 20%;
+    margin-left: 10px;
+  }
+`
 
 const ProductAmountInput: FC<Props> = ({
   max,
@@ -20,6 +35,8 @@ const ProductAmountInput: FC<Props> = ({
   type,
   name,
   required,
+  label,
+  helperText,
 }) => {
   const { t } = useTranslation()
 
@@ -31,15 +48,15 @@ const ProductAmountInput: FC<Props> = ({
     baseAmount: 1,
   })
 
-  if (!availableUnits || availableUnits?.length === 0) {
+  if (!availableUnits || availableUnits?.length === 1) {
     return (
       <NumberInput
         max={max}
         index={0}
         name='amounts'
         subName='amount'
-        label={t('forms:amount')}
-        helperText={t('forms:amountHelper')}
+        label={label}
+        helperText={helperText}
         required={required}
       />
     )
@@ -56,8 +73,10 @@ const ProductAmountInput: FC<Props> = ({
         return (
           <AmountWrapper key={index}>
             <TextField
+              error={Boolean(meta.error)}
+              helperText={meta.error ?? helperText}
               required={required}
-              label={t('forms:amount')}
+              label={label}
               value={unit.amount}
               onChange={(e) => {
                 const newUnits = Array.from(meta.value)
@@ -106,35 +125,39 @@ const ProductAmountInput: FC<Props> = ({
               style={{ width: '100%' }}
               variant='outlined'
             />
-            <Select
-              style={
-                unit.id === '1'
-                  ? { width: 'calc(30% + 45px' }
-                  : { width: '30%' }
-              }
-              value={unit.id}
-              onChange={(e) =>
-                helpers.setValue([
-                  ...meta.value,
-                  {
-                    ...availableUnits.find((u) => u.id === e.target.value),
-                    amount: '',
-                  },
-                ])
-              }
-              variant='outlined'>
-              {availableUnits.map((innerUnit) => (
-                <MenuItem
-                  disabled={Boolean(
-                    meta.value.find((u) => u.id === innerUnit.id)
-                  )}
-                  value={innerUnit.id}>
-                  {`${innerUnit.name} (${innerUnit.baseAmount} ${t(
-                    'forms:units'
-                  )})`}
-                </MenuItem>
-              ))}
-            </Select>
+            {availableUnits.length > 1 && (
+              <Select
+                error={Boolean(meta.error)}
+                style={
+                  unit.id === '1'
+                    ? { width: 'calc(30% + 45px' }
+                    : { width: '30%' }
+                }
+                value={unit.id}
+                onChange={(e) =>
+                  helpers.setValue([
+                    ...meta.value,
+                    {
+                      ...availableUnits.find((u) => u.id === e.target.value),
+                      amount: '',
+                    },
+                  ])
+                }
+                variant='outlined'>
+                {availableUnits.map((innerUnit, ind) => (
+                  <MenuItem
+                    key={ind}
+                    disabled={Boolean(
+                      meta.value.find((u) => u.id === innerUnit.id)
+                    )}
+                    value={innerUnit.id}>
+                    {`${innerUnit.name} (${innerUnit.baseAmount} ${t(
+                      'forms:units'
+                    )})`}
+                  </MenuItem>
+                ))}
+              </Select>
+            )}
             {unit.id !== '1' && (
               <Tooltip title={t('common:remove')}>
                 <IconButton
@@ -162,4 +185,6 @@ export interface Props {
   product: Partial<any>
   name: string
   required?: boolean
+  label: string
+  helperText?: string
 }

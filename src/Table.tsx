@@ -1,4 +1,4 @@
-import { InputAdornment, TextField } from '@material-ui/core'
+import { InputAdornment, TableSortLabel, TextField } from '@material-ui/core'
 import MaUTable from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -6,8 +6,8 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import SearchIcon from '@material-ui/icons/Search'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC } from 'react'
-import { Column, Row, useGlobalFilter, useTable } from 'react-table'
+import React, { CSSProperties, FC } from 'react'
+import { Column, Row, useGlobalFilter, useSortBy, useTable } from 'react-table'
 import styled from 'styled-components'
 
 const StyledRow = styled(TableRow)<{ hover: boolean }>`
@@ -22,6 +22,7 @@ const Table: FC<Props> = ({
   withSearch,
   selected,
   maxHeight,
+  style,
 }) => {
   const { t } = useTranslation()
   const {
@@ -36,6 +37,7 @@ const Table: FC<Props> = ({
       data: data ?? [],
     },
     useGlobalFilter,
+    useSortBy,
     (hooks) => {
       hooks.allColumns.push((columns) => [
         ...columns,
@@ -61,7 +63,7 @@ const Table: FC<Props> = ({
           }}
         />
       )}
-      <div style={{ overflow: 'auto', maxHeight, width: '100%' }}>
+      <div style={{ overflow: 'auto', maxHeight, width: '100%', ...style }}>
         <MaUTable stickyHeader {...getTableProps()}>
           <TableHead>
             {headerGroups.map((headerGroup, ind) => (
@@ -71,7 +73,13 @@ const Table: FC<Props> = ({
                     style={{ backgroundColor: 'white', fontWeight: 'bolder' }}
                     key={column.id}
                     {...column.getHeaderProps()}>
-                    {column.render('Header')}
+                    <TableSortLabel
+                      hideSortIcon
+                      active={column.isSorted}
+                      direction={column.isSortedDesc ? 'desc' : 'asc'}
+                      {...column.getSortByToggleProps()}>
+                      {column.render('Header')}
+                    </TableSortLabel>
                   </TableCell>
                 ))}
               </TableRow>
@@ -115,4 +123,5 @@ export interface Props {
   selected?: string
   withSearch?: boolean
   maxHeight?: number
+  style?: CSSProperties
 }

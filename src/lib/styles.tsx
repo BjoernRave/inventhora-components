@@ -168,21 +168,6 @@ export const PageWrapper: FC<{
   )
 }
 
-export const AmountWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  > div:first-child {
-    width: 100%;
-  }
-
-  > div:nth-child(2) {
-    width: 20%;
-    margin-left: 10px;
-  }
-`
-
 export const ABlank = styled.a`
   text-decoration: none;
   color: inherit;

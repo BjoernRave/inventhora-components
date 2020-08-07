@@ -10,11 +10,13 @@ import {
   ButtonGroup,
   Checkbox,
   ComboBox,
+  ConsumableInput,
   DateInput,
   DateTimeInput,
   DimensionsInput,
   EmailInput,
   FileInput,
+  formatDate,
   getTheme,
   MultiCreate,
   NumberInput,
@@ -22,6 +24,7 @@ import {
   PasswordInput,
   ProductAmountInput,
   SelectInput,
+  TableInput,
   TextAreaInput,
   TextInput,
   TextListInput,
@@ -42,6 +45,7 @@ export default {
         MultiCreateStory: [],
         DimensionsInput: {},
         FileInputStory: boolean('Multiple Files?', true) ? [] : null,
+        consumables: [],
       },
     },
   },
@@ -241,16 +245,22 @@ export const AddressInputStory = (props) => (
 
 export const ProductAmountInputStory = (props) => (
   <ProductAmountInput
+    label='ProductAmountLabel'
+    helperText='ProductAmountHelper'
     required={boolean('Required', false)}
     type={boolean('Is Outgoing', true) ? 'outgoing' : 'incoming'}
     max={number('Max Amount', 100)}
     name='ProductAmountInput'
-    product={{
-      units: [
-        { id: '2', name: 'Palette', baseAmount: 32 },
-        { id: '3', name: 'Palette', baseAmount: 100 },
-      ],
-    }}
+    product={
+      boolean('With Units', true)
+        ? {
+            units: [
+              { id: '2', name: 'Palette', baseAmount: 32 },
+              { id: '3', name: 'Palette', baseAmount: 100 },
+            ],
+          }
+        : null
+    }
   />
 )
 
@@ -267,10 +277,6 @@ export const MultiCreateStory = (props) => {
           {
             name: 'baseAmount',
             label: 'baseAmount',
-          },
-          {
-            name: 'dimensions',
-            label: 'Dimensions',
           },
         ]}
         title={'Create a Unit'}
@@ -293,13 +299,290 @@ export const MultiCreateStory = (props) => {
           label={'baseAmount'}
           helperText={'baseAmountHelper'}
         />
-        <DimensionsInput
-          name={'MultiCreateStory'}
-          index={0}
-          subName='dimensions'
-          lengthUnit='cm'
-        />
       </MultiCreate>
     </>
+  )
+}
+
+export const TableInputStory = (props) => {
+  return (
+    <TableInput
+      label='Inventory'
+      helperText='This is a helper text'
+      name='inventory'
+      columns={[
+        {
+          accessor: 'product.fullName',
+          Header: 'product',
+        },
+        { accessor: 'amount', Header: 'amount' },
+        {
+          accessor: (val: any) => val?.batch?.batchNumber ?? 'N/A',
+          Header: 'batchNumberShort',
+        },
+        {
+          accessor: (val: any) =>
+            val?.batch?.bestBefore
+              ? formatDate(val?.batch?.bestBefore, 'day')
+              : 'N/A',
+          Header: 'bestBeforeShort',
+        },
+        {
+          accessor: 'supplier.name',
+          Header: 'supplier',
+        },
+        {
+          accessor: 'warehouse.name',
+          Header: 'warehouse',
+        },
+      ]}
+      options={[
+        {
+          id: '1',
+          amount: 167,
+          supplier: {
+            id: 'ckdilk76u0037f3c9k6jy0ghm',
+            name: 'Magaña, Montañez and Valdez',
+          },
+          batch: {
+            id: 'ckdilk79z0185f3c9urbbyapl',
+            batchNumber: '1',
+            bestBefore: null,
+          },
+          product: {
+            id: 'ckdilk7800088f3c9hpvagjhu',
+            fullName: 'Teller',
+
+            consumables: [],
+          },
+          warehouse: {
+            id: 'ckdilk78c0108f3c9a1km2ex2',
+            name: 'Warehouse2',
+          },
+        },
+        {
+          id: '2',
+          amount: 100,
+          supplier: {
+            id: 'ckdilk76u0037f3c9k6jy0ghm',
+            name: 'Supplier2',
+          },
+          batch: {
+            id: 'ckdilk79z0185f3c9urbbyapl',
+            batchNumber: null,
+            bestBefore: null,
+          },
+          product: {
+            id: 'ckdilk7800088f3c9hpvagjhu',
+            fullName: 'Glas',
+
+            consumables: [],
+          },
+          warehouse: {
+            id: 'ckdilk78c0108f3c9a1km2ex2',
+            name: 'Warehouse1',
+          },
+        },
+        {
+          id: '3',
+          amount: 37,
+          supplier: {
+            id: 'ckdilk76u0037f3c9k6jy0ghm',
+            name: 'Supplier1',
+          },
+          batch: {
+            id: 'ckdilk79z0185f3c9urbbyapl',
+            batchNumber: '12',
+            bestBefore: null,
+          },
+          product: {
+            id: 'ckdilk7800088f3c9hpvagjhu',
+            fullName: 'Tisch',
+
+            consumables: [],
+          },
+        },
+      ]}
+    />
+  )
+}
+
+export const ConsumableInputStory = (props) => {
+  return (
+    <ConsumableInput
+      name='consumables'
+      label='Consumables'
+      helperText='Consumables Helper'
+      columns={[
+        {
+          accessor: 'product.fullName',
+          Header: 'product',
+        },
+        { accessor: 'amount', Header: 'amount' },
+        {
+          accessor: (val: any) => val?.batch?.batchNumber ?? 'N/A',
+          Header: 'batchNumberShort',
+        },
+        {
+          accessor: (val: any) =>
+            val?.batch?.bestBefore
+              ? formatDate(val?.batch?.bestBefore, 'day')
+              : 'N/A',
+          Header: 'bestBeforeShort',
+        },
+        {
+          accessor: 'supplier.name',
+          Header: 'supplier',
+        },
+        {
+          accessor: 'warehouse.name',
+          Header: 'warehouse',
+        },
+      ]}
+      options={[
+        {
+          title: 'Holz',
+          amount: 1,
+          options: [
+            {
+              id: '1',
+              amount: 167,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Magaña, Montañez and Valdez',
+              },
+              batch: {
+                id: '2',
+                batchNumber: '1',
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Teller',
+
+                consumables: [],
+              },
+              warehouse: {
+                id: 'ckdilk78c0108f3c9a1km2ex2',
+                name: 'Warehouse2',
+              },
+            },
+            {
+              id: '2',
+              amount: 100,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Supplier2',
+              },
+              batch: {
+                id: 'ckdilk79z0185f3c9urbbyapl',
+                batchNumber: null,
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Glas',
+
+                consumables: [],
+              },
+              warehouse: {
+                id: 'ckdilk78c0108f3c9a1km2ex2',
+                name: 'Warehouse1',
+              },
+            },
+            {
+              id: '3',
+              amount: 37,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Supplier1',
+              },
+              batch: {
+                id: 'ckdilk79z0185f3c9urbbyapl',
+                batchNumber: '12',
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Tisch',
+
+                consumables: [],
+              },
+            },
+          ],
+        },
+        {
+          title: 'Nägel',
+          amount: 10,
+          options: [
+            {
+              id: '4',
+              amount: 167,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Magaña, Montañez and Valdez',
+              },
+              batch: {
+                id: 'ckdilk79z0185f3c9urbbyapl',
+                batchNumber: '1',
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Teller',
+
+                consumables: [],
+              },
+              warehouse: {
+                id: 'ckdilk78c0108f3c9a1km2ex2',
+                name: 'Warehouse2',
+              },
+            },
+            {
+              id: '5',
+              amount: 100,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Supplier2',
+              },
+              batch: {
+                id: 'ckdilk79z0185f3c9urbbyapl',
+                batchNumber: null,
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Glas',
+
+                consumables: [],
+              },
+              warehouse: {
+                id: 'ckdilk78c0108f3c9a1km2ex2',
+                name: 'Warehouse1',
+              },
+            },
+            {
+              id: '6',
+              amount: 37,
+              supplier: {
+                id: 'ckdilk76u0037f3c9k6jy0ghm',
+                name: 'Supplier1',
+              },
+              batch: {
+                id: 'ckdilk79z0185f3c9urbbyapl',
+                batchNumber: '12',
+                bestBefore: null,
+              },
+              product: {
+                id: 'ckdilk7800088f3c9hpvagjhu',
+                fullName: 'Tisch',
+
+                consumables: [],
+              },
+            },
+          ],
+        },
+      ]}
+    />
   )
 }

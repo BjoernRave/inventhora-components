@@ -12,13 +12,12 @@ import {
 import PlusIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
-import { useField } from 'formik'
+import { useField, useFormikContext } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
+import { SubmitButton, Table } from '../../src'
 import { generateSlug, getErrorMessage } from '../lib/utils'
-import Table from '../Table'
-import SubmitButton from './Basic/SubmitButton'
 
 const StyledDialogContent = styled(DialogContent)`
   > *:not(label) {
@@ -49,11 +48,14 @@ const MultiCreate: FC<Props> = ({
   formatFunction,
   title,
   onDelete,
+  schema,
   helperText,
 }) => {
   const { t } = useTranslation()
   const [isCreating, setIsCreating] = useState(false)
-  const [isUpdating, setIsUpdating] = useState(false)
+  const [isUpdating, setIsUpdating] = useState('')
+
+  const { setFieldError, validateField } = useFormikContext()
 
   const [, meta, helper] = useField(name)
   let tableData
@@ -65,6 +67,27 @@ const MultiCreate: FC<Props> = ({
   } else {
     tableData = meta.value
   }
+
+  const handleClose = () => {
+    if (isCreating) {
+      setIsCreating(false)
+      const newArray = Array.from(meta.value)
+      newArray.pop()
+      helper.setValue(newArray, true)
+      validateField(name)
+    } else {
+      schema
+        .validate(meta.value[isUpdating])
+        .then(() => {
+          setIsUpdating('')
+          validateField(name)
+        })
+        .catch((error) => {
+          setFieldError(`${name}[${isUpdating}].${error.path}`, error.message)
+        })
+    }
+  }
+
   return (
     <>
       {tableData.length > 0 && (
@@ -84,7 +107,9 @@ const MultiCreate: FC<Props> = ({
                     <Tooltip title={t('forms:edit')}>
                       <IconButton
                         onClick={() => {
-                          setIsUpdating(true)
+                          console.log(row.index)
+
+                          setIsUpdating(row.index)
                         }}>
                         <EditIcon />
                       </IconButton>
@@ -139,19 +164,8 @@ const MultiCreate: FC<Props> = ({
         )}
       </FormControl>
       <Dialog
-        open={isCreating || isUpdating}
-        onClose={
-          isCreating
-            ? () => {
-                setIsCreating(false)
-                const newArray = Array.from(meta.value)
-                newArray.pop()
-                helper.setValue(newArray)
-              }
-            : () => {
-                setIsUpdating(false)
-              }
-        }
+        open={isCreating || isUpdating !== ''}
+        onClose={handleClose}
         id={generateSlug(title)}
         aria-labelledby={`${generateSlug(title)}-label`}
         maxWidth='xl'>
@@ -165,27 +179,26 @@ const MultiCreate: FC<Props> = ({
           {children}
         </StyledDialogContent>
         <DialogActions>
-          <Button
-            onClick={
-              isCreating
-                ? () => {
-                    const newArray = Array.from(meta.value)
-                    newArray.pop()
-                    helper.setValue(newArray)
-                    setIsCreating(false)
-                  }
-                : () => {
-                    setIsUpdating(false)
-                  }
-            }>
-            {t('forms:cancel')}
-          </Button>
+          <Button onClick={handleClose}>{t('forms:cancel')}</Button>
           <SubmitButton
-            onClick={
-              isCreating
-                ? () => setIsCreating(false)
-                : () => setIsUpdating(false)
-            }>
+            onClick={() => {
+              const index = isCreating ? meta.value.length - 1 : isUpdating
+
+              schema
+                .validate(meta.value[index])
+                .then(() => {
+                  isCreating ? setIsCreating(false) : setIsUpdating('')
+                  validateField(name)
+                })
+                .catch((error) => {
+                  console.log(error)
+
+                  setFieldError(
+                    `${name}[${index}].${error.path}`,
+                    error.message
+                  )
+                })
+            }}>
             {t('forms:submit')}
           </SubmitButton>
         </DialogActions>
@@ -203,4 +216,5 @@ export interface Props {
   formatFunction?: any
   onDelete?: (id: string) => void
   helperText?: string
+  schema: any
 }
