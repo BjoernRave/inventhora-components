@@ -46,6 +46,13 @@ const PageWrapper = styled.div`
   justify-content: center;
 `
 
+const StyledSubmit = styled(SubmitButton)`
+  @media (max-width: 767px) {
+    padding: 20px 0;
+    width: 100%;
+  }
+`
+
 const FormPage: FC<Props> = ({
   title,
   initialValues,
@@ -101,12 +108,12 @@ const FormPage: FC<Props> = ({
               <Form>
                 {children}
                 {!hideSubmit && (
-                  <SubmitButton
+                  <StyledSubmit
                     type='submit'
                     loading={isSubmitting}
                     size='large'>
                     {edit ? t('common:update') : t('common:create')}
-                  </SubmitButton>
+                  </StyledSubmit>
                 )}
               </Form>
             )

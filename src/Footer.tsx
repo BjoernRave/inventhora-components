@@ -21,6 +21,7 @@ const Content = styled.footer`
   @media (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
+    margin-top: 0;
   }
 `
 

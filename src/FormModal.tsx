@@ -20,6 +20,18 @@ const StyledDialogContent = styled(DialogContent)`
   }
 `
 
+const StyledButton = styled(Button)`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
+
+const StyledSubmit = styled(SubmitButton)`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
+
 const FormModal: FC<Props> = ({
   isOpen = true,
   onClose,
@@ -59,18 +71,18 @@ const FormModal: FC<Props> = ({
                 )}
                 {children}
                 <DialogActions>
-                  <Button
+                  <StyledButton
                     size='large'
                     onClick={() => onClose()}
                     color='primary'>
                     {t('common:cancel')}
-                  </Button>
-                  <SubmitButton
+                  </StyledButton>
+                  <StyledSubmit
                     size='large'
                     loading={isSubmitting}
                     disabled={disabled}>
                     {edit ? t('common:update') : t('common:create')}
-                  </SubmitButton>
+                  </StyledSubmit>
                 </DialogActions>
               </Form>
             </StyledDialogContent>

@@ -4,14 +4,6 @@
       "translations": {
         "de": "Afghanistan",
         "es": "Afganistán",
-        "fr": "Afghanistan",
-        "ja": "アフガニスタン",
-        "it": "Afghanistan",
-        "br": "Afeganistão",
-        "pt": "Afeganistão",
-        "nl": "Afghanistan",
-        "hr": "Afganistan",
-        "fa": "افغانستان",
         "en": "Afghanistan"
       },
       "phonePrefix": "93"
@@ -20,14 +12,6 @@
       "translations": {
         "de": "Åland",
         "es": "Alandia",
-        "fr": "Åland",
-        "ja": "オーランド諸島",
-        "it": "Isole Aland",
-        "br": "Ilhas de Aland",
-        "pt": "Ilhas de Aland",
-        "nl": "Ålandeilanden",
-        "hr": "Ålandski otoci",
-        "fa": "جزایر الند",
         "en": "Åland Islands"
       },
       "phonePrefix": "358"
@@ -36,14 +20,6 @@
       "translations": {
         "de": "Albanien",
         "es": "Albania",
-        "fr": "Albanie",
-        "ja": "アルバニア",
-        "it": "Albania",
-        "br": "Albânia",
-        "pt": "Albânia",
-        "nl": "Albanië",
-        "hr": "Albanija",
-        "fa": "آلبانی",
         "en": "Albania"
       },
       "phonePrefix": "355"
@@ -52,14 +28,6 @@
       "translations": {
         "de": "Algerien",
         "es": "Argelia",
-        "fr": "Algérie",
-        "ja": "アルジェリア",
-        "it": "Algeria",
-        "br": "Argélia",
-        "pt": "Argélia",
-        "nl": "Algerije",
-        "hr": "Alžir",
-        "fa": "الجزایر",
         "en": "Algeria"
       },
       "phonePrefix": "213"
@@ -68,14 +36,6 @@
       "translations": {
         "de": "Amerikanisch-Samoa",
         "es": "Samoa Americana",
-        "fr": "Samoa américaines",
-        "ja": "アメリカ領サモア",
-        "it": "Samoa Americane",
-        "br": "Samoa Americana",
-        "pt": "Samoa Americana",
-        "nl": "Amerikaans Samoa",
-        "hr": "Američka Samoa",
-        "fa": "ساموآی آمریکا",
         "en": "American Samoa"
       },
       "phonePrefix": "1684"
@@ -84,14 +44,6 @@
       "translations": {
         "de": "Andorra",
         "es": "Andorra",
-        "fr": "Andorre",
-        "ja": "アンドラ",
-        "it": "Andorra",
-        "br": "Andorra",
-        "pt": "Andorra",
-        "nl": "Andorra",
-        "hr": "Andora",
-        "fa": "آندورا",
         "en": "Andorra"
       },
       "phonePrefix": "376"
@@ -100,14 +52,6 @@
       "translations": {
         "de": "Angola",
         "es": "Angola",
-        "fr": "Angola",
-        "ja": "アンゴラ",
-        "it": "Angola",
-        "br": "Angola",
-        "pt": "Angola",
-        "nl": "Angola",
-        "hr": "Angola",
-        "fa": "آنگولا",
         "en": "Angola"
       },
       "phonePrefix": "244"
@@ -116,14 +60,6 @@
       "translations": {
         "de": "Anguilla",
         "es": "Anguilla",
-        "fr": "Anguilla",
-        "ja": "アンギラ",
-        "it": "Anguilla",
-        "br": "Anguila",
-        "pt": "Anguila",
-        "nl": "Anguilla",
-        "hr": "Angvila",
-        "fa": "آنگویلا",
         "en": "Anguilla"
       },
       "phonePrefix": "1264"
@@ -132,14 +68,6 @@
       "translations": {
         "de": "Antarktika",
         "es": "Antártida",
-        "fr": "Antarctique",
-        "ja": "南極大陸",
-        "it": "Antartide",
-        "br": "Antártida",
-        "pt": "Antárctida",
-        "nl": "Antarctica",
-        "hr": "Antarktika",
-        "fa": "جنوبگان",
         "en": "Antarctica"
       },
       "phonePrefix": "672"
@@ -148,14 +76,6 @@
       "translations": {
         "de": "Antigua und Barbuda",
         "es": "Antigua y Barbuda",
-        "fr": "Antigua-et-Barbuda",
-        "ja": "アンティグア・バーブーダ",
-        "it": "Antigua e Barbuda",
-        "br": "Antígua e Barbuda",
-        "pt": "Antígua e Barbuda",
-        "nl": "Antigua en Barbuda",
-        "hr": "Antigva i Barbuda",
-        "fa": "آنتیگوا و باربودا",
         "en": "Antigua and Barbuda"
       },
       "phonePrefix": "1268"
@@ -164,14 +84,6 @@
       "translations": {
         "de": "Argentinien",
         "es": "Argentina",
-        "fr": "Argentine",
-        "ja": "アルゼンチン",
-        "it": "Argentina",
-        "br": "Argentina",
-        "pt": "Argentina",
-        "nl": "Argentinië",
-        "hr": "Argentina",
-        "fa": "آرژانتین",
         "en": "Argentina"
       },
       "phonePrefix": "54"
@@ -180,14 +92,6 @@
       "translations": {
         "de": "Armenien",
         "es": "Armenia",
-        "fr": "Arménie",
-        "ja": "アルメニア",
-        "it": "Armenia",
-        "br": "Armênia",
-        "pt": "Arménia",
-        "nl": "Armenië",
-        "hr": "Armenija",
-        "fa": "ارمنستان",
         "en": "Armenia"
       },
       "phonePrefix": "374"
@@ -196,14 +100,6 @@
       "translations": {
         "de": "Aruba",
         "es": "Aruba",
-        "fr": "Aruba",
-        "ja": "アルバ",
-        "it": "Aruba",
-        "br": "Aruba",
-        "pt": "Aruba",
-        "nl": "Aruba",
-        "hr": "Aruba",
-        "fa": "آروبا",
         "en": "Aruba"
       },
       "phonePrefix": "297"
@@ -212,14 +108,6 @@
       "translations": {
         "de": "Australien",
         "es": "Australia",
-        "fr": "Australie",
-        "ja": "オーストラリア",
-        "it": "Australia",
-        "br": "Austrália",
-        "pt": "Austrália",
-        "nl": "Australië",
-        "hr": "Australija",
-        "fa": "استرالیا",
         "en": "Australia"
       },
       "phonePrefix": "61"
@@ -228,14 +116,6 @@
       "translations": {
         "de": "Österreich",
         "es": "Austria",
-        "fr": "Autriche",
-        "ja": "オーストリア",
-        "it": "Austria",
-        "br": "áustria",
-        "pt": "áustria",
-        "nl": "Oostenrijk",
-        "hr": "Austrija",
-        "fa": "اتریش",
         "en": "Austria"
       },
       "phonePrefix": "43"
@@ -244,14 +124,6 @@
       "translations": {
         "de": "Aserbaidschan",
         "es": "Azerbaiyán",
-        "fr": "Azerbaïdjan",
-        "ja": "アゼルバイジャン",
-        "it": "Azerbaijan",
-        "br": "Azerbaijão",
-        "pt": "Azerbaijão",
-        "nl": "Azerbeidzjan",
-        "hr": "Azerbajdžan",
-        "fa": "آذربایجان",
         "en": "Azerbaijan"
       },
       "phonePrefix": "994"
@@ -260,14 +132,6 @@
       "translations": {
         "de": "Bahamas",
         "es": "Bahamas",
-        "fr": "Bahamas",
-        "ja": "バハマ",
-        "it": "Bahamas",
-        "br": "Bahamas",
-        "pt": "Baamas",
-        "nl": "Bahama’s",
-        "hr": "Bahami",
-        "fa": "باهاما",
         "en": "Bahamas"
       },
       "phonePrefix": "1242"
@@ -276,14 +140,6 @@
       "translations": {
         "de": "Bahrain",
         "es": "Bahrein",
-        "fr": "Bahreïn",
-        "ja": "バーレーン",
-        "it": "Bahrein",
-        "br": "Bahrein",
-        "pt": "Barém",
-        "nl": "Bahrein",
-        "hr": "Bahrein",
-        "fa": "بحرین",
         "en": "Bahrain"
       },
       "phonePrefix": "973"
@@ -292,14 +148,6 @@
       "translations": {
         "de": "Bangladesch",
         "es": "Bangladesh",
-        "fr": "Bangladesh",
-        "ja": "バングラデシュ",
-        "it": "Bangladesh",
-        "br": "Bangladesh",
-        "pt": "Bangladeche",
-        "nl": "Bangladesh",
-        "hr": "Bangladeš",
-        "fa": "بنگلادش",
         "en": "Bangladesh"
       },
       "phonePrefix": "880"
@@ -308,14 +156,6 @@
       "translations": {
         "de": "Barbados",
         "es": "Barbados",
-        "fr": "Barbade",
-        "ja": "バルバドス",
-        "it": "Barbados",
-        "br": "Barbados",
-        "pt": "Barbados",
-        "nl": "Barbados",
-        "hr": "Barbados",
-        "fa": "باربادوس",
         "en": "Barbados"
       },
       "phonePrefix": "1246"
@@ -324,14 +164,6 @@
       "translations": {
         "de": "Weißrussland",
         "es": "Bielorrusia",
-        "fr": "Biélorussie",
-        "ja": "ベラルーシ",
-        "it": "Bielorussia",
-        "br": "Bielorrússia",
-        "pt": "Bielorrússia",
-        "nl": "Wit-Rusland",
-        "hr": "Bjelorusija",
-        "fa": "بلاروس",
         "en": "Belarus"
       },
       "phonePrefix": "375"
@@ -340,14 +172,6 @@
       "translations": {
         "de": "Belgien",
         "es": "Bélgica",
-        "fr": "Belgique",
-        "ja": "ベルギー",
-        "it": "Belgio",
-        "br": "Bélgica",
-        "pt": "Bélgica",
-        "nl": "België",
-        "hr": "Belgija",
-        "fa": "بلژیک",
         "en": "Belgium"
       },
       "phonePrefix": "32"
@@ -356,14 +180,6 @@
       "translations": {
         "de": "Belize",
         "es": "Belice",
-        "fr": "Belize",
-        "ja": "ベリーズ",
-        "it": "Belize",
-        "br": "Belize",
-        "pt": "Belize",
-        "nl": "Belize",
-        "hr": "Belize",
-        "fa": "بلیز",
         "en": "Belize"
       },
       "phonePrefix": "501"
@@ -372,14 +188,6 @@
       "translations": {
         "de": "Benin",
         "es": "Benín",
-        "fr": "Bénin",
-        "ja": "ベナン",
-        "it": "Benin",
-        "br": "Benin",
-        "pt": "Benim",
-        "nl": "Benin",
-        "hr": "Benin",
-        "fa": "بنین",
         "en": "Benin"
       },
       "phonePrefix": "229"
@@ -388,14 +196,6 @@
       "translations": {
         "de": "Bermuda",
         "es": "Bermudas",
-        "fr": "Bermudes",
-        "ja": "バミューダ",
-        "it": "Bermuda",
-        "br": "Bermudas",
-        "pt": "Bermudas",
-        "nl": "Bermuda",
-        "hr": "Bermudi",
-        "fa": "برمودا",
         "en": "Bermuda"
       },
       "phonePrefix": "1441"
@@ -404,14 +204,6 @@
       "translations": {
         "de": "Bhutan",
         "es": "Bután",
-        "fr": "Bhoutan",
-        "ja": "ブータン",
-        "it": "Bhutan",
-        "br": "Butão",
-        "pt": "Butão",
-        "nl": "Bhutan",
-        "hr": "Butan",
-        "fa": "بوتان",
         "en": "Bhutan"
       },
       "phonePrefix": "975"
@@ -420,14 +212,6 @@
       "translations": {
         "de": "Bolivien",
         "es": "Bolivia",
-        "fr": "Bolivie",
-        "ja": "ボリビア多民族国",
-        "it": "Bolivia",
-        "br": "Bolívia",
-        "pt": "Bolívia",
-        "nl": "Bolivia",
-        "hr": "Bolivija",
-        "fa": "بولیوی",
         "en": "Bolivia (Plurinational State of)"
       },
       "phonePrefix": "591"
@@ -436,14 +220,6 @@
       "translations": {
         "de": "Bonaire, Sint Eustatius und Saba",
         "es": null,
-        "fr": "Bonaire, Saint-Eustache et Saba",
-        "ja": null,
-        "it": "Bonaire, Saint-Eustache e Saba",
-        "br": "Bonaire",
-        "pt": "Bonaire",
-        "nl": null,
-        "hr": null,
-        "fa": "بونیر",
         "en": "Bonaire, Sint Eustatius and Saba"
       },
       "phonePrefix": "5997"
@@ -452,14 +228,6 @@
       "translations": {
         "de": "Bosnien und Herzegowina",
         "es": "Bosnia y Herzegovina",
-        "fr": "Bosnie-Herzégovine",
-        "ja": "ボスニア・ヘルツェゴビナ",
-        "it": "Bosnia ed Erzegovina",
-        "br": "Bósnia e Herzegovina",
-        "pt": "Bósnia e Herzegovina",
-        "nl": "Bosnië en Herzegovina",
-        "hr": "Bosna i Hercegovina",
-        "fa": "بوسنی و هرزگوین",
         "en": "Bosnia and Herzegovina"
       },
       "phonePrefix": "387"
@@ -468,14 +236,6 @@
       "translations": {
         "de": "Botswana",
         "es": "Botswana",
-        "fr": "Botswana",
-        "ja": "ボツワナ",
-        "it": "Botswana",
-        "br": "Botsuana",
-        "pt": "Botsuana",
-        "nl": "Botswana",
-        "hr": "Bocvana",
-        "fa": "بوتسوانا",
         "en": "Botswana"
       },
       "phonePrefix": "267"
@@ -484,14 +244,6 @@
       "translations": {
         "de": "Brasilien",
         "es": "Brasil",
-        "fr": "Brésil",
-        "ja": "ブラジル",
-        "it": "Brasile",
-        "br": "Brasil",
-        "pt": "Brasil",
-        "nl": "Brazilië",
-        "hr": "Brazil",
-        "fa": "برزیل",
         "en": "Brazil"
       },
       "phonePrefix": "55"
@@ -500,14 +252,6 @@
       "translations": {
         "de": "Britisches Territorium im Indischen Ozean",
         "es": "Territorio Británico del Océano Índico",
-        "fr": "Territoire britannique de l'océan Indien",
-        "ja": "イギリス領インド洋地域",
-        "it": "Territorio britannico dell'oceano indiano",
-        "br": "Território Britânico do Oceano íÍdico",
-        "pt": "Território Britânico do Oceano Índico",
-        "nl": "Britse Gebieden in de Indische Oceaan",
-        "hr": "Britanski Indijskooceanski teritorij",
-        "fa": "قلمرو بریتانیا در اقیانوس هند",
         "en": "British Indian Ocean Territory"
       },
       "phonePrefix": "246"
@@ -516,14 +260,6 @@
       "translations": {
         "de": "Britische Jungferninseln",
         "es": "Islas Vírgenes del Reino Unido",
-        "fr": "Îles Vierges britanniques",
-        "ja": "イギリス領ヴァージン諸島",
-        "it": "Isole Vergini Britanniche",
-        "br": "Ilhas Virgens Britânicas",
-        "pt": "Ilhas Virgens Britânicas",
-        "nl": "Britse Maagdeneilanden",
-        "hr": "Britanski Djevičanski Otoci",
-        "fa": "جزایر ویرجین بریتانیا",
         "en": "Virgin Islands (British)"
       },
       "phonePrefix": "1284"
@@ -532,14 +268,6 @@
       "translations": {
         "de": "Amerikanische Jungferninseln",
         "es": "Islas Vírgenes de los Estados Unidos",
-        "fr": "Îles Vierges des États-Unis",
-        "ja": "アメリカ領ヴァージン諸島",
-        "it": "Isole Vergini americane",
-        "br": "Ilhas Virgens Americanas",
-        "pt": "Ilhas Virgens Americanas",
-        "nl": "Verenigde Staten Maagdeneilanden",
-        "hr": null,
-        "fa": "جزایر ویرجین آمریکا",
         "en": "Virgin Islands (U.S.)"
       },
       "phonePrefix": "1 340"
@@ -548,14 +276,6 @@
       "translations": {
         "de": "Brunei",
         "es": "Brunei",
-        "fr": "Brunei",
-        "ja": "ブルネイ・ダルサラーム",
-        "it": "Brunei",
-        "br": "Brunei",
-        "pt": "Brunei",
-        "nl": "Brunei",
-        "hr": "Brunej",
-        "fa": "برونئی",
         "en": "Brunei Darussalam"
       },
       "phonePrefix": "673"
@@ -564,14 +284,6 @@
       "translations": {
         "de": "Bulgarien",
         "es": "Bulgaria",
-        "fr": "Bulgarie",
-        "ja": "ブルガリア",
-        "it": "Bulgaria",
-        "br": "Bulgária",
-        "pt": "Bulgária",
-        "nl": "Bulgarije",
-        "hr": "Bugarska",
-        "fa": "بلغارستان",
         "en": "Bulgaria"
       },
       "phonePrefix": "359"
@@ -580,14 +292,6 @@
       "translations": {
         "de": "Burkina Faso",
         "es": "Burkina Faso",
-        "fr": "Burkina Faso",
-        "ja": "ブルキナファソ",
-        "it": "Burkina Faso",
-        "br": "Burkina Faso",
-        "pt": "Burquina Faso",
-        "nl": "Burkina Faso",
-        "hr": "Burkina Faso",
-        "fa": "بورکینافاسو",
         "en": "Burkina Faso"
       },
       "phonePrefix": "226"
@@ -596,14 +300,6 @@
       "translations": {
         "de": "Burundi",
         "es": "Burundi",
-        "fr": "Burundi",
-        "ja": "ブルンジ",
-        "it": "Burundi",
-        "br": "Burundi",
-        "pt": "Burúndi",
-        "nl": "Burundi",
-        "hr": "Burundi",
-        "fa": "بوروندی",
         "en": "Burundi"
       },
       "phonePrefix": "257"
@@ -612,14 +308,6 @@
       "translations": {
         "de": "Kambodscha",
         "es": "Camboya",
-        "fr": "Cambodge",
-        "ja": "カンボジア",
-        "it": "Cambogia",
-        "br": "Camboja",
-        "pt": "Camboja",
-        "nl": "Cambodja",
-        "hr": "Kambodža",
-        "fa": "کامبوج",
         "en": "Cambodia"
       },
       "phonePrefix": "855"
@@ -628,14 +316,6 @@
       "translations": {
         "de": "Kamerun",
         "es": "Camerún",
-        "fr": "Cameroun",
-        "ja": "カメルーン",
-        "it": "Camerun",
-        "br": "Camarões",
-        "pt": "Camarões",
-        "nl": "Kameroen",
-        "hr": "Kamerun",
-        "fa": "کامرون",
         "en": "Cameroon"
       },
       "phonePrefix": "237"
@@ -644,14 +324,6 @@
       "translations": {
         "de": "Kanada",
         "es": "Canadá",
-        "fr": "Canada",
-        "ja": "カナダ",
-        "it": "Canada",
-        "br": "Canadá",
-        "pt": "Canadá",
-        "nl": "Canada",
-        "hr": "Kanada",
-        "fa": "کانادا",
         "en": "Canada"
       },
       "phonePrefix": "1"
@@ -660,14 +332,6 @@
       "translations": {
         "de": "Kap Verde",
         "es": "Cabo Verde",
-        "fr": "Cap Vert",
-        "ja": "カーボベルデ",
-        "it": "Capo Verde",
-        "br": "Cabo Verde",
-        "pt": "Cabo Verde",
-        "nl": "Kaapverdië",
-        "hr": "Zelenortska Republika",
-        "fa": "کیپ ورد",
         "en": "Cabo Verde"
       },
       "phonePrefix": "238"
@@ -676,14 +340,6 @@
       "translations": {
         "de": "Kaimaninseln",
         "es": "Islas Caimán",
-        "fr": "Îles Caïmans",
-        "ja": "ケイマン諸島",
-        "it": "Isole Cayman",
-        "br": "Ilhas Cayman",
-        "pt": "Ilhas Caimão",
-        "nl": "Caymaneilanden",
-        "hr": "Kajmanski otoci",
-        "fa": "جزایر کیمن",
         "en": "Cayman Islands"
       },
       "phonePrefix": "1345"
@@ -692,14 +348,6 @@
       "translations": {
         "de": "Zentralafrikanische Republik",
         "es": "República Centroafricana",
-        "fr": "République centrafricaine",
-        "ja": "中央アフリカ共和国",
-        "it": "Repubblica Centrafricana",
-        "br": "República Centro-Africana",
-        "pt": "República Centro-Africana",
-        "nl": "Centraal-Afrikaanse Republiek",
-        "hr": "Srednjoafrička Republika",
-        "fa": "جمهوری آفریقای مرکزی",
         "en": "Central African Republic"
       },
       "phonePrefix": "236"
@@ -708,14 +356,6 @@
       "translations": {
         "de": "Tschad",
         "es": "Chad",
-        "fr": "Tchad",
-        "ja": "チャド",
-        "it": "Ciad",
-        "br": "Chade",
-        "pt": "Chade",
-        "nl": "Tsjaad",
-        "hr": "Čad",
-        "fa": "چاد",
         "en": "Chad"
       },
       "phonePrefix": "235"
@@ -724,14 +364,6 @@
       "translations": {
         "de": "Chile",
         "es": "Chile",
-        "fr": "Chili",
-        "ja": "チリ",
-        "it": "Cile",
-        "br": "Chile",
-        "pt": "Chile",
-        "nl": "Chili",
-        "hr": "Čile",
-        "fa": "شیلی",
         "en": "Chile"
       },
       "phonePrefix": "56"
@@ -740,14 +372,6 @@
       "translations": {
         "de": "China",
         "es": "China",
-        "fr": "Chine",
-        "ja": "中国",
-        "it": "Cina",
-        "br": "China",
-        "pt": "China",
-        "nl": "China",
-        "hr": "Kina",
-        "fa": "چین",
         "en": "China"
       },
       "phonePrefix": "86"
@@ -756,14 +380,6 @@
       "translations": {
         "de": "Weihnachtsinsel",
         "es": "Isla de Navidad",
-        "fr": "Île Christmas",
-        "ja": "クリスマス島",
-        "it": "Isola di Natale",
-        "br": "Ilha Christmas",
-        "pt": "Ilha do Natal",
-        "nl": "Christmaseiland",
-        "hr": "Božićni otok",
-        "fa": "جزیره کریسمس",
         "en": "Christmas Island"
       },
       "phonePrefix": "61"
@@ -772,14 +388,6 @@
       "translations": {
         "de": "Kokosinseln",
         "es": "Islas Cocos o Islas Keeling",
-        "fr": "Îles Cocos",
-        "ja": "ココス（キーリング）諸島",
-        "it": "Isole Cocos e Keeling",
-        "br": "Ilhas Cocos",
-        "pt": "Ilhas dos Cocos",
-        "nl": "Cocoseilanden",
-        "hr": "Kokosovi Otoci",
-        "fa": "جزایر کوکوس",
         "en": "Cocos (Keeling) Islands"
       },
       "phonePrefix": "61"
@@ -788,14 +396,6 @@
       "translations": {
         "de": "Kolumbien",
         "es": "Colombia",
-        "fr": "Colombie",
-        "ja": "コロンビア",
-        "it": "Colombia",
-        "br": "Colômbia",
-        "pt": "Colômbia",
-        "nl": "Colombia",
-        "hr": "Kolumbija",
-        "fa": "کلمبیا",
         "en": "Colombia"
       },
       "phonePrefix": "57"
@@ -804,14 +404,6 @@
       "translations": {
         "de": "Union der Komoren",
         "es": "Comoras",
-        "fr": "Comores",
-        "ja": "コモロ",
-        "it": "Comore",
-        "br": "Comores",
-        "pt": "Comores",
-        "nl": "Comoren",
-        "hr": "Komori",
-        "fa": "کومور",
         "en": "Comoros"
       },
       "phonePrefix": "269"
@@ -820,14 +412,6 @@
       "translations": {
         "de": "Kongo",
         "es": "Congo",
-        "fr": "Congo",
-        "ja": "コンゴ共和国",
-        "it": "Congo",
-        "br": "Congo",
-        "pt": "Congo",
-        "nl": "Congo [Republiek]",
-        "hr": "Kongo",
-        "fa": "کنگو",
         "en": "Congo"
       },
       "phonePrefix": "242"
@@ -836,14 +420,6 @@
       "translations": {
         "de": "Kongo (Dem. Rep.)",
         "es": "Congo (Rep. Dem.)",
-        "fr": "Congo (Rép. dém.)",
-        "ja": "コンゴ民主共和国",
-        "it": "Congo (Rep. Dem.)",
-        "br": "RD Congo",
-        "pt": "RD Congo",
-        "nl": "Congo [DRC]",
-        "hr": "Kongo, Demokratska Republika",
-        "fa": "جمهوری کنگو",
         "en": "Congo (Democratic Republic of the)"
       },
       "phonePrefix": "243"
@@ -852,14 +428,6 @@
       "translations": {
         "de": "Cookinseln",
         "es": "Islas Cook",
-        "fr": "Îles Cook",
-        "ja": "クック諸島",
-        "it": "Isole Cook",
-        "br": "Ilhas Cook",
-        "pt": "Ilhas Cook",
-        "nl": "Cookeilanden",
-        "hr": "Cookovo Otočje",
-        "fa": "جزایر کوک",
         "en": "Cook Islands"
       },
       "phonePrefix": "682"
@@ -868,14 +436,6 @@
       "translations": {
         "de": "Costa Rica",
         "es": "Costa Rica",
-        "fr": "Costa Rica",
-        "ja": "コスタリカ",
-        "it": "Costa Rica",
-        "br": "Costa Rica",
-        "pt": "Costa Rica",
-        "nl": "Costa Rica",
-        "hr": "Kostarika",
-        "fa": "کاستاریکا",
         "en": "Costa Rica"
       },
       "phonePrefix": "506"
@@ -884,14 +444,6 @@
       "translations": {
         "de": "Kroatien",
         "es": "Croacia",
-        "fr": "Croatie",
-        "ja": "クロアチア",
-        "it": "Croazia",
-        "br": "Croácia",
-        "pt": "Croácia",
-        "nl": "Kroatië",
-        "hr": "Hrvatska",
-        "fa": "کرواسی",
         "en": "Croatia"
       },
       "phonePrefix": "385"
@@ -900,14 +452,6 @@
       "translations": {
         "de": "Kuba",
         "es": "Cuba",
-        "fr": "Cuba",
-        "ja": "キューバ",
-        "it": "Cuba",
-        "br": "Cuba",
-        "pt": "Cuba",
-        "nl": "Cuba",
-        "hr": "Kuba",
-        "fa": "کوبا",
         "en": "Cuba"
       },
       "phonePrefix": "53"
@@ -916,14 +460,6 @@
       "translations": {
         "de": "Curaçao",
         "es": null,
-        "fr": "Curaçao",
-        "ja": null,
-        "it": "Curaçao",
-        "br": "Curaçao",
-        "pt": "Curaçao",
-        "nl": "Curaçao",
-        "hr": null,
-        "fa": "کوراسائو",
         "en": "Curaçao"
       },
       "phonePrefix": "599"
@@ -932,14 +468,6 @@
       "translations": {
         "de": "Zypern",
         "es": "Chipre",
-        "fr": "Chypre",
-        "ja": "キプロス",
-        "it": "Cipro",
-        "br": "Chipre",
-        "pt": "Chipre",
-        "nl": "Cyprus",
-        "hr": "Cipar",
-        "fa": "قبرس",
         "en": "Cyprus"
       },
       "phonePrefix": "357"
@@ -948,14 +476,6 @@
       "translations": {
         "de": "Tschechische Republik",
         "es": "República Checa",
-        "fr": "République tchèque",
-        "ja": "チェコ",
-        "it": "Repubblica Ceca",
-        "br": "República Tcheca",
-        "pt": "República Checa",
-        "nl": "Tsjechië",
-        "hr": "Češka",
-        "fa": "جمهوری چک",
         "en": "Czech Republic"
       },
       "phonePrefix": "420"
@@ -964,14 +484,6 @@
       "translations": {
         "de": "Dänemark",
         "es": "Dinamarca",
-        "fr": "Danemark",
-        "ja": "デンマーク",
-        "it": "Danimarca",
-        "br": "Dinamarca",
-        "pt": "Dinamarca",
-        "nl": "Denemarken",
-        "hr": "Danska",
-        "fa": "دانمارک",
         "en": "Denmark"
       },
       "phonePrefix": "45"
@@ -980,14 +492,6 @@
       "translations": {
         "de": "Dschibuti",
         "es": "Yibuti",
-        "fr": "Djibouti",
-        "ja": "ジブチ",
-        "it": "Gibuti",
-        "br": "Djibuti",
-        "pt": "Djibuti",
-        "nl": "Djibouti",
-        "hr": "Džibuti",
-        "fa": "جیبوتی",
         "en": "Djibouti"
       },
       "phonePrefix": "253"
@@ -996,14 +500,6 @@
       "translations": {
         "de": "Dominica",
         "es": "Dominica",
-        "fr": "Dominique",
-        "ja": "ドミニカ国",
-        "it": "Dominica",
-        "br": "Dominica",
-        "pt": "Dominica",
-        "nl": "Dominica",
-        "hr": "Dominika",
-        "fa": "دومینیکا",
         "en": "Dominica"
       },
       "phonePrefix": "1767"
@@ -1012,14 +508,6 @@
       "translations": {
         "de": "Dominikanische Republik",
         "es": "República Dominicana",
-        "fr": "République dominicaine",
-        "ja": "ドミニカ共和国",
-        "it": "Repubblica Dominicana",
-        "br": "República Dominicana",
-        "pt": "República Dominicana",
-        "nl": "Dominicaanse Republiek",
-        "hr": "Dominikanska Republika",
-        "fa": "جمهوری دومینیکن",
         "en": "Dominican Republic"
       },
       "phonePrefix": "1809"
@@ -1028,14 +516,6 @@
       "translations": {
         "de": "Dominikanische Republik",
         "es": "República Dominicana",
-        "fr": "République dominicaine",
-        "ja": "ドミニカ共和国",
-        "it": "Repubblica Dominicana",
-        "br": "República Dominicana",
-        "pt": "República Dominicana",
-        "nl": "Dominicaanse Republiek",
-        "hr": "Dominikanska Republika",
-        "fa": "جمهوری دومینیکن",
         "en": "Dominican Republic"
       },
       "phonePrefix": "1829"
@@ -1044,14 +524,6 @@
       "translations": {
         "de": "Dominikanische Republik",
         "es": "República Dominicana",
-        "fr": "République dominicaine",
-        "ja": "ドミニカ共和国",
-        "it": "Repubblica Dominicana",
-        "br": "República Dominicana",
-        "pt": "República Dominicana",
-        "nl": "Dominicaanse Republiek",
-        "hr": "Dominikanska Republika",
-        "fa": "جمهوری دومینیکن",
         "en": "Dominican Republic"
       },
       "phonePrefix": "1849"
@@ -1060,14 +532,6 @@
       "translations": {
         "de": "Ecuador",
         "es": "Ecuador",
-        "fr": "Équateur",
-        "ja": "エクアドル",
-        "it": "Ecuador",
-        "br": "Equador",
-        "pt": "Equador",
-        "nl": "Ecuador",
-        "hr": "Ekvador",
-        "fa": "اکوادور",
         "en": "Ecuador"
       },
       "phonePrefix": "593"
@@ -1076,14 +540,6 @@
       "translations": {
         "de": "Ägypten",
         "es": "Egipto",
-        "fr": "Égypte",
-        "ja": "エジプト",
-        "it": "Egitto",
-        "br": "Egito",
-        "pt": "Egipto",
-        "nl": "Egypte",
-        "hr": "Egipat",
-        "fa": "مصر",
         "en": "Egypt"
       },
       "phonePrefix": "20"
@@ -1092,14 +548,6 @@
       "translations": {
         "de": "El Salvador",
         "es": "El Salvador",
-        "fr": "Salvador",
-        "ja": "エルサルバドル",
-        "it": "El Salvador",
-        "br": "El Salvador",
-        "pt": "El Salvador",
-        "nl": "El Salvador",
-        "hr": "Salvador",
-        "fa": "السالوادور",
         "en": "El Salvador"
       },
       "phonePrefix": "503"
@@ -1108,14 +556,6 @@
       "translations": {
         "de": "Äquatorial-Guinea",
         "es": "Guinea Ecuatorial",
-        "fr": "Guinée-Équatoriale",
-        "ja": "赤道ギニア",
-        "it": "Guinea Equatoriale",
-        "br": "Guiné Equatorial",
-        "pt": "Guiné Equatorial",
-        "nl": "Equatoriaal-Guinea",
-        "hr": "Ekvatorijalna Gvineja",
-        "fa": "گینه استوایی",
         "en": "Equatorial Guinea"
       },
       "phonePrefix": "240"
@@ -1124,14 +564,6 @@
       "translations": {
         "de": "Eritrea",
         "es": "Eritrea",
-        "fr": "Érythrée",
-        "ja": "エリトリア",
-        "it": "Eritrea",
-        "br": "Eritreia",
-        "pt": "Eritreia",
-        "nl": "Eritrea",
-        "hr": "Eritreja",
-        "fa": "اریتره",
         "en": "Eritrea"
       },
       "phonePrefix": "291"
@@ -1140,14 +572,6 @@
       "translations": {
         "de": "Estland",
         "es": "Estonia",
-        "fr": "Estonie",
-        "ja": "エストニア",
-        "it": "Estonia",
-        "br": "Estônia",
-        "pt": "Estónia",
-        "nl": "Estland",
-        "hr": "Estonija",
-        "fa": "استونی",
         "en": "Estonia"
       },
       "phonePrefix": "372"
@@ -1156,14 +580,6 @@
       "translations": {
         "de": "Äthiopien",
         "es": "Etiopía",
-        "fr": "Éthiopie",
-        "ja": "エチオピア",
-        "it": "Etiopia",
-        "br": "Etiópia",
-        "pt": "Etiópia",
-        "nl": "Ethiopië",
-        "hr": "Etiopija",
-        "fa": "اتیوپی",
         "en": "Ethiopia"
       },
       "phonePrefix": "251"
@@ -1172,14 +588,6 @@
       "translations": {
         "de": "Falklandinseln",
         "es": "Islas Malvinas",
-        "fr": "Îles Malouines",
-        "ja": "フォークランド（マルビナス）諸島",
-        "it": "Isole Falkland o Isole Malvine",
-        "br": "Ilhas Malvinas",
-        "pt": "Ilhas Falkland",
-        "nl": "Falklandeilanden [Islas Malvinas]",
-        "hr": "Falklandski Otoci",
-        "fa": "جزایر فالکلند",
         "en": "Falkland Islands (Malvinas)"
       },
       "phonePrefix": "500"
@@ -1188,14 +596,6 @@
       "translations": {
         "de": "Färöer-Inseln",
         "es": "Islas Faroe",
-        "fr": "Îles Féroé",
-        "ja": "フェロー諸島",
-        "it": "Isole Far Oer",
-        "br": "Ilhas Faroé",
-        "pt": "Ilhas Faroé",
-        "nl": "Faeröer",
-        "hr": "Farski Otoci",
-        "fa": "جزایر فارو",
         "en": "Faroe Islands"
       },
       "phonePrefix": "298"
@@ -1204,14 +604,6 @@
       "translations": {
         "de": "Fidschi",
         "es": "Fiyi",
-        "fr": "Fidji",
-        "ja": "フィジー",
-        "it": "Figi",
-        "br": "Fiji",
-        "pt": "Fiji",
-        "nl": "Fiji",
-        "hr": "Fiđi",
-        "fa": "فیجی",
         "en": "Fiji"
       },
       "phonePrefix": "679"
@@ -1220,14 +612,6 @@
       "translations": {
         "de": "Finnland",
         "es": "Finlandia",
-        "fr": "Finlande",
-        "ja": "フィンランド",
-        "it": "Finlandia",
-        "br": "Finlândia",
-        "pt": "Finlândia",
-        "nl": "Finland",
-        "hr": "Finska",
-        "fa": "فنلاند",
         "en": "Finland"
       },
       "phonePrefix": "358"
@@ -1236,14 +620,6 @@
       "translations": {
         "de": "Frankreich",
         "es": "Francia",
-        "fr": "France",
-        "ja": "フランス",
-        "it": "Francia",
-        "br": "França",
-        "pt": "França",
-        "nl": "Frankrijk",
-        "hr": "Francuska",
-        "fa": "فرانسه",
         "en": "France"
       },
       "phonePrefix": "33"
@@ -1252,14 +628,6 @@
       "translations": {
         "de": "Französisch Guyana",
         "es": "Guayana Francesa",
-        "fr": "Guayane",
-        "ja": "フランス領ギアナ",
-        "it": "Guyana francese",
-        "br": "Guiana Francesa",
-        "pt": "Guiana Francesa",
-        "nl": "Frans-Guyana",
-        "hr": "Francuska Gvajana",
-        "fa": "گویان فرانسه",
         "en": "French Guiana"
       },
       "phonePrefix": "594"
@@ -1268,14 +636,6 @@
       "translations": {
         "de": "Französisch-Polynesien",
         "es": "Polinesia Francesa",
-        "fr": "Polynésie française",
-        "ja": "フランス領ポリネシア",
-        "it": "Polinesia Francese",
-        "br": "Polinésia Francesa",
-        "pt": "Polinésia Francesa",
-        "nl": "Frans-Polynesië",
-        "hr": "Francuska Polinezija",
-        "fa": "پلی‌نزی فرانسه",
         "en": "French Polynesia"
       },
       "phonePrefix": "689"
@@ -1284,14 +644,6 @@
       "translations": {
         "de": "Gabun",
         "es": "Gabón",
-        "fr": "Gabon",
-        "ja": "ガボン",
-        "it": "Gabon",
-        "br": "Gabão",
-        "pt": "Gabão",
-        "nl": "Gabon",
-        "hr": "Gabon",
-        "fa": "گابن",
         "en": "Gabon"
       },
       "phonePrefix": "241"
@@ -1300,14 +652,6 @@
       "translations": {
         "de": "Gambia",
         "es": "Gambia",
-        "fr": "Gambie",
-        "ja": "ガンビア",
-        "it": "Gambia",
-        "br": "Gâmbia",
-        "pt": "Gâmbia",
-        "nl": "Gambia",
-        "hr": "Gambija",
-        "fa": "گامبیا",
         "en": "Gambia"
       },
       "phonePrefix": "220"
@@ -1316,14 +660,6 @@
       "translations": {
         "de": "Georgien",
         "es": "Georgia",
-        "fr": "Géorgie",
-        "ja": "グルジア",
-        "it": "Georgia",
-        "br": "Geórgia",
-        "pt": "Geórgia",
-        "nl": "Georgië",
-        "hr": "Gruzija",
-        "fa": "گرجستان",
         "en": "Georgia"
       },
       "phonePrefix": "995"
@@ -1332,14 +668,6 @@
       "translations": {
         "de": "Deutschland",
         "es": "Alemania",
-        "fr": "Allemagne",
-        "ja": "ドイツ",
-        "it": "Germania",
-        "br": "Alemanha",
-        "pt": "Alemanha",
-        "nl": "Duitsland",
-        "hr": "Njemačka",
-        "fa": "آلمان",
         "en": "Germany"
       },
       "phonePrefix": "49"
@@ -1348,14 +676,6 @@
       "translations": {
         "de": "Ghana",
         "es": "Ghana",
-        "fr": "Ghana",
-        "ja": "ガーナ",
-        "it": "Ghana",
-        "br": "Gana",
-        "pt": "Gana",
-        "nl": "Ghana",
-        "hr": "Gana",
-        "fa": "غنا",
         "en": "Ghana"
       },
       "phonePrefix": "233"
@@ -1364,14 +684,6 @@
       "translations": {
         "de": "Gibraltar",
         "es": "Gibraltar",
-        "fr": "Gibraltar",
-        "ja": "ジブラルタル",
-        "it": "Gibilterra",
-        "br": "Gibraltar",
-        "pt": "Gibraltar",
-        "nl": "Gibraltar",
-        "hr": "Gibraltar",
-        "fa": "جبل‌طارق",
         "en": "Gibraltar"
       },
       "phonePrefix": "350"
@@ -1380,14 +692,6 @@
       "translations": {
         "de": "Griechenland",
         "es": "Grecia",
-        "fr": "Grèce",
-        "ja": "ギリシャ",
-        "it": "Grecia",
-        "br": "Grécia",
-        "pt": "Grécia",
-        "nl": "Griekenland",
-        "hr": "Grčka",
-        "fa": "یونان",
         "en": "Greece"
       },
       "phonePrefix": "30"
@@ -1396,14 +700,6 @@
       "translations": {
         "de": "Grönland",
         "es": "Groenlandia",
-        "fr": "Groenland",
-        "ja": "グリーンランド",
-        "it": "Groenlandia",
-        "br": "Groelândia",
-        "pt": "Gronelândia",
-        "nl": "Groenland",
-        "hr": "Grenland",
-        "fa": "گرینلند",
         "en": "Greenland"
       },
       "phonePrefix": "299"
@@ -1412,14 +708,6 @@
       "translations": {
         "de": "Grenada",
         "es": "Grenada",
-        "fr": "Grenade",
-        "ja": "グレナダ",
-        "it": "Grenada",
-        "br": "Granada",
-        "pt": "Granada",
-        "nl": "Grenada",
-        "hr": "Grenada",
-        "fa": "گرنادا",
         "en": "Grenada"
       },
       "phonePrefix": "1473"
@@ -1428,14 +716,6 @@
       "translations": {
         "de": "Guadeloupe",
         "es": "Guadalupe",
-        "fr": "Guadeloupe",
-        "ja": "グアドループ",
-        "it": "Guadeloupa",
-        "br": "Guadalupe",
-        "pt": "Guadalupe",
-        "nl": "Guadeloupe",
-        "hr": "Gvadalupa",
-        "fa": "جزیره گوادلوپ",
         "en": "Guadeloupe"
       },
       "phonePrefix": "590"
@@ -1444,14 +724,6 @@
       "translations": {
         "de": "Guam",
         "es": "Guam",
-        "fr": "Guam",
-        "ja": "グアム",
-        "it": "Guam",
-        "br": "Guam",
-        "pt": "Guame",
-        "nl": "Guam",
-        "hr": "Guam",
-        "fa": "گوام",
         "en": "Guam"
       },
       "phonePrefix": "1671"
@@ -1460,14 +732,6 @@
       "translations": {
         "de": "Guatemala",
         "es": "Guatemala",
-        "fr": "Guatemala",
-        "ja": "グアテマラ",
-        "it": "Guatemala",
-        "br": "Guatemala",
-        "pt": "Guatemala",
-        "nl": "Guatemala",
-        "hr": "Gvatemala",
-        "fa": "گواتمالا",
         "en": "Guatemala"
       },
       "phonePrefix": "502"
@@ -1476,14 +740,6 @@
       "translations": {
         "de": "Guernsey",
         "es": "Guernsey",
-        "fr": "Guernesey",
-        "ja": "ガーンジー",
-        "it": "Guernsey",
-        "br": "Guernsey",
-        "pt": "Guernsey",
-        "nl": "Guernsey",
-        "hr": "Guernsey",
-        "fa": "گرنزی",
         "en": "Guernsey"
       },
       "phonePrefix": "44"
@@ -1492,14 +748,6 @@
       "translations": {
         "de": "Guinea",
         "es": "Guinea",
-        "fr": "Guinée",
-        "ja": "ギニア",
-        "it": "Guinea",
-        "br": "Guiné",
-        "pt": "Guiné",
-        "nl": "Guinee",
-        "hr": "Gvineja",
-        "fa": "گینه",
         "en": "Guinea"
       },
       "phonePrefix": "224"
@@ -1508,14 +756,6 @@
       "translations": {
         "de": "Guinea-Bissau",
         "es": "Guinea-Bisáu",
-        "fr": "Guinée-Bissau",
-        "ja": "ギニアビサウ",
-        "it": "Guinea-Bissau",
-        "br": "Guiné-Bissau",
-        "pt": "Guiné-Bissau",
-        "nl": "Guinee-Bissau",
-        "hr": "Gvineja Bisau",
-        "fa": "گینه بیسائو",
         "en": "Guinea-Bissau"
       },
       "phonePrefix": "245"
@@ -1524,14 +764,6 @@
       "translations": {
         "de": "Guyana",
         "es": "Guyana",
-        "fr": "Guyane",
-        "ja": "ガイアナ",
-        "it": "Guyana",
-        "br": "Guiana",
-        "pt": "Guiana",
-        "nl": "Guyana",
-        "hr": "Gvajana",
-        "fa": "گویان",
         "en": "Guyana"
       },
       "phonePrefix": "592"
@@ -1540,14 +772,6 @@
       "translations": {
         "de": "Haiti",
         "es": "Haiti",
-        "fr": "Haïti",
-        "ja": "ハイチ",
-        "it": "Haiti",
-        "br": "Haiti",
-        "pt": "Haiti",
-        "nl": "Haïti",
-        "hr": "Haiti",
-        "fa": "هائیتی",
         "en": "Haiti"
       },
       "phonePrefix": "509"
@@ -1556,14 +780,6 @@
       "translations": {
         "de": "Heiliger Stuhl",
         "es": "Santa Sede",
-        "fr": "voir Saint",
-        "ja": "聖座",
-        "it": "Santa Sede",
-        "br": "Vaticano",
-        "pt": "Vaticano",
-        "nl": "Heilige Stoel",
-        "hr": "Sveta Stolica",
-        "fa": "سریر مقدس",
         "en": "Holy See"
       },
       "phonePrefix": "379"
@@ -1572,14 +788,6 @@
       "translations": {
         "de": "Honduras",
         "es": "Honduras",
-        "fr": "Honduras",
-        "ja": "ホンジュラス",
-        "it": "Honduras",
-        "br": "Honduras",
-        "pt": "Honduras",
-        "nl": "Honduras",
-        "hr": "Honduras",
-        "fa": "هندوراس",
         "en": "Honduras"
       },
       "phonePrefix": "504"
@@ -1588,14 +796,6 @@
       "translations": {
         "de": "Hong Kong",
         "es": "Hong Kong",
-        "fr": "Hong Kong",
-        "ja": "香港",
-        "it": "Hong Kong",
-        "br": "Hong Kong",
-        "pt": "Hong Kong",
-        "nl": "Hongkong",
-        "hr": "Hong Kong",
-        "fa": "هنگ‌کنگ",
         "en": "Hong Kong"
       },
       "phonePrefix": "852"
@@ -1604,14 +804,6 @@
       "translations": {
         "de": "Ungarn",
         "es": "Hungría",
-        "fr": "Hongrie",
-        "ja": "ハンガリー",
-        "it": "Ungheria",
-        "br": "Hungria",
-        "pt": "Hungria",
-        "nl": "Hongarije",
-        "hr": "Mađarska",
-        "fa": "مجارستان",
         "en": "Hungary"
       },
       "phonePrefix": "36"
@@ -1620,14 +812,6 @@
       "translations": {
         "de": "Island",
         "es": "Islandia",
-        "fr": "Islande",
-        "ja": "アイスランド",
-        "it": "Islanda",
-        "br": "Islândia",
-        "pt": "Islândia",
-        "nl": "IJsland",
-        "hr": "Island",
-        "fa": "ایسلند",
         "en": "Iceland"
       },
       "phonePrefix": "354"
@@ -1636,14 +820,6 @@
       "translations": {
         "de": "Indien",
         "es": "India",
-        "fr": "Inde",
-        "ja": "インド",
-        "it": "India",
-        "br": "Índia",
-        "pt": "Índia",
-        "nl": "India",
-        "hr": "Indija",
-        "fa": "هند",
         "en": "India"
       },
       "phonePrefix": "91"
@@ -1652,14 +828,6 @@
       "translations": {
         "de": "Indonesien",
         "es": "Indonesia",
-        "fr": "Indonésie",
-        "ja": "インドネシア",
-        "it": "Indonesia",
-        "br": "Indonésia",
-        "pt": "Indonésia",
-        "nl": "Indonesië",
-        "hr": "Indonezija",
-        "fa": "اندونزی",
         "en": "Indonesia"
       },
       "phonePrefix": "62"
@@ -1668,14 +836,6 @@
       "translations": {
         "de": "Elfenbeinküste",
         "es": "Costa de Marfil",
-        "fr": "Côte d'Ivoire",
-        "ja": "コートジボワール",
-        "it": "Costa D'Avorio",
-        "br": "Costa do Marfim",
-        "pt": "Costa do Marfim",
-        "nl": "Ivoorkust",
-        "hr": "Obala Bjelokosti",
-        "fa": "ساحل عاج",
         "en": "Côte d'Ivoire"
       },
       "phonePrefix": "225"
@@ -1684,14 +844,6 @@
       "translations": {
         "de": "Iran",
         "es": "Iran",
-        "fr": "Iran",
-        "ja": "イラン・イスラム共和国",
-        "it": null,
-        "br": "Irã",
-        "pt": "Irão",
-        "nl": "Iran",
-        "hr": "Iran",
-        "fa": "ایران",
         "en": "Iran (Islamic Republic of)"
       },
       "phonePrefix": "98"
@@ -1700,14 +852,6 @@
       "translations": {
         "de": "Irak",
         "es": "Irak",
-        "fr": "Irak",
-        "ja": "イラク",
-        "it": "Iraq",
-        "br": "Iraque",
-        "pt": "Iraque",
-        "nl": "Irak",
-        "hr": "Irak",
-        "fa": "عراق",
         "en": "Iraq"
       },
       "phonePrefix": "964"
@@ -1716,14 +860,6 @@
       "translations": {
         "de": "Irland",
         "es": "Irlanda",
-        "fr": "Irlande",
-        "ja": "アイルランド",
-        "it": "Irlanda",
-        "br": "Irlanda",
-        "pt": "Irlanda",
-        "nl": "Ierland",
-        "hr": "Irska",
-        "fa": "ایرلند",
         "en": "Ireland"
       },
       "phonePrefix": "353"
@@ -1732,14 +868,6 @@
       "translations": {
         "de": "Insel Man",
         "es": "Isla de Man",
-        "fr": "Île de Man",
-        "ja": "マン島",
-        "it": "Isola di Man",
-        "br": "Ilha de Man",
-        "pt": "Ilha de Man",
-        "nl": "Isle of Man",
-        "hr": "Otok Man",
-        "fa": "جزیره من",
         "en": "Isle of Man"
       },
       "phonePrefix": "44"
@@ -1748,14 +876,6 @@
       "translations": {
         "de": "Israel",
         "es": "Israel",
-        "fr": "Israël",
-        "ja": "イスラエル",
-        "it": "Israele",
-        "br": "Israel",
-        "pt": "Israel",
-        "nl": "Israël",
-        "hr": "Izrael",
-        "fa": "اسرائیل",
         "en": "Israel"
       },
       "phonePrefix": "972"
@@ -1764,14 +884,6 @@
       "translations": {
         "de": "Italien",
         "es": "Italia",
-        "fr": "Italie",
-        "ja": "イタリア",
-        "it": "Italia",
-        "br": "Itália",
-        "pt": "Itália",
-        "nl": "Italië",
-        "hr": "Italija",
-        "fa": "ایتالیا",
         "en": "Italy"
       },
       "phonePrefix": "39"
@@ -1780,14 +892,6 @@
       "translations": {
         "de": "Jamaika",
         "es": "Jamaica",
-        "fr": "Jamaïque",
-        "ja": "ジャマイカ",
-        "it": "Giamaica",
-        "br": "Jamaica",
-        "pt": "Jamaica",
-        "nl": "Jamaica",
-        "hr": "Jamajka",
-        "fa": "جامائیکا",
         "en": "Jamaica"
       },
       "phonePrefix": "1876"
@@ -1796,14 +900,6 @@
       "translations": {
         "de": "Japan",
         "es": "Japón",
-        "fr": "Japon",
-        "ja": "日本",
-        "it": "Giappone",
-        "br": "Japão",
-        "pt": "Japão",
-        "nl": "Japan",
-        "hr": "Japan",
-        "fa": "ژاپن",
         "en": "Japan"
       },
       "phonePrefix": "81"
@@ -1812,14 +908,6 @@
       "translations": {
         "de": "Jersey",
         "es": "Jersey",
-        "fr": "Jersey",
-        "ja": "ジャージー",
-        "it": "Isola di Jersey",
-        "br": "Jersey",
-        "pt": "Jersey",
-        "nl": "Jersey",
-        "hr": "Jersey",
-        "fa": "جرزی",
         "en": "Jersey"
       },
       "phonePrefix": "44"
@@ -1828,14 +916,6 @@
       "translations": {
         "de": "Jordanien",
         "es": "Jordania",
-        "fr": "Jordanie",
-        "ja": "ヨルダン",
-        "it": "Giordania",
-        "br": "Jordânia",
-        "pt": "Jordânia",
-        "nl": "Jordanië",
-        "hr": "Jordan",
-        "fa": "اردن",
         "en": "Jordan"
       },
       "phonePrefix": "962"
@@ -1844,14 +924,6 @@
       "translations": {
         "de": "Kasachstan",
         "es": "Kazajistán",
-        "fr": "Kazakhstan",
-        "ja": "カザフスタン",
-        "it": "Kazakistan",
-        "br": "Cazaquistão",
-        "pt": "Cazaquistão",
-        "nl": "Kazachstan",
-        "hr": "Kazahstan",
-        "fa": "قزاقستان",
         "en": "Kazakhstan"
       },
       "phonePrefix": "76"
@@ -1860,14 +932,6 @@
       "translations": {
         "de": "Kasachstan",
         "es": "Kazajistán",
-        "fr": "Kazakhstan",
-        "ja": "カザフスタン",
-        "it": "Kazakistan",
-        "br": "Cazaquistão",
-        "pt": "Cazaquistão",
-        "nl": "Kazachstan",
-        "hr": "Kazahstan",
-        "fa": "قزاقستان",
         "en": "Kazakhstan"
       },
       "phonePrefix": "77"
@@ -1876,14 +940,6 @@
       "translations": {
         "de": "Kenia",
         "es": "Kenia",
-        "fr": "Kenya",
-        "ja": "ケニア",
-        "it": "Kenya",
-        "br": "Quênia",
-        "pt": "Quénia",
-        "nl": "Kenia",
-        "hr": "Kenija",
-        "fa": "کنیا",
         "en": "Kenya"
       },
       "phonePrefix": "254"
@@ -1892,14 +948,6 @@
       "translations": {
         "de": "Kiribati",
         "es": "Kiribati",
-        "fr": "Kiribati",
-        "ja": "キリバス",
-        "it": "Kiribati",
-        "br": "Kiribati",
-        "pt": "Quiribáti",
-        "nl": "Kiribati",
-        "hr": "Kiribati",
-        "fa": "کیریباتی",
         "en": "Kiribati"
       },
       "phonePrefix": "686"
@@ -1908,14 +956,6 @@
       "translations": {
         "de": "Kuwait",
         "es": "Kuwait",
-        "fr": "Koweït",
-        "ja": "クウェート",
-        "it": "Kuwait",
-        "br": "Kuwait",
-        "pt": "Kuwait",
-        "nl": "Koeweit",
-        "hr": "Kuvajt",
-        "fa": "کویت",
         "en": "Kuwait"
       },
       "phonePrefix": "965"
@@ -1924,14 +964,6 @@
       "translations": {
         "de": "Kirgisistan",
         "es": "Kirguizistán",
-        "fr": "Kirghizistan",
-        "ja": "キルギス",
-        "it": "Kirghizistan",
-        "br": "Quirguistão",
-        "pt": "Quirguizistão",
-        "nl": "Kirgizië",
-        "hr": "Kirgistan",
-        "fa": "قرقیزستان",
         "en": "Kyrgyzstan"
       },
       "phonePrefix": "996"
@@ -1940,14 +972,6 @@
       "translations": {
         "de": "Laos",
         "es": "Laos",
-        "fr": "Laos",
-        "ja": "ラオス人民民主共和国",
-        "it": "Laos",
-        "br": "Laos",
-        "pt": "Laos",
-        "nl": "Laos",
-        "hr": "Laos",
-        "fa": "لائوس",
         "en": "Lao People's Democratic Republic"
       },
       "phonePrefix": "856"
@@ -1956,14 +980,6 @@
       "translations": {
         "de": "Lettland",
         "es": "Letonia",
-        "fr": "Lettonie",
-        "ja": "ラトビア",
-        "it": "Lettonia",
-        "br": "Letônia",
-        "pt": "Letónia",
-        "nl": "Letland",
-        "hr": "Latvija",
-        "fa": "لتونی",
         "en": "Latvia"
       },
       "phonePrefix": "371"
@@ -1972,14 +988,6 @@
       "translations": {
         "de": "Libanon",
         "es": "Líbano",
-        "fr": "Liban",
-        "ja": "レバノン",
-        "it": "Libano",
-        "br": "Líbano",
-        "pt": "Líbano",
-        "nl": "Libanon",
-        "hr": "Libanon",
-        "fa": "لبنان",
         "en": "Lebanon"
       },
       "phonePrefix": "961"
@@ -1988,14 +996,6 @@
       "translations": {
         "de": "Lesotho",
         "es": "Lesotho",
-        "fr": "Lesotho",
-        "ja": "レソト",
-        "it": "Lesotho",
-        "br": "Lesoto",
-        "pt": "Lesoto",
-        "nl": "Lesotho",
-        "hr": "Lesoto",
-        "fa": "لسوتو",
         "en": "Lesotho"
       },
       "phonePrefix": "266"
@@ -2004,14 +1004,6 @@
       "translations": {
         "de": "Liberia",
         "es": "Liberia",
-        "fr": "Liberia",
-        "ja": "リベリア",
-        "it": "Liberia",
-        "br": "Libéria",
-        "pt": "Libéria",
-        "nl": "Liberia",
-        "hr": "Liberija",
-        "fa": "لیبریا",
         "en": "Liberia"
       },
       "phonePrefix": "231"
@@ -2020,14 +1012,6 @@
       "translations": {
         "de": "Libyen",
         "es": "Libia",
-        "fr": "Libye",
-        "ja": "リビア",
-        "it": "Libia",
-        "br": "Líbia",
-        "pt": "Líbia",
-        "nl": "Libië",
-        "hr": "Libija",
-        "fa": "لیبی",
         "en": "Libya"
       },
       "phonePrefix": "218"
@@ -2036,14 +1020,6 @@
       "translations": {
         "de": "Liechtenstein",
         "es": "Liechtenstein",
-        "fr": "Liechtenstein",
-        "ja": "リヒテンシュタイン",
-        "it": "Liechtenstein",
-        "br": "Liechtenstein",
-        "pt": "Listenstaine",
-        "nl": "Liechtenstein",
-        "hr": "Lihtenštajn",
-        "fa": "لیختن‌اشتاین",
         "en": "Liechtenstein"
       },
       "phonePrefix": "423"
@@ -2052,14 +1028,6 @@
       "translations": {
         "de": "Litauen",
         "es": "Lituania",
-        "fr": "Lituanie",
-        "ja": "リトアニア",
-        "it": "Lituania",
-        "br": "Lituânia",
-        "pt": "Lituânia",
-        "nl": "Litouwen",
-        "hr": "Litva",
-        "fa": "لیتوانی",
         "en": "Lithuania"
       },
       "phonePrefix": "370"
@@ -2068,14 +1036,6 @@
       "translations": {
         "de": "Luxemburg",
         "es": "Luxemburgo",
-        "fr": "Luxembourg",
-        "ja": "ルクセンブルク",
-        "it": "Lussemburgo",
-        "br": "Luxemburgo",
-        "pt": "Luxemburgo",
-        "nl": "Luxemburg",
-        "hr": "Luksemburg",
-        "fa": "لوکزامبورگ",
         "en": "Luxembourg"
       },
       "phonePrefix": "352"
@@ -2084,14 +1044,6 @@
       "translations": {
         "de": "Macao",
         "es": "Macao",
-        "fr": "Macao",
-        "ja": "マカオ",
-        "it": "Macao",
-        "br": "Macau",
-        "pt": "Macau",
-        "nl": "Macao",
-        "hr": "Makao",
-        "fa": "مکائو",
         "en": "Macao"
       },
       "phonePrefix": "853"
@@ -2100,14 +1052,6 @@
       "translations": {
         "de": "Mazedonien",
         "es": "Macedonia",
-        "fr": "Macédoine",
-        "ja": "マケドニア旧ユーゴスラビア共和国",
-        "it": "Macedonia",
-        "br": "Macedônia",
-        "pt": "Macedónia",
-        "nl": "Macedonië",
-        "hr": "Makedonija",
-        "fa": "",
         "en": "Macedonia (the former Yugoslav Republic of)"
       },
       "phonePrefix": "389"
@@ -2116,14 +1060,6 @@
       "translations": {
         "de": "Madagaskar",
         "es": "Madagascar",
-        "fr": "Madagascar",
-        "ja": "マダガスカル",
-        "it": "Madagascar",
-        "br": "Madagascar",
-        "pt": "Madagáscar",
-        "nl": "Madagaskar",
-        "hr": "Madagaskar",
-        "fa": "ماداگاسکار",
         "en": "Madagascar"
       },
       "phonePrefix": "261"
@@ -2132,14 +1068,6 @@
       "translations": {
         "de": "Malawi",
         "es": "Malawi",
-        "fr": "Malawi",
-        "ja": "マラウイ",
-        "it": "Malawi",
-        "br": "Malawi",
-        "pt": "Malávi",
-        "nl": "Malawi",
-        "hr": "Malavi",
-        "fa": "مالاوی",
         "en": "Malawi"
       },
       "phonePrefix": "265"
@@ -2148,14 +1076,6 @@
       "translations": {
         "de": "Malaysia",
         "es": "Malasia",
-        "fr": "Malaisie",
-        "ja": "マレーシア",
-        "it": "Malesia",
-        "br": "Malásia",
-        "pt": "Malásia",
-        "nl": "Maleisië",
-        "hr": "Malezija",
-        "fa": "مالزی",
         "en": "Malaysia"
       },
       "phonePrefix": "60"
@@ -2164,14 +1084,6 @@
       "translations": {
         "de": "Malediven",
         "es": "Maldivas",
-        "fr": "Maldives",
-        "ja": "モルディブ",
-        "it": "Maldive",
-        "br": "Maldivas",
-        "pt": "Maldivas",
-        "nl": "Maldiven",
-        "hr": "Maldivi",
-        "fa": "مالدیو",
         "en": "Maldives"
       },
       "phonePrefix": "960"
@@ -2180,14 +1092,6 @@
       "translations": {
         "de": "Mali",
         "es": "Mali",
-        "fr": "Mali",
-        "ja": "マリ",
-        "it": "Mali",
-        "br": "Mali",
-        "pt": "Mali",
-        "nl": "Mali",
-        "hr": "Mali",
-        "fa": "مالی",
         "en": "Mali"
       },
       "phonePrefix": "223"
@@ -2196,14 +1100,6 @@
       "translations": {
         "de": "Malta",
         "es": "Malta",
-        "fr": "Malte",
-        "ja": "マルタ",
-        "it": "Malta",
-        "br": "Malta",
-        "pt": "Malta",
-        "nl": "Malta",
-        "hr": "Malta",
-        "fa": "مالت",
         "en": "Malta"
       },
       "phonePrefix": "356"
@@ -2212,14 +1108,6 @@
       "translations": {
         "de": "Marshallinseln",
         "es": "Islas Marshall",
-        "fr": "Îles Marshall",
-        "ja": "マーシャル諸島",
-        "it": "Isole Marshall",
-        "br": "Ilhas Marshall",
-        "pt": "Ilhas Marshall",
-        "nl": "Marshalleilanden",
-        "hr": "Maršalovi Otoci",
-        "fa": "جزایر مارشال",
         "en": "Marshall Islands"
       },
       "phonePrefix": "692"
@@ -2228,14 +1116,6 @@
       "translations": {
         "de": "Martinique",
         "es": "Martinica",
-        "fr": "Martinique",
-        "ja": "マルティニーク",
-        "it": "Martinica",
-        "br": "Martinica",
-        "pt": "Martinica",
-        "nl": "Martinique",
-        "hr": "Martinique",
-        "fa": "مونتسرات",
         "en": "Martinique"
       },
       "phonePrefix": "596"
@@ -2244,14 +1124,6 @@
       "translations": {
         "de": "Mauretanien",
         "es": "Mauritania",
-        "fr": "Mauritanie",
-        "ja": "モーリタニア",
-        "it": "Mauritania",
-        "br": "Mauritânia",
-        "pt": "Mauritânia",
-        "nl": "Mauritanië",
-        "hr": "Mauritanija",
-        "fa": "موریتانی",
         "en": "Mauritania"
       },
       "phonePrefix": "222"
@@ -2260,14 +1132,6 @@
       "translations": {
         "de": "Mauritius",
         "es": "Mauricio",
-        "fr": "Île Maurice",
-        "ja": "モーリシャス",
-        "it": "Mauritius",
-        "br": "Maurício",
-        "pt": "Maurícia",
-        "nl": "Mauritius",
-        "hr": "Mauricijus",
-        "fa": "موریس",
         "en": "Mauritius"
       },
       "phonePrefix": "230"
@@ -2276,14 +1140,6 @@
       "translations": {
         "de": "Mayotte",
         "es": "Mayotte",
-        "fr": "Mayotte",
-        "ja": "マヨット",
-        "it": "Mayotte",
-        "br": "Mayotte",
-        "pt": "Mayotte",
-        "nl": "Mayotte",
-        "hr": "Mayotte",
-        "fa": "مایوت",
         "en": "Mayotte"
       },
       "phonePrefix": "262"
@@ -2292,14 +1148,6 @@
       "translations": {
         "de": "Mexiko",
         "es": "México",
-        "fr": "Mexique",
-        "ja": "メキシコ",
-        "it": "Messico",
-        "br": "México",
-        "pt": "México",
-        "nl": "Mexico",
-        "hr": "Meksiko",
-        "fa": "مکزیک",
         "en": "Mexico"
       },
       "phonePrefix": "52"
@@ -2308,14 +1156,6 @@
       "translations": {
         "de": "Mikronesien",
         "es": "Micronesia",
-        "fr": "Micronésie",
-        "ja": "ミクロネシア連邦",
-        "it": "Micronesia",
-        "br": "Micronésia",
-        "pt": "Micronésia",
-        "nl": "Micronesië",
-        "hr": "Mikronezija",
-        "fa": "ایالات فدرال میکرونزی",
         "en": "Micronesia (Federated States of)"
       },
       "phonePrefix": "691"
@@ -2324,14 +1164,6 @@
       "translations": {
         "de": "Moldawie",
         "es": "Moldavia",
-        "fr": "Moldavie",
-        "ja": "モルドバ共和国",
-        "it": "Moldavia",
-        "br": "Moldávia",
-        "pt": "Moldávia",
-        "nl": "Moldavië",
-        "hr": "Moldova",
-        "fa": "مولداوی",
         "en": "Moldova (Republic of)"
       },
       "phonePrefix": "373"
@@ -2340,14 +1172,6 @@
       "translations": {
         "de": "Monaco",
         "es": "Mónaco",
-        "fr": "Monaco",
-        "ja": "モナコ",
-        "it": "Principato di Monaco",
-        "br": "Mônaco",
-        "pt": "Mónaco",
-        "nl": "Monaco",
-        "hr": "Monako",
-        "fa": "موناکو",
         "en": "Monaco"
       },
       "phonePrefix": "377"
@@ -2356,14 +1180,6 @@
       "translations": {
         "de": "Mongolei",
         "es": "Mongolia",
-        "fr": "Mongolie",
-        "ja": "モンゴル",
-        "it": "Mongolia",
-        "br": "Mongólia",
-        "pt": "Mongólia",
-        "nl": "Mongolië",
-        "hr": "Mongolija",
-        "fa": "مغولستان",
         "en": "Mongolia"
       },
       "phonePrefix": "976"
@@ -2372,14 +1188,6 @@
       "translations": {
         "de": "Montenegro",
         "es": "Montenegro",
-        "fr": "Monténégro",
-        "ja": "モンテネグロ",
-        "it": "Montenegro",
-        "br": "Montenegro",
-        "pt": "Montenegro",
-        "nl": "Montenegro",
-        "hr": "Crna Gora",
-        "fa": "مونته‌نگرو",
         "en": "Montenegro"
       },
       "phonePrefix": "382"
@@ -2388,14 +1196,6 @@
       "translations": {
         "de": "Montserrat",
         "es": "Montserrat",
-        "fr": "Montserrat",
-        "ja": "モントセラト",
-        "it": "Montserrat",
-        "br": "Montserrat",
-        "pt": "Monserrate",
-        "nl": "Montserrat",
-        "hr": "Montserrat",
-        "fa": "مایوت",
         "en": "Montserrat"
       },
       "phonePrefix": "1664"
@@ -2404,14 +1204,6 @@
       "translations": {
         "de": "Marokko",
         "es": "Marruecos",
-        "fr": "Maroc",
-        "ja": "モロッコ",
-        "it": "Marocco",
-        "br": "Marrocos",
-        "pt": "Marrocos",
-        "nl": "Marokko",
-        "hr": "Maroko",
-        "fa": "مراکش",
         "en": "Morocco"
       },
       "phonePrefix": "212"
@@ -2420,14 +1212,6 @@
       "translations": {
         "de": "Mosambik",
         "es": "Mozambique",
-        "fr": "Mozambique",
-        "ja": "モザンビーク",
-        "it": "Mozambico",
-        "br": "Moçambique",
-        "pt": "Moçambique",
-        "nl": "Mozambique",
-        "hr": "Mozambik",
-        "fa": "موزامبیک",
         "en": "Mozambique"
       },
       "phonePrefix": "258"
@@ -2436,14 +1220,6 @@
       "translations": {
         "de": "Myanmar",
         "es": "Myanmar",
-        "fr": "Myanmar",
-        "ja": "ミャンマー",
-        "it": "Birmania",
-        "br": "Myanmar",
-        "pt": "Myanmar",
-        "nl": "Myanmar",
-        "hr": "Mijanmar",
-        "fa": "میانمار",
         "en": "Myanmar"
       },
       "phonePrefix": "95"
@@ -2452,14 +1228,6 @@
       "translations": {
         "de": "Namibia",
         "es": "Namibia",
-        "fr": "Namibie",
-        "ja": "ナミビア",
-        "it": "Namibia",
-        "br": "Namíbia",
-        "pt": "Namíbia",
-        "nl": "Namibië",
-        "hr": "Namibija",
-        "fa": "نامیبیا",
         "en": "Namibia"
       },
       "phonePrefix": "264"
@@ -2468,14 +1236,6 @@
       "translations": {
         "de": "Nauru",
         "es": "Nauru",
-        "fr": "Nauru",
-        "ja": "ナウル",
-        "it": "Nauru",
-        "br": "Nauru",
-        "pt": "Nauru",
-        "nl": "Nauru",
-        "hr": "Nauru",
-        "fa": "نائورو",
         "en": "Nauru"
       },
       "phonePrefix": "674"
@@ -2484,14 +1244,6 @@
       "translations": {
         "de": "Népal",
         "es": "Nepal",
-        "fr": "Népal",
-        "ja": "ネパール",
-        "it": "Nepal",
-        "br": "Nepal",
-        "pt": "Nepal",
-        "nl": "Nepal",
-        "hr": "Nepal",
-        "fa": "نپال",
         "en": "Nepal"
       },
       "phonePrefix": "977"
@@ -2500,14 +1252,6 @@
       "translations": {
         "de": "Niederlande",
         "es": "Países Bajos",
-        "fr": "Pays-Bas",
-        "ja": "オランダ",
-        "it": "Paesi Bassi",
-        "br": "Holanda",
-        "pt": "Países Baixos",
-        "nl": "Nederland",
-        "hr": "Nizozemska",
-        "fa": "پادشاهی هلند",
         "en": "Netherlands"
       },
       "phonePrefix": "31"
@@ -2516,14 +1260,6 @@
       "translations": {
         "de": "Neukaledonien",
         "es": "Nueva Caledonia",
-        "fr": "Nouvelle-Calédonie",
-        "ja": "ニューカレドニア",
-        "it": "Nuova Caledonia",
-        "br": "Nova Caledônia",
-        "pt": "Nova Caledónia",
-        "nl": "Nieuw-Caledonië",
-        "hr": "Nova Kaledonija",
-        "fa": "کالدونیای جدید",
         "en": "New Caledonia"
       },
       "phonePrefix": "687"
@@ -2532,14 +1268,6 @@
       "translations": {
         "de": "Neuseeland",
         "es": "Nueva Zelanda",
-        "fr": "Nouvelle-Zélande",
-        "ja": "ニュージーランド",
-        "it": "Nuova Zelanda",
-        "br": "Nova Zelândia",
-        "pt": "Nova Zelândia",
-        "nl": "Nieuw-Zeeland",
-        "hr": "Novi Zeland",
-        "fa": "نیوزیلند",
         "en": "New Zealand"
       },
       "phonePrefix": "64"
@@ -2548,14 +1276,6 @@
       "translations": {
         "de": "Nicaragua",
         "es": "Nicaragua",
-        "fr": "Nicaragua",
-        "ja": "ニカラグア",
-        "it": "Nicaragua",
-        "br": "Nicarágua",
-        "pt": "Nicarágua",
-        "nl": "Nicaragua",
-        "hr": "Nikaragva",
-        "fa": "نیکاراگوئه",
         "en": "Nicaragua"
       },
       "phonePrefix": "505"
@@ -2564,14 +1284,6 @@
       "translations": {
         "de": "Niger",
         "es": "Níger",
-        "fr": "Niger",
-        "ja": "ニジェール",
-        "it": "Niger",
-        "br": "Níger",
-        "pt": "Níger",
-        "nl": "Niger",
-        "hr": "Niger",
-        "fa": "نیجر",
         "en": "Niger"
       },
       "phonePrefix": "227"
@@ -2580,14 +1292,6 @@
       "translations": {
         "de": "Nigeria",
         "es": "Nigeria",
-        "fr": "Nigéria",
-        "ja": "ナイジェリア",
-        "it": "Nigeria",
-        "br": "Nigéria",
-        "pt": "Nigéria",
-        "nl": "Nigeria",
-        "hr": "Nigerija",
-        "fa": "نیجریه",
         "en": "Nigeria"
       },
       "phonePrefix": "234"
@@ -2596,14 +1300,6 @@
       "translations": {
         "de": "Niue",
         "es": "Niue",
-        "fr": "Niue",
-        "ja": "ニウエ",
-        "it": "Niue",
-        "br": "Niue",
-        "pt": "Niue",
-        "nl": "Niue",
-        "hr": "Niue",
-        "fa": "نیووی",
         "en": "Niue"
       },
       "phonePrefix": "683"
@@ -2612,14 +1308,6 @@
       "translations": {
         "de": "Norfolkinsel",
         "es": "Isla de Norfolk",
-        "fr": "Île de Norfolk",
-        "ja": "ノーフォーク島",
-        "it": "Isola Norfolk",
-        "br": "Ilha Norfolk",
-        "pt": "Ilha Norfolk",
-        "nl": "Norfolkeiland",
-        "hr": "Otok Norfolk",
-        "fa": "جزیره نورفک",
         "en": "Norfolk Island"
       },
       "phonePrefix": "672"
@@ -2628,14 +1316,6 @@
       "translations": {
         "de": "Nordkorea",
         "es": "Corea del Norte",
-        "fr": "Corée du Nord",
-        "ja": "朝鮮民主主義人民共和国",
-        "it": "Corea del Nord",
-        "br": "Coreia do Norte",
-        "pt": "Coreia do Norte",
-        "nl": "Noord-Korea",
-        "hr": "Sjeverna Koreja",
-        "fa": "کره جنوبی",
         "en": "Korea (Democratic People's Republic of)"
       },
       "phonePrefix": "850"
@@ -2644,14 +1324,6 @@
       "translations": {
         "de": "Nördliche Marianen",
         "es": "Islas Marianas del Norte",
-        "fr": "Îles Mariannes du Nord",
-        "ja": "北マリアナ諸島",
-        "it": "Isole Marianne Settentrionali",
-        "br": "Ilhas Marianas",
-        "pt": "Ilhas Marianas",
-        "nl": "Noordelijke Marianeneilanden",
-        "hr": "Sjevernomarijanski otoci",
-        "fa": "جزایر ماریانای شمالی",
         "en": "Northern Mariana Islands"
       },
       "phonePrefix": "1670"
@@ -2660,14 +1332,6 @@
       "translations": {
         "de": "Norwegen",
         "es": "Noruega",
-        "fr": "Norvège",
-        "ja": "ノルウェー",
-        "it": "Norvegia",
-        "br": "Noruega",
-        "pt": "Noruega",
-        "nl": "Noorwegen",
-        "hr": "Norveška",
-        "fa": "نروژ",
         "en": "Norway"
       },
       "phonePrefix": "47"
@@ -2676,14 +1340,6 @@
       "translations": {
         "de": "Oman",
         "es": "Omán",
-        "fr": "Oman",
-        "ja": "オマーン",
-        "it": "oman",
-        "br": "Omã",
-        "pt": "Omã",
-        "nl": "Oman",
-        "hr": "Oman",
-        "fa": "عمان",
         "en": "Oman"
       },
       "phonePrefix": "968"
@@ -2692,14 +1348,6 @@
       "translations": {
         "de": "Pakistan",
         "es": "Pakistán",
-        "fr": "Pakistan",
-        "ja": "パキスタン",
-        "it": "Pakistan",
-        "br": "Paquistão",
-        "pt": "Paquistão",
-        "nl": "Pakistan",
-        "hr": "Pakistan",
-        "fa": "پاکستان",
         "en": "Pakistan"
       },
       "phonePrefix": "92"
@@ -2708,14 +1356,6 @@
       "translations": {
         "de": "Palau",
         "es": "Palau",
-        "fr": "Palaos",
-        "ja": "パラオ",
-        "it": "Palau",
-        "br": "Palau",
-        "pt": "Palau",
-        "nl": "Palau",
-        "hr": "Palau",
-        "fa": "پالائو",
         "en": "Palau"
       },
       "phonePrefix": "680"
@@ -2724,14 +1364,6 @@
       "translations": {
         "de": "Palästina",
         "es": "Palestina",
-        "fr": "Palestine",
-        "ja": "パレスチナ",
-        "it": "Palestina",
-        "br": "Palestina",
-        "pt": "Palestina",
-        "nl": "Palestijnse gebieden",
-        "hr": "Palestina",
-        "fa": "فلسطین",
         "en": "Palestine, State of"
       },
       "phonePrefix": "970"
@@ -2740,14 +1372,6 @@
       "translations": {
         "de": "Panama",
         "es": "Panamá",
-        "fr": "Panama",
-        "ja": "パナマ",
-        "it": "Panama",
-        "br": "Panamá",
-        "pt": "Panamá",
-        "nl": "Panama",
-        "hr": "Panama",
-        "fa": "پاناما",
         "en": "Panama"
       },
       "phonePrefix": "507"
@@ -2756,14 +1380,6 @@
       "translations": {
         "de": "Papua-Neuguinea",
         "es": "Papúa Nueva Guinea",
-        "fr": "Papouasie-Nouvelle-Guinée",
-        "ja": "パプアニューギニア",
-        "it": "Papua Nuova Guinea",
-        "br": "Papua Nova Guiné",
-        "pt": "Papua Nova Guiné",
-        "nl": "Papoea-Nieuw-Guinea",
-        "hr": "Papua Nova Gvineja",
-        "fa": "پاپوآ گینه نو",
         "en": "Papua New Guinea"
       },
       "phonePrefix": "675"
@@ -2772,14 +1388,6 @@
       "translations": {
         "de": "Paraguay",
         "es": "Paraguay",
-        "fr": "Paraguay",
-        "ja": "パラグアイ",
-        "it": "Paraguay",
-        "br": "Paraguai",
-        "pt": "Paraguai",
-        "nl": "Paraguay",
-        "hr": "Paragvaj",
-        "fa": "پاراگوئه",
         "en": "Paraguay"
       },
       "phonePrefix": "595"
@@ -2788,14 +1396,6 @@
       "translations": {
         "de": "Peru",
         "es": "Perú",
-        "fr": "Pérou",
-        "ja": "ペルー",
-        "it": "Perù",
-        "br": "Peru",
-        "pt": "Peru",
-        "nl": "Peru",
-        "hr": "Peru",
-        "fa": "پرو",
         "en": "Peru"
       },
       "phonePrefix": "51"
@@ -2804,14 +1404,6 @@
       "translations": {
         "de": "Philippinen",
         "es": "Filipinas",
-        "fr": "Philippines",
-        "ja": "フィリピン",
-        "it": "Filippine",
-        "br": "Filipinas",
-        "pt": "Filipinas",
-        "nl": "Filipijnen",
-        "hr": "Filipini",
-        "fa": "جزایر الندفیلیپین",
         "en": "Philippines"
       },
       "phonePrefix": "63"
@@ -2820,14 +1412,6 @@
       "translations": {
         "de": "Pitcairn",
         "es": "Islas Pitcairn",
-        "fr": "Îles Pitcairn",
-        "ja": "ピトケアン",
-        "it": "Isole Pitcairn",
-        "br": "Ilhas Pitcairn",
-        "pt": "Ilhas Picárnia",
-        "nl": "Pitcairneilanden",
-        "hr": "Pitcairnovo otočje",
-        "fa": "پیتکرن",
         "en": "Pitcairn"
       },
       "phonePrefix": "64"
@@ -2836,14 +1420,6 @@
       "translations": {
         "de": "Polen",
         "es": "Polonia",
-        "fr": "Pologne",
-        "ja": "ポーランド",
-        "it": "Polonia",
-        "br": "Polônia",
-        "pt": "Polónia",
-        "nl": "Polen",
-        "hr": "Poljska",
-        "fa": "لهستان",
         "en": "Poland"
       },
       "phonePrefix": "48"
@@ -2852,14 +1428,6 @@
       "translations": {
         "de": "Portugal",
         "es": "Portugal",
-        "fr": "Portugal",
-        "ja": "ポルトガル",
-        "it": "Portogallo",
-        "br": "Portugal",
-        "pt": "Portugal",
-        "nl": "Portugal",
-        "hr": "Portugal",
-        "fa": "پرتغال",
         "en": "Portugal"
       },
       "phonePrefix": "351"
@@ -2868,14 +1436,6 @@
       "translations": {
         "de": "Puerto Rico",
         "es": "Puerto Rico",
-        "fr": "Porto Rico",
-        "ja": "プエルトリコ",
-        "it": "Porto Rico",
-        "br": "Porto Rico",
-        "pt": "Porto Rico",
-        "nl": "Puerto Rico",
-        "hr": "Portoriko",
-        "fa": "پورتو ریکو",
         "en": "Puerto Rico"
       },
       "phonePrefix": "1787"
@@ -2884,14 +1444,6 @@
       "translations": {
         "de": "Puerto Rico",
         "es": "Puerto Rico",
-        "fr": "Porto Rico",
-        "ja": "プエルトリコ",
-        "it": "Porto Rico",
-        "br": "Porto Rico",
-        "pt": "Porto Rico",
-        "nl": "Puerto Rico",
-        "hr": "Portoriko",
-        "fa": "پورتو ریکو",
         "en": "Puerto Rico"
       },
       "phonePrefix": "1939"
@@ -2900,14 +1452,6 @@
       "translations": {
         "de": "Katar",
         "es": "Catar",
-        "fr": "Qatar",
-        "ja": "カタール",
-        "it": "Qatar",
-        "br": "Catar",
-        "pt": "Catar",
-        "nl": "Qatar",
-        "hr": "Katar",
-        "fa": "قطر",
         "en": "Qatar"
       },
       "phonePrefix": "974"
@@ -2916,14 +1460,6 @@
       "translations": {
         "de": null,
         "es": "Kosovo",
-        "fr": null,
-        "ja": null,
-        "it": null,
-        "br": "Kosovo",
-        "pt": "Kosovo",
-        "nl": null,
-        "hr": "Kosovo",
-        "fa": "کوزوو",
         "en": "Republic of Kosovo"
       },
       "phonePrefix": "383"
@@ -2932,14 +1468,6 @@
       "translations": {
         "de": "Réunion",
         "es": "Reunión",
-        "fr": "Réunion",
-        "ja": "レユニオン",
-        "it": "Riunione",
-        "br": "Reunião",
-        "pt": "Reunião",
-        "nl": "Réunion",
-        "hr": "Réunion",
-        "fa": "رئونیون",
         "en": "Réunion"
       },
       "phonePrefix": "262"
@@ -2948,14 +1476,6 @@
       "translations": {
         "de": "Rumänien",
         "es": "Rumania",
-        "fr": "Roumanie",
-        "ja": "ルーマニア",
-        "it": "Romania",
-        "br": "Romênia",
-        "pt": "Roménia",
-        "nl": "Roemenië",
-        "hr": "Rumunjska",
-        "fa": "رومانی",
         "en": "Romania"
       },
       "phonePrefix": "40"
@@ -2964,14 +1484,6 @@
       "translations": {
         "de": "Russland",
         "es": "Rusia",
-        "fr": "Russie",
-        "ja": "ロシア連邦",
-        "it": "Russia",
-        "br": "Rússia",
-        "pt": "Rússia",
-        "nl": "Rusland",
-        "hr": "Rusija",
-        "fa": "روسیه",
         "en": "Russian Federation"
       },
       "phonePrefix": "7"
@@ -2980,14 +1492,6 @@
       "translations": {
         "de": "Ruanda",
         "es": "Ruanda",
-        "fr": "Rwanda",
-        "ja": "ルワンダ",
-        "it": "Ruanda",
-        "br": "Ruanda",
-        "pt": "Ruanda",
-        "nl": "Rwanda",
-        "hr": "Ruanda",
-        "fa": "رواندا",
         "en": "Rwanda"
       },
       "phonePrefix": "250"
@@ -2996,14 +1500,6 @@
       "translations": {
         "de": "Saint-Barthélemy",
         "es": "San Bartolomé",
-        "fr": "Saint-Barthélemy",
-        "ja": "サン・バルテルミー",
-        "it": "Antille Francesi",
-        "br": "São Bartolomeu",
-        "pt": "São Bartolomeu",
-        "nl": "Saint Barthélemy",
-        "hr": "Saint Barthélemy",
-        "fa": "سن-بارتلمی",
         "en": "Saint Barthélemy"
       },
       "phonePrefix": "590"
@@ -3012,14 +1508,6 @@
       "translations": {
         "de": "Sankt Helena",
         "es": "Santa Helena",
-        "fr": "Sainte-Hélène",
-        "ja": "セントヘレナ・アセンションおよびトリスタンダクーニャ",
-        "it": "Sant'Elena",
-        "br": "Santa Helena",
-        "pt": "Santa Helena",
-        "nl": "Sint-Helena",
-        "hr": "Sveta Helena",
-        "fa": "سنت هلنا، اسنشن و تریستان دا کونا",
         "en": "Saint Helena, Ascension and Tristan da Cunha"
       },
       "phonePrefix": "290"
@@ -3028,14 +1516,6 @@
       "translations": {
         "de": "St. Kitts und Nevis",
         "es": "San Cristóbal y Nieves",
-        "fr": "Saint-Christophe-et-Niévès",
-        "ja": "セントクリストファー・ネイビス",
-        "it": "Saint Kitts e Nevis",
-        "br": "São Cristóvão e Neves",
-        "pt": "São Cristóvão e Neves",
-        "nl": "Saint Kitts en Nevis",
-        "hr": "Sveti Kristof i Nevis",
-        "fa": "سنت کیتس و نویس",
         "en": "Saint Kitts and Nevis"
       },
       "phonePrefix": "1869"
@@ -3044,14 +1524,6 @@
       "translations": {
         "de": "Saint Lucia",
         "es": "Santa Lucía",
-        "fr": "Saint-Lucie",
-        "ja": "セントルシア",
-        "it": "Santa Lucia",
-        "br": "Santa Lúcia",
-        "pt": "Santa Lúcia",
-        "nl": "Saint Lucia",
-        "hr": "Sveta Lucija",
-        "fa": "سنت لوسیا",
         "en": "Saint Lucia"
       },
       "phonePrefix": "1758"
@@ -3060,14 +1532,6 @@
       "translations": {
         "de": "Saint Martin",
         "es": "Saint Martin",
-        "fr": "Saint-Martin",
-        "ja": "サン・マルタン（フランス領）",
-        "it": "Saint Martin",
-        "br": "Saint Martin",
-        "pt": "Ilha São Martinho",
-        "nl": "Saint-Martin",
-        "hr": "Sveti Martin",
-        "fa": "سینت مارتن",
         "en": "Saint Martin (French part)"
       },
       "phonePrefix": "590"
@@ -3076,14 +1540,6 @@
       "translations": {
         "de": "Saint-Pierre und Miquelon",
         "es": "San Pedro y Miquelón",
-        "fr": "Saint-Pierre-et-Miquelon",
-        "ja": "サンピエール島・ミクロン島",
-        "it": "Saint-Pierre e Miquelon",
-        "br": "Saint-Pierre e Miquelon",
-        "pt": "São Pedro e Miquelon",
-        "nl": "Saint Pierre en Miquelon",
-        "hr": "Sveti Petar i Mikelon",
-        "fa": "سن پیر و میکلن",
         "en": "Saint Pierre and Miquelon"
       },
       "phonePrefix": "508"
@@ -3092,14 +1548,6 @@
       "translations": {
         "de": "Saint Vincent und die Grenadinen",
         "es": "San Vicente y Granadinas",
-        "fr": "Saint-Vincent-et-les-Grenadines",
-        "ja": "セントビンセントおよびグレナディーン諸島",
-        "it": "Saint Vincent e Grenadine",
-        "br": "São Vicente e Granadinas",
-        "pt": "São Vicente e Granadinas",
-        "nl": "Saint Vincent en de Grenadines",
-        "hr": "Sveti Vincent i Grenadini",
-        "fa": "سنت وینسنت و گرنادین‌ها",
         "en": "Saint Vincent and the Grenadines"
       },
       "phonePrefix": "1784"
@@ -3108,14 +1556,6 @@
       "translations": {
         "de": "Samoa",
         "es": "Samoa",
-        "fr": "Samoa",
-        "ja": "サモア",
-        "it": "Samoa",
-        "br": "Samoa",
-        "pt": "Samoa",
-        "nl": "Samoa",
-        "hr": "Samoa",
-        "fa": "ساموآ",
         "en": "Samoa"
       },
       "phonePrefix": "685"
@@ -3124,14 +1564,6 @@
       "translations": {
         "de": "San Marino",
         "es": "San Marino",
-        "fr": "Saint-Marin",
-        "ja": "サンマリノ",
-        "it": "San Marino",
-        "br": "San Marino",
-        "pt": "São Marinho",
-        "nl": "San Marino",
-        "hr": "San Marino",
-        "fa": "سان مارینو",
         "en": "San Marino"
       },
       "phonePrefix": "378"
@@ -3140,14 +1572,6 @@
       "translations": {
         "de": "São Tomé und Príncipe",
         "es": "Santo Tomé y Príncipe",
-        "fr": "Sao Tomé-et-Principe",
-        "ja": "サントメ・プリンシペ",
-        "it": "São Tomé e Príncipe",
-        "br": "São Tomé e Príncipe",
-        "pt": "São Tomé e Príncipe",
-        "nl": "Sao Tomé en Principe",
-        "hr": "Sveti Toma i Princip",
-        "fa": "کواترو دو فرویرو",
         "en": "Sao Tome and Principe"
       },
       "phonePrefix": "239"
@@ -3156,14 +1580,6 @@
       "translations": {
         "de": "Saudi-Arabien",
         "es": "Arabia Saudí",
-        "fr": "Arabie Saoudite",
-        "ja": "サウジアラビア",
-        "it": "Arabia Saudita",
-        "br": "Arábia Saudita",
-        "pt": "Arábia Saudita",
-        "nl": "Saoedi-Arabië",
-        "hr": "Saudijska Arabija",
-        "fa": "عربستان سعودی",
         "en": "Saudi Arabia"
       },
       "phonePrefix": "966"
@@ -3172,14 +1588,6 @@
       "translations": {
         "de": "Senegal",
         "es": "Senegal",
-        "fr": "Sénégal",
-        "ja": "セネガル",
-        "it": "Senegal",
-        "br": "Senegal",
-        "pt": "Senegal",
-        "nl": "Senegal",
-        "hr": "Senegal",
-        "fa": "سنگال",
         "en": "Senegal"
       },
       "phonePrefix": "221"
@@ -3188,14 +1596,6 @@
       "translations": {
         "de": "Serbien",
         "es": "Serbia",
-        "fr": "Serbie",
-        "ja": "セルビア",
-        "it": "Serbia",
-        "br": "Sérvia",
-        "pt": "Sérvia",
-        "nl": "Servië",
-        "hr": "Srbija",
-        "fa": "صربستان",
         "en": "Serbia"
       },
       "phonePrefix": "381"
@@ -3204,14 +1604,6 @@
       "translations": {
         "de": "Seychellen",
         "es": "Seychelles",
-        "fr": "Seychelles",
-        "ja": "セーシェル",
-        "it": "Seychelles",
-        "br": "Seicheles",
-        "pt": "Seicheles",
-        "nl": "Seychellen",
-        "hr": "Sejšeli",
-        "fa": "سیشل",
         "en": "Seychelles"
       },
       "phonePrefix": "248"
@@ -3220,14 +1612,6 @@
       "translations": {
         "de": "Sierra Leone",
         "es": "Sierra Leone",
-        "fr": "Sierra Leone",
-        "ja": "シエラレオネ",
-        "it": "Sierra Leone",
-        "br": "Serra Leoa",
-        "pt": "Serra Leoa",
-        "nl": "Sierra Leone",
-        "hr": "Sijera Leone",
-        "fa": "سیرالئون",
         "en": "Sierra Leone"
       },
       "phonePrefix": "232"
@@ -3236,14 +1620,6 @@
       "translations": {
         "de": "Singapur",
         "es": "Singapur",
-        "fr": "Singapour",
-        "ja": "シンガポール",
-        "it": "Singapore",
-        "br": "Singapura",
-        "pt": "Singapura",
-        "nl": "Singapore",
-        "hr": "Singapur",
-        "fa": "سنگاپور",
         "en": "Singapore"
       },
       "phonePrefix": "65"
@@ -3252,14 +1628,6 @@
       "translations": {
         "de": "Sint Maarten (niederl. Teil)",
         "es": null,
-        "fr": "Saint Martin (partie néerlandaise)",
-        "ja": null,
-        "it": "Saint Martin (parte olandese)",
-        "br": "Sint Maarten",
-        "pt": "São Martinho",
-        "nl": "Sint Maarten",
-        "hr": null,
-        "fa": "سینت مارتن",
         "en": "Sint Maarten (Dutch part)"
       },
       "phonePrefix": "1721"
@@ -3268,14 +1636,6 @@
       "translations": {
         "de": "Slowakei",
         "es": "República Eslovaca",
-        "fr": "Slovaquie",
-        "ja": "スロバキア",
-        "it": "Slovacchia",
-        "br": "Eslováquia",
-        "pt": "Eslováquia",
-        "nl": "Slowakije",
-        "hr": "Slovačka",
-        "fa": "اسلواکی",
         "en": "Slovakia"
       },
       "phonePrefix": "421"
@@ -3284,14 +1644,6 @@
       "translations": {
         "de": "Slowenien",
         "es": "Eslovenia",
-        "fr": "Slovénie",
-        "ja": "スロベニア",
-        "it": "Slovenia",
-        "br": "Eslovênia",
-        "pt": "Eslovénia",
-        "nl": "Slovenië",
-        "hr": "Slovenija",
-        "fa": "اسلوونی",
         "en": "Slovenia"
       },
       "phonePrefix": "386"
@@ -3300,14 +1652,6 @@
       "translations": {
         "de": "Salomonen",
         "es": "Islas Salomón",
-        "fr": "Îles Salomon",
-        "ja": "ソロモン諸島",
-        "it": "Isole Salomone",
-        "br": "Ilhas Salomão",
-        "pt": "Ilhas Salomão",
-        "nl": "Salomonseilanden",
-        "hr": "Solomonski Otoci",
-        "fa": "جزایر سلیمان",
         "en": "Solomon Islands"
       },
       "phonePrefix": "677"
@@ -3316,14 +1660,6 @@
       "translations": {
         "de": "Somalia",
         "es": "Somalia",
-        "fr": "Somalie",
-        "ja": "ソマリア",
-        "it": "Somalia",
-        "br": "Somália",
-        "pt": "Somália",
-        "nl": "Somalië",
-        "hr": "Somalija",
-        "fa": "سومالی",
         "en": "Somalia"
       },
       "phonePrefix": "252"
@@ -3332,14 +1668,6 @@
       "translations": {
         "de": "Republik Südafrika",
         "es": "República de Sudáfrica",
-        "fr": "Afrique du Sud",
-        "ja": "南アフリカ",
-        "it": "Sud Africa",
-        "br": "República Sul-Africana",
-        "pt": "República Sul-Africana",
-        "nl": "Zuid-Afrika",
-        "hr": "Južnoafrička Republika",
-        "fa": "آفریقای جنوبی",
         "en": "South Africa"
       },
       "phonePrefix": "27"
@@ -3348,14 +1676,6 @@
       "translations": {
         "de": "Südgeorgien und die Südlichen Sandwichinseln",
         "es": "Islas Georgias del Sur y Sandwich del Sur",
-        "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
-        "ja": "サウスジョージア・サウスサンドウィッチ諸島",
-        "it": "Georgia del Sud e Isole Sandwich Meridionali",
-        "br": "Ilhas Geórgias do Sul e Sandwich do Sul",
-        "pt": "Ilhas Geórgia do Sul e Sanduíche do Sul",
-        "nl": "Zuid-Georgia en Zuidelijke Sandwicheilanden",
-        "hr": "Južna Georgija i otočje Južni Sandwich",
-        "fa": "جزایر جورجیای جنوبی و ساندویچ جنوبی",
         "en": "South Georgia and the South Sandwich Islands"
       },
       "phonePrefix": "500"
@@ -3364,14 +1684,6 @@
       "translations": {
         "de": "Südkorea",
         "es": "Corea del Sur",
-        "fr": "Corée du Sud",
-        "ja": "大韓民国",
-        "it": "Corea del Sud",
-        "br": "Coreia do Sul",
-        "pt": "Coreia do Sul",
-        "nl": "Zuid-Korea",
-        "hr": "Južna Koreja",
-        "fa": "کره شمالی",
         "en": "Korea (Republic of)"
       },
       "phonePrefix": "82"
@@ -3380,14 +1692,6 @@
       "translations": {
         "de": "Südsudan",
         "es": "Sudán del Sur",
-        "fr": "Soudan du Sud",
-        "ja": "南スーダン",
-        "it": "Sudan del sud",
-        "br": "Sudão do Sul",
-        "pt": "Sudão do Sul",
-        "nl": "Zuid-Soedan",
-        "hr": "Južni Sudan",
-        "fa": "سودان جنوبی",
         "en": "South Sudan"
       },
       "phonePrefix": "211"
@@ -3396,14 +1700,6 @@
       "translations": {
         "de": "Spanien",
         "es": "España",
-        "fr": "Espagne",
-        "ja": "スペイン",
-        "it": "Spagna",
-        "br": "Espanha",
-        "pt": "Espanha",
-        "nl": "Spanje",
-        "hr": "Španjolska",
-        "fa": "اسپانیا",
         "en": "Spain"
       },
       "phonePrefix": "34"
@@ -3412,14 +1708,6 @@
       "translations": {
         "de": "Sri Lanka",
         "es": "Sri Lanka",
-        "fr": "Sri Lanka",
-        "ja": "スリランカ",
-        "it": "Sri Lanka",
-        "br": "Sri Lanka",
-        "pt": "Sri Lanka",
-        "nl": "Sri Lanka",
-        "hr": "Šri Lanka",
-        "fa": "سری‌لانکا",
         "en": "Sri Lanka"
       },
       "phonePrefix": "94"
@@ -3428,14 +1716,6 @@
       "translations": {
         "de": "Sudan",
         "es": "Sudán",
-        "fr": "Soudan",
-        "ja": "スーダン",
-        "it": "Sudan",
-        "br": "Sudão",
-        "pt": "Sudão",
-        "nl": "Soedan",
-        "hr": "Sudan",
-        "fa": "سودان",
         "en": "Sudan"
       },
       "phonePrefix": "249"
@@ -3444,14 +1724,6 @@
       "translations": {
         "de": "Suriname",
         "es": "Surinam",
-        "fr": "Surinam",
-        "ja": "スリナム",
-        "it": "Suriname",
-        "br": "Suriname",
-        "pt": "Suriname",
-        "nl": "Suriname",
-        "hr": "Surinam",
-        "fa": "سورینام",
         "en": "Suriname"
       },
       "phonePrefix": "597"
@@ -3460,14 +1732,6 @@
       "translations": {
         "de": "Svalbard und Jan Mayen",
         "es": "Islas Svalbard y Jan Mayen",
-        "fr": "Svalbard et Jan Mayen",
-        "ja": "スヴァールバル諸島およびヤンマイエン島",
-        "it": "Svalbard e Jan Mayen",
-        "br": "Svalbard",
-        "pt": "Svalbard",
-        "nl": "Svalbard en Jan Mayen",
-        "hr": "Svalbard i Jan Mayen",
-        "fa": "سوالبارد و یان ماین",
         "en": "Svalbard and Jan Mayen"
       },
       "phonePrefix": "4779"
@@ -3476,14 +1740,6 @@
       "translations": {
         "de": "Swasiland",
         "es": "Suazilandia",
-        "fr": "Swaziland",
-        "ja": "スワジランド",
-        "it": "Swaziland",
-        "br": "Suazilândia",
-        "pt": "Suazilândia",
-        "nl": "Swaziland",
-        "hr": "Svazi",
-        "fa": "سوازیلند",
         "en": "Swaziland"
       },
       "phonePrefix": "268"
@@ -3492,14 +1748,6 @@
       "translations": {
         "de": "Schweden",
         "es": "Suecia",
-        "fr": "Suède",
-        "ja": "スウェーデン",
-        "it": "Svezia",
-        "br": "Suécia",
-        "pt": "Suécia",
-        "nl": "Zweden",
-        "hr": "Švedska",
-        "fa": "سوئد",
         "en": "Sweden"
       },
       "phonePrefix": "46"
@@ -3508,14 +1756,6 @@
       "translations": {
         "de": "Schweiz",
         "es": "Suiza",
-        "fr": "Suisse",
-        "ja": "スイス",
-        "it": "Svizzera",
-        "br": "Suíça",
-        "pt": "Suíça",
-        "nl": "Zwitserland",
-        "hr": "Švicarska",
-        "fa": "سوئیس",
         "en": "Switzerland"
       },
       "phonePrefix": "41"
@@ -3524,14 +1764,6 @@
       "translations": {
         "de": "Syrien",
         "es": "Siria",
-        "fr": "Syrie",
-        "ja": "シリア・アラブ共和国",
-        "it": "Siria",
-        "br": "Síria",
-        "pt": "Síria",
-        "nl": "Syrië",
-        "hr": "Sirija",
-        "fa": "سوریه",
         "en": "Syrian Arab Republic"
       },
       "phonePrefix": "963"
@@ -3540,14 +1772,6 @@
       "translations": {
         "de": "Taiwan",
         "es": "Taiwán",
-        "fr": "Taïwan",
-        "ja": "台湾（中華民国）",
-        "it": "Taiwan",
-        "br": "Taiwan",
-        "pt": "Taiwan",
-        "nl": "Taiwan",
-        "hr": "Tajvan",
-        "fa": "تایوان",
         "en": "Taiwan"
       },
       "phonePrefix": "886"
@@ -3556,14 +1780,6 @@
       "translations": {
         "de": "Tadschikistan",
         "es": "Tayikistán",
-        "fr": "Tadjikistan",
-        "ja": "タジキスタン",
-        "it": "Tagikistan",
-        "br": "Tajiquistão",
-        "pt": "Tajiquistão",
-        "nl": "Tadzjikistan",
-        "hr": "Tađikistan",
-        "fa": "تاجیکستان",
         "en": "Tajikistan"
       },
       "phonePrefix": "992"
@@ -3572,14 +1788,6 @@
       "translations": {
         "de": "Tansania",
         "es": "Tanzania",
-        "fr": "Tanzanie",
-        "ja": "タンザニア",
-        "it": "Tanzania",
-        "br": "Tanzânia",
-        "pt": "Tanzânia",
-        "nl": "Tanzania",
-        "hr": "Tanzanija",
-        "fa": "تانزانیا",
         "en": "Tanzania, United Republic of"
       },
       "phonePrefix": "255"
@@ -3588,14 +1796,6 @@
       "translations": {
         "de": "Thailand",
         "es": "Tailandia",
-        "fr": "Thaïlande",
-        "ja": "タイ",
-        "it": "Tailandia",
-        "br": "Tailândia",
-        "pt": "Tailândia",
-        "nl": "Thailand",
-        "hr": "Tajland",
-        "fa": "تایلند",
         "en": "Thailand"
       },
       "phonePrefix": "66"
@@ -3604,14 +1804,6 @@
       "translations": {
         "de": "Timor-Leste",
         "es": "Timor Oriental",
-        "fr": "Timor oriental",
-        "ja": "東ティモール",
-        "it": "Timor Est",
-        "br": "Timor Leste",
-        "pt": "Timor Leste",
-        "nl": "Oost-Timor",
-        "hr": "Istočni Timor",
-        "fa": "تیمور شرقی",
         "en": "Timor-Leste"
       },
       "phonePrefix": "670"
@@ -3620,14 +1812,6 @@
       "translations": {
         "de": "Togo",
         "es": "Togo",
-        "fr": "Togo",
-        "ja": "トーゴ",
-        "it": "Togo",
-        "br": "Togo",
-        "pt": "Togo",
-        "nl": "Togo",
-        "hr": "Togo",
-        "fa": "توگو",
         "en": "Togo"
       },
       "phonePrefix": "228"
@@ -3636,14 +1820,6 @@
       "translations": {
         "de": "Tokelau",
         "es": "Islas Tokelau",
-        "fr": "Tokelau",
-        "ja": "トケラウ",
-        "it": "Isole Tokelau",
-        "br": "Tokelau",
-        "pt": "Toquelau",
-        "nl": "Tokelau",
-        "hr": "Tokelau",
-        "fa": "توکلائو",
         "en": "Tokelau"
       },
       "phonePrefix": "690"
@@ -3652,14 +1828,6 @@
       "translations": {
         "de": "Tonga",
         "es": "Tonga",
-        "fr": "Tonga",
-        "ja": "トンガ",
-        "it": "Tonga",
-        "br": "Tonga",
-        "pt": "Tonga",
-        "nl": "Tonga",
-        "hr": "Tonga",
-        "fa": "تونگا",
         "en": "Tonga"
       },
       "phonePrefix": "676"
@@ -3668,14 +1836,6 @@
       "translations": {
         "de": "Trinidad und Tobago",
         "es": "Trinidad y Tobago",
-        "fr": "Trinité et Tobago",
-        "ja": "トリニダード・トバゴ",
-        "it": "Trinidad e Tobago",
-        "br": "Trinidad e Tobago",
-        "pt": "Trindade e Tobago",
-        "nl": "Trinidad en Tobago",
-        "hr": "Trinidad i Tobago",
-        "fa": "ترینیداد و توباگو",
         "en": "Trinidad and Tobago"
       },
       "phonePrefix": "1868"
@@ -3684,14 +1844,6 @@
       "translations": {
         "de": "Tunesien",
         "es": "Túnez",
-        "fr": "Tunisie",
-        "ja": "チュニジア",
-        "it": "Tunisia",
-        "br": "Tunísia",
-        "pt": "Tunísia",
-        "nl": "Tunesië",
-        "hr": "Tunis",
-        "fa": "تونس",
         "en": "Tunisia"
       },
       "phonePrefix": "216"
@@ -3700,14 +1852,6 @@
       "translations": {
         "de": "Türkei",
         "es": "Turquía",
-        "fr": "Turquie",
-        "ja": "トルコ",
-        "it": "Turchia",
-        "br": "Turquia",
-        "pt": "Turquia",
-        "nl": "Turkije",
-        "hr": "Turska",
-        "fa": "ترکیه",
         "en": "Turkey"
       },
       "phonePrefix": "90"
@@ -3716,14 +1860,6 @@
       "translations": {
         "de": "Turkmenistan",
         "es": "Turkmenistán",
-        "fr": "Turkménistan",
-        "ja": "トルクメニスタン",
-        "it": "Turkmenistan",
-        "br": "Turcomenistão",
-        "pt": "Turquemenistão",
-        "nl": "Turkmenistan",
-        "hr": "Turkmenistan",
-        "fa": "ترکمنستان",
         "en": "Turkmenistan"
       },
       "phonePrefix": "993"
@@ -3732,14 +1868,6 @@
       "translations": {
         "de": "Turks- und Caicosinseln",
         "es": "Islas Turks y Caicos",
-        "fr": "Îles Turques-et-Caïques",
-        "ja": "タークス・カイコス諸島",
-        "it": "Isole Turks e Caicos",
-        "br": "Ilhas Turcas e Caicos",
-        "pt": "Ilhas Turcas e Caicos",
-        "nl": "Turks- en Caicoseilanden",
-        "hr": "Otoci Turks i Caicos",
-        "fa": "جزایر تورکس و کایکوس",
         "en": "Turks and Caicos Islands"
       },
       "phonePrefix": "1649"
@@ -3748,14 +1876,6 @@
       "translations": {
         "de": "Tuvalu",
         "es": "Tuvalu",
-        "fr": "Tuvalu",
-        "ja": "ツバル",
-        "it": "Tuvalu",
-        "br": "Tuvalu",
-        "pt": "Tuvalu",
-        "nl": "Tuvalu",
-        "hr": "Tuvalu",
-        "fa": "تووالو",
         "en": "Tuvalu"
       },
       "phonePrefix": "688"
@@ -3764,14 +1884,6 @@
       "translations": {
         "de": "Uganda",
         "es": "Uganda",
-        "fr": "Uganda",
-        "ja": "ウガンダ",
-        "it": "Uganda",
-        "br": "Uganda",
-        "pt": "Uganda",
-        "nl": "Oeganda",
-        "hr": "Uganda",
-        "fa": "اوگاندا",
         "en": "Uganda"
       },
       "phonePrefix": "256"
@@ -3780,14 +1892,6 @@
       "translations": {
         "de": "Ukraine",
         "es": "Ucrania",
-        "fr": "Ukraine",
-        "ja": "ウクライナ",
-        "it": "Ucraina",
-        "br": "Ucrânia",
-        "pt": "Ucrânia",
-        "nl": "Oekraïne",
-        "hr": "Ukrajina",
-        "fa": "وکراین",
         "en": "Ukraine"
       },
       "phonePrefix": "380"
@@ -3796,14 +1900,6 @@
       "translations": {
         "de": "Vereinigte Arabische Emirate",
         "es": "Emiratos Árabes Unidos",
-        "fr": "Émirats arabes unis",
-        "ja": "アラブ首長国連邦",
-        "it": "Emirati Arabi Uniti",
-        "br": "Emirados árabes Unidos",
-        "pt": "Emirados árabes Unidos",
-        "nl": "Verenigde Arabische Emiraten",
-        "hr": "Ujedinjeni Arapski Emirati",
-        "fa": "امارات متحده عربی",
         "en": "United Arab Emirates"
       },
       "phonePrefix": "971"
@@ -3812,14 +1908,6 @@
       "translations": {
         "de": "Vereinigtes Königreich",
         "es": "Reino Unido",
-        "fr": "Royaume-Uni",
-        "ja": "イギリス",
-        "it": "Regno Unito",
-        "br": "Reino Unido",
-        "pt": "Reino Unido",
-        "nl": "Verenigd Koninkrijk",
-        "hr": "Ujedinjeno Kraljevstvo",
-        "fa": "بریتانیای کبیر و ایرلند شمالی",
         "en": "United Kingdom of Great Britain and Northern Ireland"
       },
       "phonePrefix": "44"
@@ -3828,14 +1916,6 @@
       "translations": {
         "de": "Vereinigte Staaten von Amerika",
         "es": "Estados Unidos",
-        "fr": "États-Unis",
-        "ja": "アメリカ合衆国",
-        "it": "Stati Uniti D'America",
-        "br": "Estados Unidos",
-        "pt": "Estados Unidos",
-        "nl": "Verenigde Staten",
-        "hr": "Sjedinjene Američke Države",
-        "fa": "ایالات متحده آمریکا",
         "en": "United States of America"
       },
       "phonePrefix": "1"
@@ -3844,14 +1924,6 @@
       "translations": {
         "de": "Uruguay",
         "es": "Uruguay",
-        "fr": "Uruguay",
-        "ja": "ウルグアイ",
-        "it": "Uruguay",
-        "br": "Uruguai",
-        "pt": "Uruguai",
-        "nl": "Uruguay",
-        "hr": "Urugvaj",
-        "fa": "اروگوئه",
         "en": "Uruguay"
       },
       "phonePrefix": "598"
@@ -3860,14 +1932,6 @@
       "translations": {
         "de": "Usbekistan",
         "es": "Uzbekistán",
-        "fr": "Ouzbékistan",
-        "ja": "ウズベキスタン",
-        "it": "Uzbekistan",
-        "br": "Uzbequistão",
-        "pt": "Usbequistão",
-        "nl": "Oezbekistan",
-        "hr": "Uzbekistan",
-        "fa": "ازبکستان",
         "en": "Uzbekistan"
       },
       "phonePrefix": "998"
@@ -3876,14 +1940,6 @@
       "translations": {
         "de": "Vanuatu",
         "es": "Vanuatu",
-        "fr": "Vanuatu",
-        "ja": "バヌアツ",
-        "it": "Vanuatu",
-        "br": "Vanuatu",
-        "pt": "Vanuatu",
-        "nl": "Vanuatu",
-        "hr": "Vanuatu",
-        "fa": "وانواتو",
         "en": "Vanuatu"
       },
       "phonePrefix": "678"
@@ -3892,14 +1948,6 @@
       "translations": {
         "de": "Venezuela",
         "es": "Venezuela",
-        "fr": "Venezuela",
-        "ja": "ベネズエラ・ボリバル共和国",
-        "it": "Venezuela",
-        "br": "Venezuela",
-        "pt": "Venezuela",
-        "nl": "Venezuela",
-        "hr": "Venezuela",
-        "fa": "ونزوئلا",
         "en": "Venezuela (Bolivarian Republic of)"
       },
       "phonePrefix": "58"
@@ -3908,14 +1956,6 @@
       "translations": {
         "de": "Vietnam",
         "es": "Vietnam",
-        "fr": "Viêt Nam",
-        "ja": "ベトナム",
-        "it": "Vietnam",
-        "br": "Vietnã",
-        "pt": "Vietname",
-        "nl": "Vietnam",
-        "hr": "Vijetnam",
-        "fa": "ویتنام",
         "en": "Viet Nam"
       },
       "phonePrefix": "84"
@@ -3924,14 +1964,6 @@
       "translations": {
         "de": "Wallis und Futuna",
         "es": "Wallis y Futuna",
-        "fr": "Wallis-et-Futuna",
-        "ja": "ウォリス・フツナ",
-        "it": "Wallis e Futuna",
-        "br": "Wallis e Futuna",
-        "pt": "Wallis e Futuna",
-        "nl": "Wallis en Futuna",
-        "hr": "Wallis i Fortuna",
-        "fa": "والیس و فوتونا",
         "en": "Wallis and Futuna"
       },
       "phonePrefix": "681"
@@ -3940,14 +1972,6 @@
       "translations": {
         "de": "Westsahara",
         "es": "Sahara Occidental",
-        "fr": "Sahara Occidental",
-        "ja": "西サハラ",
-        "it": "Sahara Occidentale",
-        "br": "Saara Ocidental",
-        "pt": "Saara Ocidental",
-        "nl": "Westelijke Sahara",
-        "hr": "Zapadna Sahara",
-        "fa": "جمهوری دموکراتیک عربی صحرا",
         "en": "Western Sahara"
       },
       "phonePrefix": "212"
@@ -3956,14 +1980,6 @@
       "translations": {
         "de": "Jemen",
         "es": "Yemen",
-        "fr": "Yémen",
-        "ja": "イエメン",
-        "it": "Yemen",
-        "br": "Iêmen",
-        "pt": "Iémen",
-        "nl": "Jemen",
-        "hr": "Jemen",
-        "fa": "یمن",
         "en": "Yemen"
       },
       "phonePrefix": "967"
@@ -3972,14 +1988,6 @@
       "translations": {
         "de": "Sambia",
         "es": "Zambia",
-        "fr": "Zambie",
-        "ja": "ザンビア",
-        "it": "Zambia",
-        "br": "Zâmbia",
-        "pt": "Zâmbia",
-        "nl": "Zambia",
-        "hr": "Zambija",
-        "fa": "زامبیا",
         "en": "Zambia"
       },
       "phonePrefix": "260"
@@ -3988,14 +1996,6 @@
       "translations": {
         "de": "Simbabwe",
         "es": "Zimbabue",
-        "fr": "Zimbabwe",
-        "ja": "ジンバブエ",
-        "it": "Zimbabwe",
-        "br": "Zimbabwe",
-        "pt": "Zimbabué",
-        "nl": "Zimbabwe",
-        "hr": "Zimbabve",
-        "fa": "زیمباوه",
         "en": "Zimbabwe"
       },
       "phonePrefix": "263"

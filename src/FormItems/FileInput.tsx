@@ -21,6 +21,7 @@ const FileInput: FC<Props> = ({
   subName,
   deleteMutation,
   isImages,
+  orderMutation,
 }) => {
   const formName =
     typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
@@ -28,6 +29,7 @@ const FileInput: FC<Props> = ({
   const [, meta, helpers] = useField(formName)
 
   const [, deleteImage] = useMutation(deleteMutation)
+  const [, updateImageOrder] = useMutation(orderMutation)
 
   const handleDelete = async (file: { name?: string; id?: string }) => {
     if (file?.name) {
@@ -54,6 +56,12 @@ const FileInput: FC<Props> = ({
     }
   }
 
+  const handleOrderChange = async (orders: any) => {
+    const response = await updateImageOrder({
+      orders: orders.map((order) => ({ order: order.order, id: order.id })),
+    })
+  }
+
   return (
     <UploadWrapper id={generateSlug(formName)}>
       <FormLabel>{label}</FormLabel>
@@ -73,6 +81,7 @@ const FileInput: FC<Props> = ({
         <>
           {isImages ? (
             <ImageViewer
+              onOrderChange={orderMutation && handleOrderChange}
               images={multiple ? meta.value : [meta.value]}
               onDelete={handleDelete}
             />
@@ -98,5 +107,6 @@ interface Props {
   multiple?: boolean
   label: string
   deleteMutation: any
+  orderMutation?: any
   isImages?: boolean
 }

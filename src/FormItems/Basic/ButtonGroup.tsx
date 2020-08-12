@@ -16,6 +16,7 @@ const ButtonWrapper = styled(MuiButtonGroup)`
 
   button {
     flex: 1;
+    padding: 20px 0;
   }
 `
 

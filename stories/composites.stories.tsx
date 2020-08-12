@@ -36,16 +36,24 @@ export const TableStory = (props) => {
   )
 }
 
-export const ImageViewerStory = (props) => (
-  <ImageViewer
-    onDelete={boolean('Can Delete?', false) ? () => {} : null}
-    images={[
-      { url: '/image1.jpg' },
-      { url: '/image2.jpg' },
-      { url: '/image3.jpg' },
-    ]}
-  />
-)
+export const ImageViewerStory = (props) => {
+  const [images, setImages] = useState<any>([
+    { url: '/image1.jpg', order: 0 },
+    { url: '/image2.jpg', order: 1 },
+    { url: '/image3.jpg', order: 2 },
+  ])
+  return (
+    <ImageViewer
+      onOrderChange={
+        boolean('With Order Change', true)
+          ? (newImages) => setImages(newImages)
+          : null
+      }
+      onDelete={boolean('Can Delete?', false) ? () => {} : null}
+      images={images}
+    />
+  )
+}
 
 export const DocumentViewerStory = (props) => (
   <DocumentViewer

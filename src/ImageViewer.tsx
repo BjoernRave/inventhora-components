@@ -1,5 +1,8 @@
-import { Backdrop } from '@material-ui/core'
+import { Backdrop, IconButton, Tooltip } from '@material-ui/core'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import DeleteIcon from '@material-ui/icons/Delete'
+import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -38,14 +41,19 @@ const hoverStyles = css`
   }
 `
 
-const PreviewWrapper = styled.div<{ isdeleting: number }>`
+const PreviewWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  margin: 10px;
+`
+
+const ImagePreviewWrapper = styled.div<{ isdeleting: number }>`
   position: relative;
   cursor: pointer;
   transition: all linear 0.2s;
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 10px;
+  padding: 10px 10px 0 10px;
 
   ::after {
     content: '';
@@ -70,25 +78,74 @@ const FullScreenImage = styled.img`
   top: 2.5%;
 `
 
-const ImageViewer: FC<Props> = ({ images, onDelete }) => {
+const OrderChange = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+`
+
+const ImageViewer: FC<Props> = ({ images, onDelete, onOrderChange }) => {
+  const { t } = useTranslation()
   const [isFullScreen, setIsFullScreen] = useState(null)
   return (
     <>
       <PreviewsWrapper>
-        {images.map((image, index) => (
-          <PreviewWrapper
-            isdeleting={onDelete ? 1 : 0}
-            onClick={() =>
-              onDelete ? onDelete(image) : setIsFullScreen(image)
-            }
-            key={index}>
-            <UploadPreview
-              src={image?.name ? URL.createObjectURL(image) : image.url}
-            />
+        {images
+          .sort((a, b) => a.order - b.order)
+          .map((image, index) => (
+            <PreviewWrapper>
+              <ImagePreviewWrapper
+                isdeleting={onDelete ? 1 : 0}
+                onClick={() =>
+                  onDelete ? onDelete(image) : setIsFullScreen(image)
+                }
+                key={index}>
+                <UploadPreview
+                  src={image?.name ? URL.createObjectURL(image) : image.url}
+                />
 
-            {onDelete && <StyledIcon fontSize='large' />}
-          </PreviewWrapper>
-        ))}
+                {onDelete && <StyledIcon fontSize='large' />}
+              </ImagePreviewWrapper>
+              {onOrderChange && images && (
+                <OrderChange>
+                  <Tooltip title={t('common:back')}>
+                    <IconButton
+                      disabled={image.order === 0}
+                      onClick={() => {
+                        const newArray = Array.from(images)
+
+                        newArray[index].order = newArray[index - 1].order
+
+                        newArray[index - 1].order =
+                          newArray[index - 1].order + 1
+
+                        onOrderChange(newArray)
+                      }}>
+                      <ArrowBackIcon />
+                    </IconButton>
+                  </Tooltip>
+                  {image.order + 1}.
+                  <Tooltip title={t('common:forward')}>
+                    <IconButton
+                      disabled={image.order === images.length - 1}
+                      onClick={() => {
+                        const newArray = Array.from(images)
+
+                        newArray[index].order = newArray[index + 1].order
+
+                        newArray[index + 1].order =
+                          newArray[index + 1].order - 1
+
+                        onOrderChange(newArray)
+                      }}>
+                      <ArrowForwardIcon />
+                    </IconButton>
+                  </Tooltip>
+                </OrderChange>
+              )}
+            </PreviewWrapper>
+          ))}
       </PreviewsWrapper>
       {isFullScreen && (
         <Backdrop
@@ -111,6 +168,9 @@ const ImageViewer: FC<Props> = ({ images, onDelete }) => {
 export default ImageViewer
 
 interface Props {
-  images: { url: string; name?: string }[]
+  images: { url: string; name?: string; order?: number }[]
   onDelete?: (image: any) => void
+  onOrderChange?: (
+    files: { url: string; name?: string; order?: number }[]
+  ) => void
 }

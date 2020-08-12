@@ -16,8 +16,9 @@ import { useField, useFormikContext } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { SubmitButton, Table } from '../../src'
 import { generateSlug, getErrorMessage } from '../lib/utils'
+import Table from '../Table'
+import SubmitButton from './Basic/SubmitButton'
 
 const StyledDialogContent = styled(DialogContent)`
   > *:not(label) {
@@ -39,6 +40,24 @@ const StyledDialogContent = styled(DialogContent)`
 const HelperText = styled.span`
   align-self: flex-start;
   color: rgba(0, 0, 0, 0.54);
+`
+
+const StyledButton = styled(Button)`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
+
+const StyledSubmit = styled(SubmitButton)`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
+
+const CreateButton = styled(Button)`
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 `
 
 const MultiCreate: FC<Props> = ({
@@ -136,7 +155,7 @@ const MultiCreate: FC<Props> = ({
         </>
       )}
       <FormControl style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
-        <Button
+        <CreateButton
           variant='contained'
           color='secondary'
           type='button'
@@ -145,17 +164,17 @@ const MultiCreate: FC<Props> = ({
             meta.error
               ? {
                   backgroundColor: '#f44336',
+                  width: '100%',
                 }
-              : {}
+              : { width: '100%' }
           }
           onClick={() => {
             setIsCreating(true)
             helper.setValue([...meta.value, {}])
           }}>
-          {' '}
           <PlusIcon style={{ margin: '0 5px 0 -5px' }} />
           {title}
-        </Button>
+        </CreateButton>
 
         {meta.error && (
           <FormHelperText error={Boolean(meta.error)}>
@@ -179,8 +198,8 @@ const MultiCreate: FC<Props> = ({
           {children}
         </StyledDialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>{t('forms:cancel')}</Button>
-          <SubmitButton
+          <StyledButton onClick={handleClose}>{t('forms:cancel')}</StyledButton>
+          <StyledSubmit
             onClick={() => {
               const index = isCreating ? meta.value.length - 1 : isUpdating
 
@@ -200,7 +219,7 @@ const MultiCreate: FC<Props> = ({
                 })
             }}>
             {t('forms:submit')}
-          </SubmitButton>
+          </StyledSubmit>
         </DialogActions>
       </Dialog>
     </>
