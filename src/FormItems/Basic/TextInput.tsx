@@ -10,6 +10,7 @@ const TextInput: FC<Props> = ({
   helperText,
   variant = 'outlined',
   style,
+  onChange,
   ...rest
 }) => {
   const formName =
@@ -24,6 +25,10 @@ const TextInput: FC<Props> = ({
       {...field}
       type='text'
       margin='none'
+      onChange={(e) => {
+        field.onChange(e)
+        onChange && onChange(e)
+      }}
       style={style ?? { width: '100%' }}
       variant={variant as any}
       helperText={meta.error ?? helperText}
@@ -39,4 +44,5 @@ export interface Props extends BaseTextFieldProps {
   index?: number
   subName?: string
   InputProps?: any
+  onChange?: any
 }

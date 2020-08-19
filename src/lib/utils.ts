@@ -238,8 +238,8 @@ export const roundTo = (
 export const generateSlug = (title: string) => {
   return title
     .toLowerCase()
-    .replace(/ /g, '_')
-    .replace(/\./g, '_')
+    .replace(/ /g, '-')
+    .replace(/\./g, '-')
     .replace(/\(|\)|\/|\\|\[|\]|\{|\}|\|/g, '')
 }
 

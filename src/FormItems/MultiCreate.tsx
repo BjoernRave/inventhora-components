@@ -69,6 +69,7 @@ const MultiCreate: FC<Props> = ({
   onDelete,
   schema,
   helperText,
+  onOpen,
 }) => {
   const { t } = useTranslation()
   const [isCreating, setIsCreating] = useState(false)
@@ -126,8 +127,6 @@ const MultiCreate: FC<Props> = ({
                     <Tooltip title={t('forms:edit')}>
                       <IconButton
                         onClick={() => {
-                          console.log(row.index)
-
                           setIsUpdating(row.index)
                         }}>
                         <EditIcon />
@@ -170,7 +169,11 @@ const MultiCreate: FC<Props> = ({
           }
           onClick={() => {
             setIsCreating(true)
-            helper.setValue([...meta.value, {}])
+            if (onOpen) {
+              onOpen(meta.value.length)
+            } else {
+              helper.setValue([...meta.value, {}])
+            }
           }}>
           <PlusIcon style={{ margin: '0 5px 0 -5px' }} />
           {title}
@@ -236,4 +239,5 @@ export interface Props {
   onDelete?: (id: string) => void
   helperText?: string
   schema: any
+  onOpen?: (index: string) => void
 }
