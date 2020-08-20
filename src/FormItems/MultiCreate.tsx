@@ -55,6 +55,8 @@ const StyledSubmit = styled(SubmitButton)`
 `
 
 const CreateButton = styled(Button)`
+  align-self: flex-start;
+
   @media (max-width: 767px) {
     padding: 20px;
   }
@@ -163,9 +165,8 @@ const MultiCreate: FC<Props> = ({
             meta.error
               ? {
                   backgroundColor: '#f44336',
-                  width: '100%',
                 }
-              : { width: '100%' }
+              : {}
           }
           onClick={() => {
             setIsCreating(true)
@@ -179,9 +180,9 @@ const MultiCreate: FC<Props> = ({
           {title}
         </CreateButton>
 
-        {meta.error && (
+        {(meta.error || helperText) && (
           <FormHelperText error={Boolean(meta.error)}>
-            {getErrorMessage(meta.error)}
+            {meta.error ? getErrorMessage(meta.error) : helperText}
           </FormHelperText>
         )}
       </FormControl>

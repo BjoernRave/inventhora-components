@@ -1,8 +1,10 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, withKnobs } from '@storybook/addon-knobs'
+import { useState } from '@storybook/addons'
 import '@toast-ui/editor/dist/toastui-editor.css'
 import React from 'react'
+import Markdown from 'react-markdown'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
 import {
@@ -231,13 +233,21 @@ export const FileInputStory = (props) => (
   />
 )
 
-export const WYSIWYGInputStory = (props) => (
-  <WYSIWYGInput
-    name='WYSIWYGInput'
-    label='WYSIWYGInput'
-    required={boolean('Required', false)}
-  />
-)
+export const WYSIWYGInputStory = (props) => {
+  const [value, setValue] = useState('')
+
+  return (
+    <>
+      <WYSIWYGInput
+        onChange={(val) => setValue(val)}
+        name='WYSIWYGInput'
+        label='WYSIWYGInput'
+        required={boolean('Required', false)}
+      />
+      <Markdown source={value} />
+    </>
+  )
+}
 
 export const AddressInputStory = (props) => (
   <AddressInput withBilling={boolean('With Billing Address', true)} />
@@ -281,7 +291,9 @@ export const MultiCreateStory = (props) => {
         ]}
         title={'Create a Unit'}
         onDelete={action}
-        helperText={'unitExplanation'}>
+        helperText={
+          'unitExplanation super duper long so long wow is this long who even reads this'
+        }>
         <TextInput
           autoFocus
           name={'MultiCreateStory'}

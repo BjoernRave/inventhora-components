@@ -65,7 +65,6 @@ const ImagePreviewWrapper = styled.div<{ isdeleting: number }>`
     background: #3c9f80;
     opacity: 0;
     transition: all 0.2s;
-    border-radius: 10px;
   }
 
   ${({ isdeleting }) => isdeleting === 1 && hoverStyles};
@@ -104,38 +103,57 @@ const ImageViewer: FC<Props> = ({ images, onDelete, onOrderChange }) => {
                 <UploadPreview
                   src={image?.name ? URL.createObjectURL(image) : image.url}
                 />
-
                 {onDelete && <StyledIcon fontSize='large' />}
               </ImagePreviewWrapper>
               {onOrderChange && images && (
                 <OrderChange>
                   <Tooltip title={t('common:back')}>
                     <IconButton
-                      disabled={image.order === 0}
+                      disabled={image?.name ? index === 0 : image.order === 0}
                       onClick={() => {
                         const newArray = Array.from(images)
 
-                        newArray[index].order = newArray[index - 1].order
+                        if (image.name) {
+                          const temp = newArray[index]
 
-                        newArray[index - 1].order =
-                          newArray[index - 1].order + 1
+                          newArray[index] = newArray[index - 1]
+
+                          newArray[index - 1] = temp
+                        } else {
+                          newArray[index].order = newArray[index - 1].order
+
+                          newArray[index - 1].order =
+                            newArray[index - 1].order + 1
+                        }
 
                         onOrderChange(newArray)
                       }}>
                       <ArrowBackIcon />
                     </IconButton>
                   </Tooltip>
-                  {image.order + 1}.
+                  {image?.name ? index + 1 : image.order + 1}.
                   <Tooltip title={t('common:forward')}>
                     <IconButton
-                      disabled={image.order === images.length - 1}
+                      disabled={
+                        image?.name
+                          ? index === images.length - 1
+                          : image.order === images.length - 1
+                      }
                       onClick={() => {
                         const newArray = Array.from(images)
 
-                        newArray[index].order = newArray[index + 1].order
+                        if (image.name) {
+                          const temp = newArray[index]
 
-                        newArray[index + 1].order =
-                          newArray[index + 1].order - 1
+                          newArray[index] = newArray[index + 1]
+
+                          newArray[index + 1] = temp
+                        } else {
+                          newArray[index].order = newArray[index + 1].order
+
+                          newArray[index + 1].order =
+                            newArray[index + 1].order - 1
+                        }
 
                         onOrderChange(newArray)
                       }}>

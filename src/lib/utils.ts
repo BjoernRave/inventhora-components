@@ -247,7 +247,10 @@ export const getSubdomain = (req: IncomingMessage) => {
   if (process.env.BASE_URL === 'https://testing.inventhora.com') {
     return 'testing'
   }
-  if (req.headers.host === 'localhost:3000') {
+  if (
+    req.headers.host.indexOf('localhost') === 0 &&
+    req.headers.host.indexOf('inventhora') === -1
+  ) {
     return 'dev'
   } else {
     return req.headers.host.split('.')[0]

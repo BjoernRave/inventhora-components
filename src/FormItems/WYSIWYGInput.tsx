@@ -43,7 +43,14 @@ const EditorWrapper = styled(FormGroup)`
   }
 `
 
-const WYSIWYGInput: FC<Props> = ({ name, subName, index, label, required }) => {
+const WYSIWYGInput: FC<Props> = ({
+  name,
+  subName,
+  index,
+  label,
+  required,
+  onChange,
+}) => {
   const { lang } = useTranslation()
   const ref = useRef(null)
   const formName =
@@ -72,9 +79,15 @@ const WYSIWYGInput: FC<Props> = ({ name, subName, index, label, required }) => {
 
       {component?.Component && (
         <component.Component
-          onChange={() =>
-            helper.setValue(ref?.current?.getInstance().getMarkdown())
-          }
+          onChange={() => {
+            const value = ref?.current
+              ?.getInstance()
+              .getMarkdown()
+              .replace(/<br>/g, '\n')
+
+            helper.setValue(value)
+            onChange && onChange(value)
+          }}
           initialValue={meta.value}
           ref={ref}
           toolbarItems={[
@@ -114,4 +127,5 @@ interface Props {
   index?: number
   label: ReactNode
   required?: boolean
+  onChange?: (value: string) => void
 }

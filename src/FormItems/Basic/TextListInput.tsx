@@ -16,8 +16,8 @@ import React, { FC, ReactNode, useState } from 'react'
 import styled from 'styled-components'
 import { generateSlug } from '../../lib/utils'
 
-const StyledButton = styled(IconButton)<{ hasInput: boolean }>`
-  ${({ hasInput }) => hasInput && 'color: #3c9f80 !important'};
+const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
+  ${({ hasinput }) => hasinput && 'color: #3c9f80 !important'};
 `
 
 const TextListInput: FC<Props> = ({
@@ -63,7 +63,7 @@ const TextListInput: FC<Props> = ({
                 arrow
                 title={t('forms:add')}>
                 <StyledButton
-                  hasInput={Boolean(input)}
+                  hasinput={Boolean(input)}
                   onClick={() => {
                     if (input) {
                       helper.setValue([...value, input])

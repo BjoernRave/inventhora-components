@@ -56,10 +56,14 @@ const FileInput: FC<Props> = ({
     }
   }
 
-  const handleOrderChange = async (orders: any) => {
-    const response = await updateImageOrder({
-      orders: orders.map((order) => ({ order: order.order, id: order.id })),
-    })
+  const handleOrderChange = async (files: any) => {
+    helpers.setValue(files)
+
+    if (!files.every((file) => file.name)) {
+      await updateImageOrder({
+        orders: files.map(({ order, id }) => ({ order, id })),
+      })
+    }
   }
 
   return (
@@ -69,8 +73,6 @@ const FileInput: FC<Props> = ({
         <FileUpload
           multiple={multiple}
           onUpload={(files) => {
-            console.log(files)
-
             helpers.setValue(
               multiple ? [...Array.from(files), ...meta.value] : files[0]
             )
@@ -81,7 +83,7 @@ const FileInput: FC<Props> = ({
         <>
           {isImages ? (
             <ImageViewer
-              onOrderChange={orderMutation && handleOrderChange}
+              onOrderChange={multiple && handleOrderChange}
               images={multiple ? meta.value : [meta.value]}
               onDelete={handleDelete}
             />
