@@ -1,10 +1,15 @@
-import { InputAdornment, TableSortLabel, TextField } from '@material-ui/core'
+import {
+  InputAdornment,
+  TableBody,
+  TableSortLabel,
+  TextField,
+} from '@material-ui/core'
 import MaUTable from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import SearchIcon from '@material-ui/icons/Search'
+import { Skeleton } from '@material-ui/lab'
 import useTranslation from 'next-translate/useTranslation'
 import React, { CSSProperties, FC } from 'react'
 import { Column, Row, useGlobalFilter, useSortBy, useTable } from 'react-table'
@@ -12,6 +17,25 @@ import styled from 'styled-components'
 
 const StyledRow = styled(TableRow)<{ hover: boolean }>`
   cursor: ${({ hover }) => hover && 'pointer'};
+`
+
+const NoRecords = styled.tbody`
+  font-size: 18px;
+  display: table;
+  position: absolute;
+  margin: 20px auto;
+  left: 46px;
+  right: 0;
+`
+
+const StyledTableBody = styled(TableBody)`
+  @media (max-width: 1023px) {
+    tr {
+      :nth-child(even) {
+        background-color: #d5d5d5;
+      }
+    }
+  }
 `
 
 const Table: FC<Props> = ({
@@ -27,6 +51,7 @@ const Table: FC<Props> = ({
   const { t } = useTranslation()
   const {
     getTableProps,
+    getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
@@ -45,6 +70,8 @@ const Table: FC<Props> = ({
       ])
     }
   )
+
+  const array = new Array(10).fill('blah')
 
   return (
     <>
@@ -85,28 +112,44 @@ const Table: FC<Props> = ({
               </TableRow>
             ))}
           </TableHead>
-          <TableBody>
-            {rows.map((row) => {
-              prepareRow(row)
+          {!Boolean(data) ? (
+            <StyledTableBody {...getTableBodyProps()}>
+              {array.map((row) => (
+                <TableRow key={row.id}>
+                  {columns.map((col, ind) => (
+                    <TableCell key={ind}>
+                      <Skeleton variant='text' />
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </StyledTableBody>
+          ) : rows.length > 0 ? (
+            <StyledTableBody {...getTableBodyProps()}>
+              {rows.map((row) => {
+                prepareRow(row)
 
-              return (
-                <StyledRow
-                  selected={selected === row.id}
-                  hover={Boolean(onRowClick)}
-                  onClick={() => onRowClick && onRowClick(row)}
-                  key={row.id}
-                  {...row.getRowProps()}>
-                  {row.cells.map((cell, ind) => {
-                    return (
-                      <TableCell key={ind} {...cell.getCellProps()}>
-                        {cell.render('Cell')}
-                      </TableCell>
-                    )
-                  })}
-                </StyledRow>
-              )
-            })}
-          </TableBody>
+                return (
+                  <StyledRow
+                    selected={selected === row.id}
+                    hover={Boolean(onRowClick)}
+                    onClick={() => onRowClick && onRowClick(row)}
+                    key={row.id}
+                    {...row.getRowProps()}>
+                    {row.cells.map((cell, ind) => {
+                      return (
+                        <TableCell key={ind} {...cell.getCellProps()}>
+                          {cell.render('Cell')}
+                        </TableCell>
+                      )
+                    })}
+                  </StyledRow>
+                )
+              })}
+            </StyledTableBody>
+          ) : (
+            <NoRecords>{t('table:noRecords')}</NoRecords>
+          )}
         </MaUTable>
       </div>
     </>

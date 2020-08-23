@@ -67,10 +67,11 @@ const FileInput: FC<Props> = ({
   }
 
   return (
-    <UploadWrapper id={generateSlug(formName)}>
-      <FormLabel>{label}</FormLabel>
+    <UploadWrapper>
+      <FormLabel htmlFor={generateSlug(formName)}>{label}</FormLabel>
       {(multiple || !meta.value) && (
         <FileUpload
+          id={generateSlug(formName)}
           multiple={multiple}
           onUpload={(files) => {
             helpers.setValue(

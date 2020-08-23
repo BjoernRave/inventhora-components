@@ -3,8 +3,7 @@ import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { isServer } from '../lib/utils'
-
+import { generateSlug, isServer } from '../lib/utils'
 const EditorWrapper = styled(FormGroup)`
   width: 100%;
   div > {
@@ -70,13 +69,23 @@ const WYSIWYGInput: FC<Props> = ({
     }
   }, [])
 
+  useEffect(() => {
+    const el = document.querySelector(
+      '.tui-editor-contents.tui-editor-contents-placeholder'
+    )
+    if (el && !el.id) {
+      el.setAttribute('aria-labelledby', `${generateSlug(formName)}-label`)
+    }
+  }, [component])
+
   return (
     <EditorWrapper>
-      <FormLabel style={{ marginBottom: 10 }}>
+      <FormLabel
+        id={`${generateSlug(formName)}-label`}
+        style={{ marginBottom: 10 }}>
         {label}
         {required ? ' *' : ''}
       </FormLabel>
-
       {component?.Component && (
         <component.Component
           onChange={() => {

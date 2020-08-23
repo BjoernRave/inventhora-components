@@ -11,7 +11,11 @@ import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
-import { getErrorMessage, getObjectKeyByString } from '../lib/utils'
+import {
+  getErrorMessage,
+  getObjectKeyByString,
+  removeFromObjectArray,
+} from '../lib/utils'
 import Table from '../Table'
 
 const SelectedWrapper = styled(Paper)`
@@ -31,6 +35,30 @@ const SelectedText = styled.span`
   align-items: center;
 `
 
+const Selection = ({ columns, onDelete, value }) => {
+  const { t } = useTranslation()
+
+  return (
+    <SelectedWrapper>
+      {columns.map((column) => (
+        <SelectedText>
+          <span style={{ fontWeight: 'bold', marginBottom: 10 }}>
+            {column.Header}
+          </span>
+          {typeof column.accessor === 'string'
+            ? getObjectKeyByString(value, column.accessor)
+            : column.accessor(value)}
+        </SelectedText>
+      ))}
+      <Tooltip title={t('common:remove')}>
+        <IconButton style={{ marginLeft: 20 }} onClick={() => onDelete(value)}>
+          <CancelIcon fontSize='large' />
+        </IconButton>
+      </Tooltip>
+    </SelectedWrapper>
+  )
+}
+
 const TableInput: FC<Props> = ({
   name,
   required,
@@ -38,8 +66,10 @@ const TableInput: FC<Props> = ({
   helperText,
   options,
   columns,
+  multiple,
+  filterWith,
+  withSearch,
 }) => {
-  const { t } = useTranslation()
   const [, meta, helpers] = useField(name)
 
   useEffect(() => {
@@ -54,32 +84,53 @@ const TableInput: FC<Props> = ({
       error={Boolean(meta.error)}
       required={required}>
       <FormLabel>{label}</FormLabel>
-      {meta.value ? (
-        <SelectedWrapper>
-          {columns.map((column) => (
-            <SelectedText>
-              <span style={{ fontWeight: 'bold', marginBottom: 10 }}>
-                {column.Header}
-              </span>
-              {typeof column.accessor === 'string'
-                ? getObjectKeyByString(meta.value, column.accessor)
-                : column.accessor(meta.value)}
-            </SelectedText>
-          ))}
-          <Tooltip title={t('common:remove')}>
-            <IconButton
-              style={{ marginLeft: 20 }}
-              onClick={() => helpers.setValue(null)}>
-              <CancelIcon fontSize='large' />
-            </IconButton>
-          </Tooltip>
-        </SelectedWrapper>
-      ) : (
+      {!multiple && meta.value && (
+        <Selection
+          onDelete={() => helpers.setValue(null)}
+          value={meta.value}
+          columns={columns}
+        />
+      )}
+      {multiple &&
+        meta.value?.length > 0 &&
+        meta.value.map((value, ind) => (
+          <Selection
+            value={value}
+            onDelete={(v) =>
+              helpers.setValue(removeFromObjectArray(meta.value, 'id', v.id))
+            }
+            key={ind}
+            columns={columns}
+          />
+        ))}
+      {(multiple || !meta.value) && (
         <Table
+          withSearch={withSearch}
           style={{ margin: '10px 0' }}
           maxHeight={400}
-          onRowClick={(row: any) => helpers.setValue(row.original)}
-          data={options}
+          onRowClick={(row: any) =>
+            helpers.setValue(
+              multiple ? [...meta.value, row.original] : row.original
+            )
+          }
+          data={
+            multiple
+              ? options.filter((option) => {
+                  if (
+                    filterWith &&
+                    meta.value.length > 0 &&
+                    getObjectKeyByString(option, filterWith) !==
+                      getObjectKeyByString(meta.value[0], filterWith)
+                  ) {
+                    return false
+                  }
+
+                  return !Boolean(
+                    meta.value.find((val) => val.id === option.id)
+                  )
+                })
+              : options
+          }
           columns={columns}
         />
       )}
@@ -101,4 +152,7 @@ interface Props {
   helperText?: string
   columns: { accessor: any; Header: string }[]
   options: any[]
+  multiple?: boolean
+  filterWith?: string
+  withSearch?: boolean
 }

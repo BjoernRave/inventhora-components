@@ -21,12 +21,16 @@ export const TableStory = (props) => {
       onRowClick={
         boolean('Selectable', false) ? (row) => setSelected(row.id) : null
       }
-      data={[
-        { name: 'Shoe', amount: 10 },
-        { name: 'Table', amount: 20 },
-        { name: 'Trouser', amount: 22 },
-        { name: 'Ball', amount: 19 },
-      ]}
+      data={
+        boolean('Has data', true)
+          ? [
+              { name: 'Shoe', amount: 10 },
+              { name: 'Table', amount: 20 },
+              { name: 'Trouser', amount: 22 },
+              { name: 'Ball', amount: 19 },
+            ]
+          : null
+      }
       columns={[
         { accessor: 'name', Header: 'Name' },
         { accessor: 'amount', Header: 'Amount' },

@@ -3,6 +3,7 @@ import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import { SameLine } from '../lib/styles'
+import { generateSlug } from '../lib/utils'
 import NumberInput from './Basic/NumberInput'
 
 const DimensionsInput: FC<Props> = ({
@@ -24,10 +25,10 @@ const DimensionsInput: FC<Props> = ({
       required={required}
       error={Boolean(meta.error)}
       style={{ width: '100%' }}>
-      <FormLabel style={{ marginBottom: 20 }}>
+      <FormLabel htmlFor={generateSlug(name)} style={{ marginBottom: 20 }}>
         {t('table:dimensions')}
       </FormLabel>
-      <SameLine>
+      <SameLine id={generateSlug(name)}>
         <NumberInput
           allowDecimals
           index={index}

@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { useField } from 'formik'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { getObjectKeyByString } from '../lib/utils'
+import { generateSlug, getObjectKeyByString } from '../lib/utils'
 import Table from '../Table'
 
 const AccordionsWrapper = styled.div`
@@ -54,8 +54,8 @@ const ConsumableVariantInput: FC<Props> = ({
       error={Boolean(meta.error)}
       required={required}
       style={{ width: '100%' }}>
-      <FormLabel>{label}</FormLabel>
-      <AccordionsWrapper>
+      <FormLabel htmlFor={generateSlug(name)} >{label}</FormLabel>
+      <AccordionsWrapper id={generateSlug(name)}>
         {options.map((option, ind) => {
           const currentValue = meta.value.find((value) =>
             option.options.some((o) => o.id === value.inventoryId)

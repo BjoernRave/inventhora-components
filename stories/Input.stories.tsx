@@ -48,6 +48,7 @@ export default {
         DimensionsInput: {},
         FileInputStory: boolean('Multiple Files?', true) ? [] : null,
         consumables: [],
+        TableInputStory: [],
       },
     },
   },
@@ -278,6 +279,7 @@ export const MultiCreateStory = (props) => {
   return (
     <>
       <MultiCreate
+        schema={null}
         name={'MultiCreateStory'}
         fields={[
           {
@@ -319,9 +321,11 @@ export const MultiCreateStory = (props) => {
 export const TableInputStory = (props) => {
   return (
     <TableInput
-      label='Inventory'
+      label='TableInput'
+      multiple={boolean('Multiple?', false)}
       helperText='This is a helper text'
-      name='inventory'
+      name='TableInputStory'
+      filterWith={boolean('With Filter', false) && 'supplier.id'}
       columns={[
         {
           accessor: 'product.fullName',
@@ -353,8 +357,8 @@ export const TableInputStory = (props) => {
           id: '1',
           amount: 167,
           supplier: {
-            id: 'ckdilk76u0037f3c9k6jy0ghm',
-            name: 'Magaña, Montañez and Valdez',
+            id: 'ckdilk78c0108f3c9a1km2ex2',
+            name: 'Supplier1',
           },
           batch: {
             id: 'ckdilk79z0185f3c9urbbyapl',
@@ -399,7 +403,7 @@ export const TableInputStory = (props) => {
           id: '3',
           amount: 37,
           supplier: {
-            id: 'ckdilk76u0037f3c9k6jy0ghm',
+            id: 'ckdilk78c0108f3c9a1km2ex2',
             name: 'Supplier1',
           },
           batch: {
