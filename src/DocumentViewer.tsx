@@ -11,6 +11,7 @@ import {
 import DownloadIcon from '@material-ui/icons/CloudDownload'
 import DeleteIcon from '@material-ui/icons/Delete'
 import DocumentIcon from '@material-ui/icons/Description'
+import VisibilityIcon from '@material-ui/icons/Visibility'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 
@@ -18,6 +19,7 @@ const DocumentViewer: FC<Props> = ({
   documents,
   onDelete,
   canDownload = true,
+  canView,
 }) => {
   const { t } = useTranslation()
 
@@ -32,6 +34,18 @@ const DocumentViewer: FC<Props> = ({
             <ListItemText>{document.name}</ListItemText>
 
             <ListItemSecondaryAction>
+              {canView && (
+                <Tooltip
+                  title={t('common:viewTitle', {
+                    name: t('common:document'),
+                  })}>
+                  <a href={document.url} target='_blank'>
+                    <IconButton>
+                      <VisibilityIcon />
+                    </IconButton>
+                  </a>
+                </Tooltip>
+              )}
               {canDownload && (
                 <Tooltip
                   title={t('common:downloadTitle', {
@@ -69,4 +83,5 @@ interface Props {
   documents: { url: string; name?: string; description?: string }[]
   onDelete?: (document: any) => void
   canDownload?: boolean
+  canView?: boolean
 }

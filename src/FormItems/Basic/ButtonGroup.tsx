@@ -40,10 +40,8 @@ const ButtonGroup: FC<Props> = ({
   const id = name ? generateSlug(name) : generateSlug(label)
 
   return (
-    <FormControl required={required} fullWidth component='fieldset'>
-      <FormLabel component='legend' htmlFor={id}>
-        {label}
-      </FormLabel>
+    <FormControl required={required} fullWidth>
+      <FormLabel htmlFor={id}>{label}</FormLabel>
       <ButtonWrapper
         aria-label={label}
         variant='contained'

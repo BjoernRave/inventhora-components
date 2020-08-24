@@ -12,6 +12,7 @@ import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
 import {
+  generateSlug,
   getErrorMessage,
   getObjectKeyByString,
   removeFromObjectArray,
@@ -73,7 +74,7 @@ const TableInput: FC<Props> = ({
   const [, meta, helpers] = useField(name)
 
   useEffect(() => {
-    if (options.length === 1) {
+    if (options?.length === 1) {
       helpers.setValue(options[1])
     }
   }, [])
@@ -83,7 +84,7 @@ const TableInput: FC<Props> = ({
       style={{ width: '100%' }}
       error={Boolean(meta.error)}
       required={required}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel id={`${generateSlug(name)}-input`}>{label}</FormLabel>
       {!multiple && meta.value && (
         <Selection
           onDelete={() => helpers.setValue(null)}
@@ -105,6 +106,7 @@ const TableInput: FC<Props> = ({
         ))}
       {(multiple || !meta.value) && (
         <Table
+          labelledBy={`${generateSlug(name)}-input`}
           withSearch={withSearch}
           style={{ margin: '10px 0' }}
           maxHeight={400}
@@ -115,7 +117,7 @@ const TableInput: FC<Props> = ({
           }
           data={
             multiple
-              ? options.filter((option) => {
+              ? options?.filter((option) => {
                   if (
                     filterWith &&
                     meta.value.length > 0 &&

@@ -1,5 +1,8 @@
 import {
+  FormControl,
+  FormHelperText,
   IconButton,
+  InputLabel,
   MenuItem,
   Select,
   TextField,
@@ -11,12 +14,12 @@ import { Amount } from 'lib/types'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { removeFromObjectArray } from '../lib/utils'
+import { generateSlug, removeFromObjectArray } from '../lib/utils'
 import NumberInput from './Basic/NumberInput'
 
 const AmountWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 
   > div:first-child {
@@ -73,10 +76,11 @@ const ProductAmountInput: FC<Props> = ({
         return (
           <AmountWrapper key={index}>
             <TextField
+              id={`${generateSlug(name)}-${index}`}
+              label={label}
               error={Boolean(meta.error)}
               helperText={meta.error ?? helperText}
               required={required}
-              label={label}
               value={unit.amount}
               onChange={(e) => {
                 const newUnits = Array.from(meta.value)
@@ -126,41 +130,51 @@ const ProductAmountInput: FC<Props> = ({
               variant='outlined'
             />
             {availableUnits.length > 1 && (
-              <Select
-                error={Boolean(meta.error)}
+              <FormControl
                 style={
                   unit.id === '1'
                     ? { width: 'calc(30% + 45px' }
                     : { width: '30%' }
                 }
-                value={unit.id}
-                onChange={(e) =>
-                  helpers.setValue([
-                    ...meta.value,
-                    {
-                      ...availableUnits.find((u) => u.id === e.target.value),
-                      amount: '',
-                    },
-                  ])
-                }
+                error={Boolean(meta.error)}
                 variant='outlined'>
-                {availableUnits.map((innerUnit, ind) => (
-                  <MenuItem
-                    key={ind}
-                    disabled={Boolean(
-                      meta.value.find((u) => u.id === innerUnit.id)
-                    )}
-                    value={innerUnit.id}>
-                    {`${innerUnit.name} (${innerUnit.baseAmount} ${t(
-                      'forms:units'
-                    )})`}
-                  </MenuItem>
-                ))}
-              </Select>
+                <InputLabel id={`unit-label`}>{t('forms:unit')}</InputLabel>
+                <Select
+                  label={t('forms:unit')}
+                  labelId={`unit-label`}
+                  value={unit.id}
+                  onChange={(e) =>
+                    helpers.setValue([
+                      ...meta.value,
+                      {
+                        ...availableUnits.find((u) => u.id === e.target.value),
+                        amount: '',
+                      },
+                    ])
+                  }
+                  variant='outlined'>
+                  {availableUnits.map((innerUnit, ind) => (
+                    <MenuItem
+                      key={ind}
+                      disabled={Boolean(
+                        meta.value.find((u) => u.id === innerUnit.id)
+                      )}
+                      value={innerUnit.id}>
+                      {`${innerUnit.name} (${innerUnit.baseAmount} ${t(
+                        'forms:units'
+                      )})`}
+                    </MenuItem>
+                  ))}
+                </Select>
+                <FormHelperText variant='outlined'>
+                  {t('forms:unitHelper')}
+                </FormHelperText>
+              </FormControl>
             )}
             {unit.id !== '1' && (
               <Tooltip title={t('common:remove')}>
                 <IconButton
+                  style={{ marginBottom: 19 }}
                   onClick={() =>
                     helpers.setValue(
                       removeFromObjectArray(meta.value, 'id', unit.id)

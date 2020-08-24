@@ -47,6 +47,7 @@ const Table: FC<Props> = ({
   selected,
   maxHeight,
   style,
+  labelledBy,
 }) => {
   const { t } = useTranslation()
   const {
@@ -91,7 +92,10 @@ const Table: FC<Props> = ({
         />
       )}
       <div style={{ overflow: 'auto', maxHeight, width: '100%', ...style }}>
-        <MaUTable stickyHeader {...getTableProps()}>
+        <MaUTable
+          aria-labelledby={labelledBy}
+          stickyHeader
+          {...getTableProps()}>
           <TableHead>
             {headerGroups.map((headerGroup, ind) => (
               <TableRow key={ind} {...headerGroup.getHeaderGroupProps()}>
@@ -167,4 +171,5 @@ export interface Props {
   withSearch?: boolean
   maxHeight?: number
   style?: CSSProperties
+  labelledBy?: string
 }
