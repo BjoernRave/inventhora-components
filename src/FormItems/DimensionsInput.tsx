@@ -1,4 +1,9 @@
-import { FormControl, FormLabel, InputAdornment } from '@material-ui/core'
+import {
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  InputAdornment,
+} from '@material-ui/core'
 import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
@@ -12,6 +17,7 @@ const DimensionsInput: FC<Props> = ({
   subName,
   index,
   required,
+  helperText,
 }) => {
   const { t } = useTranslation()
 
@@ -31,6 +37,7 @@ const DimensionsInput: FC<Props> = ({
       <SameLine id={generateSlug(name)}>
         <NumberInput
           allowDecimals
+          error={Boolean(meta.error)}
           index={index}
           subName={typeof index === 'number' && `${subName}.height`}
           name={typeof index === 'number' ? name : `${name}.height`}
@@ -47,6 +54,7 @@ const DimensionsInput: FC<Props> = ({
         />
         <NumberInput
           index={index}
+          error={Boolean(meta.error)}
           disabled={!Boolean(meta?.value?.height)}
           allowDecimals
           onChange={(e) =>
@@ -64,6 +72,7 @@ const DimensionsInput: FC<Props> = ({
         />
         <NumberInput
           index={index}
+          error={Boolean(meta.error)}
           disabled={!Boolean(meta?.value?.width)}
           allowDecimals
           subName={typeof index === 'number' && `${subName}.depth`}
@@ -76,6 +85,9 @@ const DimensionsInput: FC<Props> = ({
           }}
         />
       </SameLine>
+      {(meta.error || helperText) && (
+        <FormHelperText>{meta.error ?? helperText}</FormHelperText>
+      )}
     </FormControl>
   )
 }
@@ -88,4 +100,5 @@ export interface Props {
   subName?: string
   index?: number
   required?: boolean
+  helperText?: string
 }

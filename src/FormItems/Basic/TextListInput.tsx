@@ -28,6 +28,7 @@ const TextListInput: FC<Props> = ({
   helperText,
   style,
   required,
+  error,
   ...rest
 }) => {
   const { t } = useTranslation()
@@ -43,7 +44,7 @@ const TextListInput: FC<Props> = ({
   return (
     <>
       <FormControl
-        error={Boolean(meta.error)}
+        error={Boolean(meta.error) || error}
         required={required}
         variant='outlined'
         style={style ?? { width: '100%' }}>

@@ -11,6 +11,7 @@ const TextInput: FC<Props> = ({
   variant = 'outlined',
   style,
   onChange,
+  error,
   ...rest
 }) => {
   const formName =
@@ -32,7 +33,7 @@ const TextInput: FC<Props> = ({
       style={style ?? { width: '100%' }}
       variant={variant as any}
       helperText={meta.error ?? helperText}
-      error={Boolean(meta.error)}
+      error={Boolean(meta.error) || error}
     />
   )
 }

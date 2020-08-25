@@ -11,6 +11,7 @@ const NumberInput: FC<Props> = ({
   variant = 'outlined',
   allowDecimals,
   onChange,
+  error,
   max,
   ...rest
 }) => {
@@ -63,7 +64,7 @@ const NumberInput: FC<Props> = ({
       style={{ width: '100%' }}
       variant={variant as any}
       helperText={meta.error ?? helperText}
-      error={Boolean(meta.error)}
+      error={Boolean(meta.error) || error}
     />
   )
 }

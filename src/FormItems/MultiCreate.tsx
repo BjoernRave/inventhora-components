@@ -72,13 +72,13 @@ const MultiCreate: FC<Props> = ({
   schema,
   helperText,
   onOpen,
+  validate,
 }) => {
   const { t } = useTranslation()
   const [isCreating, setIsCreating] = useState(false)
   const [isUpdating, setIsUpdating] = useState('')
 
   const { setFieldError, validateField } = useFormikContext()
-
   const [, meta, helper] = useField(name)
   let tableData
 
@@ -98,6 +98,12 @@ const MultiCreate: FC<Props> = ({
       helper.setValue(newArray, true)
       validateField(name)
     } else {
+      const validateRes = validate && validate(meta.value[isUpdating])
+
+      if (validateRes) {
+        return setFieldError(`${name}[${isUpdating}]`, validateRes)
+      }
+
       schema
         .validate(meta.value[isUpdating])
         .then(() => {
@@ -207,6 +213,11 @@ const MultiCreate: FC<Props> = ({
             onClick={() => {
               const index = isCreating ? meta.value.length - 1 : isUpdating
 
+              const validateRes = validate && validate(meta.value[index])
+
+              if (validateRes) {
+                return setFieldError(`${name}[${index}]`, validateRes)
+              }
               schema
                 .validate(meta.value[index])
                 .then(() => {
@@ -241,4 +252,5 @@ export interface Props {
   helperText?: string
   schema: any
   onOpen?: (index: string) => void
+  validate?: (values: any) => any
 }

@@ -4,33 +4,32 @@ import {
   InputAdornment,
   TextField,
   Tooltip,
-} from '@material-ui/core';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import { useField } from 'formik';
-import useTranslation from 'next-translate/useTranslation';
-import React, { FC, useState } from 'react';
-import { generateSlug } from '../../lib/utils';
+} from '@material-ui/core'
+import VisibilityIcon from '@material-ui/icons/Visibility'
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff'
+import { useField } from 'formik'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC, useState } from 'react'
+import { generateSlug } from '../../lib/utils'
 
 const PasswordInput: FC<Props> = ({
   name,
   index,
   subName,
   helperText,
+  error,
   variant = 'outlined',
   ...rest
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const formName =
-    typeof index === 'number' && subName
-      ? `${name}[${index}].${subName}`
-      : name;
-  const [showPassword, setShowPassword] = useState(false);
-  const [field, meta] = useField(formName);
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+  const [showPassword, setShowPassword] = useState(false)
+  const [field, meta] = useField(formName)
 
   return (
     <TextField
-      margin="none"
+      margin='none'
       id={generateSlug(formName)}
       {...rest}
       {...field}
@@ -38,23 +37,21 @@ const PasswordInput: FC<Props> = ({
       type={showPassword ? 'text' : 'password'}
       variant={variant as any}
       helperText={meta.error ?? helperText}
-      error={Boolean(meta.error)}
+      error={Boolean(meta.error) || error}
       InputProps={{
         endAdornment: (
-          <InputAdornment position="end">
+          <InputAdornment position='end'>
             <Tooltip
               title={
                 showPassword
                   ? t('common:hidePassword')
                   : t('common:showPassword')
-              }
-            >
+              }>
               <IconButton
                 tabIndex={-1}
-                aria-label="toggle password visibility"
+                aria-label='toggle password visibility'
                 onClick={() => setShowPassword(!showPassword)}
-                onMouseDown={(e) => e.preventDefault()}
-              >
+                onMouseDown={(e) => e.preventDefault()}>
                 {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </IconButton>
             </Tooltip>
@@ -62,13 +59,13 @@ const PasswordInput: FC<Props> = ({
         ),
       }}
     />
-  );
-};
+  )
+}
 
-export default PasswordInput;
+export default PasswordInput
 
 export interface Props extends BaseTextFieldProps {
-  name: string;
-  index?: number;
-  subName?: string;
+  name: string
+  index?: number
+  subName?: string
 }
