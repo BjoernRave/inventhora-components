@@ -7,7 +7,7 @@ import {
   FormLabel,
 } from '@material-ui/core';
 import { useField } from 'formik';
-import { Option } from 'lib/types';
+import { Option } from '../lib/types';
 import useTranslation from 'next-translate/useTranslation';
 import React, { FC } from 'react';
 import styled from 'styled-components';

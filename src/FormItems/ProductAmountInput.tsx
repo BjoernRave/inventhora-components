@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import CancelIcon from '@material-ui/icons/Cancel'
 import { useField } from 'formik'
-import { Amount } from 'lib/types'
+import { Amount } from '../lib/types'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
