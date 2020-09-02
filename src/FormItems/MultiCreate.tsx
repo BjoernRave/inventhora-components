@@ -39,7 +39,7 @@ const StyledDialogContent = styled(DialogContent)`
 
 const HelperText = styled.span`
   align-self: flex-start;
-  color: rgba(0, 0, 0, 0.54);
+  color: ${({ theme }) => theme.palette.text.secondary};
 `
 
 const StyledButton = styled(Button)`

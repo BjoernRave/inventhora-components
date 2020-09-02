@@ -9,11 +9,22 @@ const EditorWrapper = styled(FormGroup)`
   div > {
     width: 100%;
   }
+  .tui-editor {
+    color: inherit !important;
+  }
+
+  .te-ww-container {
+    background-color: inherit !important;
+  }
 
   .te-toolbar-section {
     border-color: rgba(0, 0, 0, 0.23);
     width: calc(100% + 8px);
     margin-left: -4px;
+  }
+
+  .tui-editor-defaultUI-toolbar {
+    background-color: inherit !important;
   }
 
   .tui-editor-defaultUI {
@@ -32,11 +43,11 @@ const EditorWrapper = styled(FormGroup)`
     :focus-within {
       padding: 4px;
       border-width: 2px;
-      border-color: #3c9f80;
+      border-color: ${({ theme }) => theme.palette.primary.main};
 
       .te-toolbar-section {
         border-width: 2px;
-        border-color: #3c9f80;
+        border-color: ${({ theme }) => theme.palette.primary.main};
       }
     }
   }

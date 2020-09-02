@@ -1,5 +1,4 @@
 import { format, isDate, parse } from 'date-fns'
-import { IncomingMessage } from 'http'
 import { NextPageContext } from 'next'
 import { useEffect, useState } from 'react'
 import { UAParser } from 'ua-parser-js'
@@ -235,26 +234,34 @@ export const roundTo = (
   return (Number(number) + 1 / x).toFixed(decimals)
 }
 
-export const generateSlug = (title: string) => {
-  return title
+export const generateSlug = (text: string) =>
+  text
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
-    .replace(/ /g, '-')
-    .replace(/\./g, '-')
-    .replace(/\(|\)|\/|\\|\[|\]|\{|\}|\|/g, '')
-}
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
 
-export const getSubdomain = (req: IncomingMessage) => {
-  if (process.env.BASE_URL === 'https://testing.inventhora.com') {
-    return 'testing'
-  }
+export const getSubdomain = (url: string) => {
   if (
-    req.headers.host.indexOf('localhost') === 0 &&
-    req.headers.host.indexOf('inventhora') === -1
+    url === 'inventhora.com' ||
+    (url.indexOf('localhost') === 0 && url.indexOf('inventhora') === -1)
   ) {
     return 'dev'
-  } else {
-    return req.headers.host.split('.')[0]
   }
+
+  const currentBranch = process.env.VERCEL_GITHUB_COMMIT_REF?.toLowerCase()
+    ?.replace('/', '-')
+    ?.replace('_', '-')
+
+  if (currentBranch !== 'master') {
+    return 'testing'
+  }
+
+  return url.split('.')[0]
 }
 
 export const parseNumber = (number: string | number) => {

@@ -62,7 +62,7 @@ const ImagePreviewWrapper = styled.div<{ isdeleting: number }>`
     height: 100%;
     top: 0;
     left: 0;
-    background: #3c9f80;
+    background: ${({ theme }) => theme.palette.primary.main};
     opacity: 0;
     transition: all 0.2s;
   }

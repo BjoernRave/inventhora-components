@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.footer`
-  background-color: #3c9f80;
+  background-color: ${({ theme }) => theme.palette.primary.main};
   display: flex;
   justify-content: space-around;
   margin-top: -20px;

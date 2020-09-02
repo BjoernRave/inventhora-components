@@ -5,18 +5,18 @@ import {
   FormGroup,
   FormHelperText,
   FormLabel,
-} from '@material-ui/core';
-import { useField } from 'formik';
-import { Option } from '../lib/types';
-import useTranslation from 'next-translate/useTranslation';
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import { removeFromArray } from '../lib/utils';
+} from '@material-ui/core'
+import { useField } from 'formik'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC } from 'react'
+import styled from 'styled-components'
+import { Option } from '../lib/types'
+import { removeFromArray } from '../lib/utils'
 
 const EntityField = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Wrapper = styled(FormControl)`
   margin: 20px !important;
@@ -24,28 +24,24 @@ const Wrapper = styled(FormControl)`
   @media (max-width: 767px) {
     width: 100% !important;
   }
-`;
+`
 
 const LabelWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const StyledLabel = styled(FormLabel)`
   && {
-    color: rgba(0, 0, 0, 0.87);
+    color: ${({ theme }) => theme.palette.text.primary};
     font-size: 24px;
     font-weight: bolder;
   }
 
   .Mui-disabled {
-    color: rgba(0, 0, 0, 0.38);
+    color: ${({ theme }) => theme.palette.text.disabled};
   }
-
-  .Mui-focused {
-    color: #3c9f80;
-  }
-`;
+`
 
 const EntitySelect: FC<Props> = ({
   label,
@@ -54,16 +50,16 @@ const EntitySelect: FC<Props> = ({
   name,
   disabled,
 }) => {
-  const { t } = useTranslation();
-  const [field, meta, helper] = useField(name);
+  const { t } = useTranslation()
+  const [field, meta, helper] = useField(name)
 
   const handleSelect = (value: string) => {
     if (meta.value.includes(value)) {
-      helper.setValue(removeFromArray([value], meta.value));
+      helper.setValue(removeFromArray([value], meta.value))
     } else {
-      helper.setValue([...meta.value, value]);
+      helper.setValue([...meta.value, value])
     }
-  };
+  }
 
   const handleSelectAll = () => {
     if (values.every((val) => meta.value.includes(val.value))) {
@@ -72,14 +68,14 @@ const EntitySelect: FC<Props> = ({
           values.map((val) => val.value),
           meta.value
         )
-      );
+      )
     } else {
       const missingValues = values
         .filter((val) => !meta.value.includes(val.value))
-        .map((val) => val.value);
-      helper.setValue([...meta.value, ...missingValues]);
+        .map((val) => val.value)
+      helper.setValue([...meta.value, ...missingValues])
     }
-  };
+  }
 
   return (
     <Wrapper disabled={disabled}>
@@ -104,8 +100,7 @@ const EntitySelect: FC<Props> = ({
         {values.map((innerValue) => (
           <EntityField
             style={innerValue.helperText ? { margin: '10px 0' } : {}}
-            key={innerValue.label}
-          >
+            key={innerValue.label}>
             <FormControlLabel
               label={
                 <>
@@ -127,15 +122,15 @@ const EntitySelect: FC<Props> = ({
       </FormGroup>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default EntitySelect;
+export default EntitySelect
 
 export interface Props {
-  name: string;
-  label: string;
-  helperText?: string;
-  values: Option[];
-  disabled?: boolean;
+  name: string
+  label: string
+  helperText?: string
+  values: Option[]
+  disabled?: boolean
 }

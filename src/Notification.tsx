@@ -18,6 +18,8 @@ const initialState: {
   setShowBanner?: Dispatch<SetStateAction<TopBannerMessages>>
   showChat?: boolean
   setShowChat?: Dispatch<SetStateAction<boolean>>
+  isDarkMode: boolean
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>
 } = {
   notification: null,
   setNotification: null,
@@ -25,6 +27,8 @@ const initialState: {
   setShowBanner: null,
   showChat: false,
   setShowChat: null,
+  setIsDarkMode: null,
+  isDarkMode: false,
 }
 
 export const NotificationContext = createContext(initialState)

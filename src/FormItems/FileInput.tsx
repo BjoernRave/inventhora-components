@@ -1,4 +1,4 @@
-import { FormLabel } from '@material-ui/core'
+import { FormControl, FormLabel } from '@material-ui/core'
 import { useField } from 'formik'
 import React, { FC } from 'react'
 import styled from 'styled-components'
@@ -8,7 +8,7 @@ import ImageViewer from '../ImageViewer'
 import { generateSlug } from '../lib/utils'
 import FileUpload from './FileUpload'
 
-const UploadWrapper = styled.div`
+const UploadWrapper = styled(FormControl)`
   width: 100%;
   margin: 10px 0 !important;
 `
@@ -22,6 +22,7 @@ const FileInput: FC<Props> = ({
   deleteMutation,
   isImages,
   orderMutation,
+  required,
 }) => {
   const formName =
     typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
@@ -67,7 +68,7 @@ const FileInput: FC<Props> = ({
   }
 
   return (
-    <UploadWrapper>
+    <UploadWrapper required={required}>
       <FormLabel htmlFor={generateSlug(formName)}>{label}</FormLabel>
       {(multiple || !meta.value) && (
         <FileUpload
@@ -112,4 +113,5 @@ interface Props {
   deleteMutation: any
   orderMutation?: any
   isImages?: boolean
+  required?: boolean
 }

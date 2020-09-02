@@ -10,6 +10,7 @@ const TextAreaInput: FC<Props> = ({
   helperText,
   error,
   variant = 'outlined',
+  rows = 4,
   ...rest
 }) => {
   const formName =
@@ -26,7 +27,7 @@ const TextAreaInput: FC<Props> = ({
       margin='none'
       style={{ width: '100%' }}
       multiline
-      rows='4'
+      rows={String(rows)}
       variant={variant as any}
       helperText={meta.error ?? helperText}
       error={Boolean(meta.error) || error}
@@ -40,4 +41,5 @@ export interface Props extends BaseTextFieldProps {
   name: string
   subName?: string
   index?: number
+  rows?: number
 }

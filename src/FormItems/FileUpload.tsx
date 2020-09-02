@@ -5,8 +5,8 @@ import { useDropzone } from 'react-dropzone'
 import styled from 'styled-components'
 
 const Dropzone = styled.div`
-  border: 2px dashed black;
-  background-color: #f2f2f2;
+  border: 2px dashed;
+  background-color: ${({ theme }) => theme.palette.background.paper};
   padding: 80px;
   margin: 20px;
   cursor: pointer;

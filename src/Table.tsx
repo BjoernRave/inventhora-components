@@ -32,10 +32,15 @@ const StyledTableBody = styled(TableBody)`
   @media (max-width: 1023px) {
     tr {
       :nth-child(even) {
-        background-color: #d5d5d5;
+        background-color: ${({ theme }) => theme.palette.background.default};
       }
     }
   }
+`
+
+const StyledCell = styled(TableCell)`
+  font-weight: bolder;
+  background-color: ${({ theme }) => theme.palette.background.paper};
 `
 
 const Table: FC<Props> = ({
@@ -100,10 +105,7 @@ const Table: FC<Props> = ({
             {headerGroups.map((headerGroup, ind) => (
               <TableRow key={ind} {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <TableCell
-                    style={{ backgroundColor: 'white', fontWeight: 'bolder' }}
-                    key={column.id}
-                    {...column.getHeaderProps()}>
+                  <StyledCell key={column.id} {...column.getHeaderProps()}>
                     <TableSortLabel
                       hideSortIcon
                       active={column.isSorted}
@@ -111,7 +113,7 @@ const Table: FC<Props> = ({
                       {...column.getSortByToggleProps()}>
                       {column.render('Header')}
                     </TableSortLabel>
-                  </TableCell>
+                  </StyledCell>
                 ))}
               </TableRow>
             ))}

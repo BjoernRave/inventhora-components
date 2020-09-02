@@ -3,62 +3,64 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
-export const getTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#3c9f80',
-    },
-    secondary: {
-      main: '#3f51b5',
-    },
-  },
-  overrides: {
-    MuiContainer: {
-      root: {
-        paddingBottom: '10px',
+export const getTheme = (darkMode: boolean) =>
+  createMuiTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light',
+      primary: {
+        main: '#3c9f80',
+      },
+      secondary: {
+        main: '#3f51b5',
       },
     },
-    MuiTableRow: {
-      root: {
-        height: '45px',
+    overrides: {
+      MuiContainer: {
+        root: {
+          paddingBottom: '10px',
+        },
       },
-    },
-    MuiTableFooter: {
-      root: {
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
+      MuiTableRow: {
+        root: {
+          height: '45px',
+        },
       },
-    },
-    MuiToolbar: {
-      root: {
-        minHeight: '45px',
+      MuiTableFooter: {
+        root: {
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+        },
       },
-    },
-    MuiTableCell: {
-      head: {
-        whiteSpace: 'nowrap',
+      MuiToolbar: {
+        root: {
+          minHeight: '45px',
+        },
       },
-      root: {
-        padding: '5px',
-        textAlign: 'center',
+      MuiTableCell: {
+        head: {
+          whiteSpace: 'nowrap',
+        },
+        root: {
+          padding: '5px',
+          textAlign: 'center',
+        },
       },
-    },
-    MuiIconButton: {
-      root: {
-        padding: '5px',
-        '&:hover': {
-          color: '#3c9f80',
+      MuiIconButton: {
+        root: {
+          padding: '5px',
+          '&:hover': {
+            color: '#3c9f80',
+          },
+        },
+      },
+      MuiDialogActions: {
+        root: {
+          alignSelf: 'flex-end',
         },
       },
     },
-    MuiDialogActions: {
-      root: {
-        alignSelf: 'flex-end',
-      },
-    },
-  },
-})
+  })
 
 export const Loader = styled(CircularProgress)`
   position: fixed;
