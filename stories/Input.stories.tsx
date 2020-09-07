@@ -7,6 +7,7 @@ import React from 'react'
 import Markdown from 'react-markdown'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
+import StorybookWrapper from '../.storybook/Wrapper'
 import {
   AddressInput,
   ButtonGroup,
@@ -20,6 +21,7 @@ import {
   FileInput,
   formatDate,
   getTheme,
+  MultiCombobox,
   MultiCreate,
   NumberInput,
   Option,
@@ -37,7 +39,13 @@ import {
 
 export default {
   title: 'Inputs',
-  decorators: [withKnobs, withA11y, withFormik, muiTheme([getTheme])],
+  decorators: [
+    StorybookWrapper,
+    withKnobs,
+    withA11y,
+    withFormik,
+    muiTheme([getTheme(false)]),
+  ],
   parameters: {
     formik: {
       initialValues: {
@@ -49,6 +57,7 @@ export default {
         FileInputStory: boolean('Multiple Files?', true) ? [] : null,
         consumables: [],
         TableInputStory: [],
+        MultiComboboxStory: [],
       },
     },
   },
@@ -275,10 +284,21 @@ export const ProductAmountInputStory = (props) => (
   />
 )
 
+export const MultiComboboxStory = (props) => (
+  <MultiCombobox
+    name='MultiComboboxStory'
+    helperText='MultiComboboxHelper'
+    required={boolean('Required', false)}
+    label='MultiComboboxStory'
+    options={['tag1', 'tag2', 'tag3']}
+  />
+)
+
 export const MultiCreateStory = (props) => {
   return (
     <>
       <MultiCreate
+        label='MultiCreate'
         schema={null}
         name={'MultiCreateStory'}
         fields={[

@@ -18,6 +18,7 @@ import { generateSlug } from '../../lib/utils'
 
 const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
   ${({ hasinput }) => hasinput && 'color: #3c9f80 !important'};
+  padding: 0;
 `
 
 const TextListInput: FC<Props> = ({

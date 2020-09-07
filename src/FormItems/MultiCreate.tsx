@@ -6,6 +6,7 @@ import {
   DialogTitle,
   FormControl,
   FormHelperText,
+  FormLabel,
   IconButton,
   Tooltip,
 } from '@material-ui/core'
@@ -56,6 +57,7 @@ const StyledSubmit = styled(SubmitButton)`
 
 const CreateButton = styled(Button)`
   align-self: flex-start;
+  margin: 10px 0 !important;
 
   @media (max-width: 767px) {
     padding: 20px;
@@ -73,6 +75,8 @@ const MultiCreate: FC<Props> = ({
   helperText,
   onOpen,
   validate,
+  label,
+  required,
 }) => {
   const { t } = useTranslation()
   const [isCreating, setIsCreating] = useState(false)
@@ -161,7 +165,10 @@ const MultiCreate: FC<Props> = ({
           />
         </>
       )}
-      <FormControl style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
+      <FormControl
+        required={required}
+        style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
+        <FormLabel>{label}</FormLabel>
         <CreateButton
           variant='contained'
           color='secondary'
@@ -253,4 +260,6 @@ export interface Props {
   schema: any
   onOpen?: (index: string) => void
   validate?: (values: any) => any
+  label: string
+  required?: boolean
 }

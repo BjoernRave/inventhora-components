@@ -1,6 +1,7 @@
 import {
   InputAdornment,
   TableBody,
+  TableContainer,
   TableSortLabel,
   TextField,
 } from '@material-ui/core'
@@ -39,8 +40,13 @@ const StyledTableBody = styled(TableBody)`
 `
 
 const StyledCell = styled(TableCell)`
-  font-weight: bolder;
-  background-color: ${({ theme }) => theme.palette.background.paper};
+  font-weight: bold !important;
+  background-color: ${({ theme }) => theme.palette.background.paper} !important;
+`
+
+const StyledContainer = styled(TableContainer)`
+  overflow: auto;
+  width: 100%;
 `
 
 const Table: FC<Props> = ({
@@ -96,7 +102,7 @@ const Table: FC<Props> = ({
           }}
         />
       )}
-      <div style={{ overflow: 'auto', maxHeight, width: '100%', ...style }}>
+      <StyledContainer style={{ maxHeight, ...style }}>
         <MaUTable
           aria-labelledby={labelledBy}
           stickyHeader
@@ -157,7 +163,7 @@ const Table: FC<Props> = ({
             <NoRecords>{t('table:noRecords')}</NoRecords>
           )}
         </MaUTable>
-      </div>
+      </StyledContainer>
     </>
   )
 }

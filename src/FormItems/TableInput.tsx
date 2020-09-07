@@ -11,10 +11,12 @@ import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
+import Infos from '../Infos'
 import {
   generateSlug,
   getErrorMessage,
   getObjectKeyByString,
+  isServer,
   removeFromObjectArray,
 } from '../lib/utils'
 import Table from '../Table'
@@ -36,8 +38,48 @@ const SelectedText = styled.span`
   align-items: center;
 `
 
+const MobileSelectedWrapper = styled(Paper)`
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    align-self: flex-end;
+    margin: 10px 10px 0 0;
+  }
+`
+
 const Selection = ({ columns, onDelete, value }) => {
   const { t } = useTranslation()
+
+  const isMobile =
+    !isServer &&
+    window.matchMedia &&
+    window.matchMedia('(max-width: 767px)').matches
+
+  if (isMobile) {
+    return (
+      <MobileSelectedWrapper>
+        <Tooltip title={t('common:remove')}>
+          <IconButton
+            style={{ marginLeft: 20 }}
+            onClick={() => onDelete(value)}>
+            <CancelIcon fontSize='large' />
+          </IconButton>
+        </Tooltip>
+        <Infos
+          infos={columns.map((column) => ({
+            name: column.Header,
+            value:
+              typeof column.accessor === 'string'
+                ? getObjectKeyByString(value, column.accessor)
+                : column.accessor(value),
+          }))}
+        />
+      </MobileSelectedWrapper>
+    )
+  }
 
   return (
     <SelectedWrapper>

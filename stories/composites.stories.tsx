@@ -3,12 +3,18 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
+import StorybookWrapper from '../.storybook/Wrapper'
 import { DocumentViewer, getTheme, ImageViewer, Table } from '../src'
 import Footer from '../src/Footer'
-
 export default {
   title: 'Composites',
-  decorators: [withKnobs, withA11y, withFormik, muiTheme([getTheme])],
+  decorators: [
+    StorybookWrapper,
+    withKnobs,
+    withA11y,
+    withFormik,
+    muiTheme([getTheme(false)]),
+  ],
 }
 
 export const FooterStory = (props) => <Footer />

@@ -12,7 +12,7 @@ import { Option } from '../../lib/types'
 import { generateSlug } from '../../lib/utils'
 
 const ButtonWrapper = styled(MuiButtonGroup)`
-  margin: 10px;
+  margin: 10px 0;
 
   button {
     flex: 1;
