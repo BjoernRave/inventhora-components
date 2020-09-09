@@ -36,6 +36,7 @@ const SelectedText = styled.span`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `
 
 const MobileSelectedWrapper = styled(Paper)`
@@ -43,6 +44,7 @@ const MobileSelectedWrapper = styled(Paper)`
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 
   button {
     align-self: flex-end;
@@ -84,7 +86,7 @@ const Selection = ({ columns, onDelete, value }) => {
   return (
     <SelectedWrapper>
       {columns.map((column) => (
-        <SelectedText>
+        <SelectedText key={column.Header}>
           <span style={{ fontWeight: 'bold', marginBottom: 10 }}>
             {column.Header}
           </span>
@@ -123,7 +125,7 @@ const TableInput: FC<Props> = ({
 
   return (
     <FormControl
-      style={{ width: '100%' }}
+      style={{ width: '100%', display: 'grid' }}
       error={Boolean(meta.error)}
       required={required}>
       <FormLabel id={`${generateSlug(name)}-input`}>{label}</FormLabel>

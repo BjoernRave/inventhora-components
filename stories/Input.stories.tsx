@@ -342,6 +342,7 @@ export const TableInputStory = (props) => {
   return (
     <TableInput
       label='TableInput'
+      withSearch={boolean('With Search', true)}
       multiple={boolean('Multiple?', false)}
       helperText='This is a helper text'
       name='TableInputStory'

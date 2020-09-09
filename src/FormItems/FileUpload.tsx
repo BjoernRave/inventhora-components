@@ -14,6 +14,10 @@ const Dropzone = styled.div`
   svg {
     margin-right: 10px;
   }
+
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 `
 
 const UploadDescription = styled.div`

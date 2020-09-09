@@ -1,14 +1,17 @@
 import {
+  IconButton,
   InputAdornment,
   TableBody,
   TableContainer,
   TableSortLabel,
   TextField,
+  Tooltip,
 } from '@material-ui/core'
 import MaUTable from '@material-ui/core/Table'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
+import ClearIcon from '@material-ui/icons/Clear'
 import SearchIcon from '@material-ui/icons/Search'
 import { Skeleton } from '@material-ui/lab'
 import useTranslation from 'next-translate/useTranslation'
@@ -20,12 +23,12 @@ const StyledRow = styled(TableRow)<{ hover: boolean }>`
   cursor: ${({ hover }) => hover && 'pointer'};
 `
 
-const NoRecords = styled.tbody`
+const NoRecords = styled.tr`
   font-size: 18px;
   display: table;
   position: absolute;
   margin: 20px auto;
-  left: 46px;
+  left: 0;
   right: 0;
 `
 
@@ -67,6 +70,7 @@ const Table: FC<Props> = ({
     headerGroups,
     rows,
     prepareRow,
+    state,
     setGlobalFilter,
   } = useTable(
     {
@@ -89,15 +93,27 @@ const Table: FC<Props> = ({
     <>
       {withSearch && (
         <TextField
-          style={{ width: '100%' }}
+          style={{ width: '100%', margin: '15px 0' }}
           variant='outlined'
           label={t('common:search')}
+          value={state.globalFilter ?? ''}
           onChange={(e) => setGlobalFilter(e.target.value)}
           InputProps={{
             endAdornment: (
-              <InputAdornment position='end'>
-                <SearchIcon />
-              </InputAdornment>
+              <>
+                {state.globalFilter && (
+                  <InputAdornment position='end'>
+                    <Tooltip title={t('common:clear')}>
+                      <IconButton onClick={() => setGlobalFilter('')}>
+                        <ClearIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </InputAdornment>
+                )}
+                <InputAdornment position='end'>
+                  <SearchIcon />
+                </InputAdornment>
+              </>
             ),
           }}
         />
@@ -160,7 +176,9 @@ const Table: FC<Props> = ({
               })}
             </StyledTableBody>
           ) : (
-            <NoRecords>{t('table:noRecords')}</NoRecords>
+            <tbody style={{ height: 60, position: 'relative' }}>
+              <NoRecords>{t('table:noRecords')}</NoRecords>
+            </tbody>
           )}
         </MaUTable>
       </StyledContainer>
