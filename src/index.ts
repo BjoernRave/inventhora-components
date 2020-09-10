@@ -1,3 +1,4 @@
+export { default as DarkmodeSwitch } from './DarkmodeSwitch'
 export { default as DeletionModal } from './DeletionModal'
 export { default as DocumentViewer } from './DocumentViewer'
 export { default as Footer } from './Footer'

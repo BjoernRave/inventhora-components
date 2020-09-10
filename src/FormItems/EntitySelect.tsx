@@ -41,6 +41,10 @@ const StyledLabel = styled(FormLabel)`
   .Mui-disabled {
     color: ${({ theme }) => theme.palette.text.disabled};
   }
+
+  .Mui-focused {
+    color: ${({ theme }) => theme.palette.primary.main};
+  }
 `
 
 const EntitySelect: FC<Props> = ({
