@@ -26,6 +26,7 @@ import {
   NumberInput,
   Option,
   PasswordInput,
+  PhoneInput,
   ProductAmountInput,
   SelectInput,
   TableInput,
@@ -231,6 +232,15 @@ export const WithCreationOptionStory = (props) => (
 
 export const DimensionsInputStory = (props) => (
   <DimensionsInput name='DimensionsInput' lengthUnit='cm' />
+)
+
+export const PhoneInputStory = (props) => (
+  <PhoneInput
+    name='PhoneInputStory'
+    prefixName='PrefixPhoneInputStory'
+    label='PhoneInput'
+    required={boolean('Required', false)}
+  />
 )
 
 export const FileInputStory = (props) => (
