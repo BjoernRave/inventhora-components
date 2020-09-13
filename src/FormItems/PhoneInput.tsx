@@ -1,10 +1,8 @@
 import TextField from '@material-ui/core/TextField'
-import Autocomplete from '@material-ui/lab/Autocomplete'
 import { useField } from 'formik'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { countries } from '../lib/countries.json'
 import { generateSlug } from '../lib/utils'
 
 const PhoneWrapper = styled.div`
@@ -32,40 +30,42 @@ const PhoneInput: FC<Props> = ({
       ? `${prefixName}[${index}].${prefixSubName}`
       : prefixName
 
-  const { lang } = useTranslation()
-
   const [, meta, helper] = useField(formName)
 
   const [, prefixMeta, prefixHelper] = useField(prefixFormName)
 
   return (
     <PhoneWrapper id={`${generateSlug(formName)}-group`}>
-      <Autocomplete
+      <TextField
         style={{ width: '170px', alignSelf: 'flex-end', marginRight: '20px' }}
-        value={prefixMeta.value ?? null}
-        onChange={(e, value: Prefix) => {
-          prefixHelper.setValue(value)
+        required={required}
+        value={prefixMeta.value}
+        onChange={(e) => prefixHelper.setValue(e.target.value)}
+        fullWidth
+        label={t('forms:prefix')}
+        placeholder='+'
+        error={Boolean(meta.error)}
+        inputMode='numeric'
+        type='text'
+        variant='outlined'
+        onKeyDown={(e) => {
+          //delete, tab, etc
+          if ([8, 9, 37, 39].includes(e.keyCode)) {
+            return
+          }
+
+          //number keys
+          if (e.keyCode >= 48 && e.keyCode <= 57) {
+            return
+          }
+
+          //numpad
+          if (e.keyCode >= 96 && e.keyCode <= 105) {
+            return
+          }
+
+          e.preventDefault()
         }}
-        getOptionLabel={(option) => (option ? `+${option.phonePrefix}` : '')}
-        renderOption={(option) =>
-          option
-            ? `+${option.phonePrefix} (${
-                option.translations[lang] ?? option.translations.en
-              })`
-            : ''
-        }
-        options={countries}
-        renderInput={(params) => (
-          <TextField
-            required={required}
-            {...params}
-            fullWidth
-            label={t('forms:prefix')}
-            placeholder='+'
-            error={Boolean(meta.error)}
-            variant='outlined'
-          />
-        )}
       />
       <TextField
         id={formName}

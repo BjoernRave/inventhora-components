@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "1.89.10",
+  "version": "1.89.12",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "react-dropzone": "^11.1.0",
-    "ua-parser-js": "^0.7.21"
+    "ua-parser-js": "^0.7.22"
   },
   "peerDependencies": {
     "react": ">=16",
