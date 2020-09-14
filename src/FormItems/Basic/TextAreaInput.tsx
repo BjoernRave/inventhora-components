@@ -1,7 +1,7 @@
 import { BaseTextFieldProps, TextField } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { FC } from 'react'
-import { generateSlug } from '../../lib/utils'
 
 const TextAreaInput: FC<Props> = ({
   name,

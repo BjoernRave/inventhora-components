@@ -1,7 +1,7 @@
 import { BaseTextFieldProps, TextField } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { ChangeEvent, FC } from 'react'
-import { generateSlug } from '../../lib/utils'
 
 const NumberInput: FC<Props> = ({
   name,

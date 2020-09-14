@@ -5,10 +5,10 @@ import {
   InputAdornment,
 } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import { SameLine } from '../lib/styles'
-import { generateSlug } from '../lib/utils'
 import NumberInput from './Basic/NumberInput'
 
 const DimensionsInput: FC<Props> = ({

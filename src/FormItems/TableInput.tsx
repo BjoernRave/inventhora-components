@@ -8,17 +8,17 @@ import {
 } from '@material-ui/core'
 import CancelIcon from '@material-ui/icons/Cancel'
 import { useField } from 'formik'
-import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useEffect } from 'react'
-import styled from 'styled-components'
-import Infos from '../Infos'
 import {
   generateSlug,
   getErrorMessage,
   getObjectKeyByString,
   isServer,
   removeFromObjectArray,
-} from '../lib/utils'
+} from 'inventhora-utils'
+import useTranslation from 'next-translate/useTranslation'
+import React, { FC, useEffect } from 'react'
+import styled from 'styled-components'
+import Infos from '../Infos'
 import Table from '../Table'
 
 const SelectedWrapper = styled(Paper)`

@@ -1,9 +1,9 @@
 import TextField from '@material-ui/core/TextField'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { generateSlug } from '../lib/utils'
 
 const PhoneWrapper = styled.div`
   display: inline-flex !important;

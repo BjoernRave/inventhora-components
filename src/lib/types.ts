@@ -10,8 +10,6 @@ export interface Option {
   helperText?: string
 }
 
-export type TopBannerMessages = 'trialEnd'
-
 export type DateFormat = 'daytime' | 'day' | 'time'
 
 export interface ResponseHandle {

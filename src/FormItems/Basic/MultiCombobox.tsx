@@ -3,10 +3,10 @@ import TextField from '@material-ui/core/TextField'
 import PlusIcon from '@material-ui/icons/AddCircle'
 import { Autocomplete } from '@material-ui/lab'
 import { useField } from 'formik'
+import { generateSlug, getErrorMessage } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, ReactNode, useState } from 'react'
 import styled from 'styled-components'
-import { generateSlug, getErrorMessage } from '../../lib/utils'
 
 const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
   ${({ hasinput }) => hasinput && 'color: #3c9f80 !important'};

@@ -8,9 +8,9 @@ import {
 import VisibilityIcon from '@material-ui/icons/Visibility'
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
-import { generateSlug } from '../../lib/utils'
 
 const PasswordInput: FC<Props> = ({
   name,

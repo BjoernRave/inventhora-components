@@ -1,10 +1,10 @@
 import { TextField } from '@material-ui/core'
 import { DateTimePicker } from '@material-ui/pickers'
 import { useField } from 'formik'
+import { dateTimeFormat, generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, ReactNode } from 'react'
 import { Language } from '../../lib/types'
-import { dateTimeFormat, generateSlug } from '../../lib/utils'
 import DateTimeProvider from './DateTimeProvider'
 
 const DateTimeInput: FC<Props> = ({

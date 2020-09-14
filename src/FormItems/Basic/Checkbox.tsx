@@ -5,8 +5,8 @@ import {
   FormHelperText,
 } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { FC, ReactNode } from 'react'
-import { generateSlug } from '../../lib/utils'
 
 const Checkbox: FC<Props> = ({
   name,

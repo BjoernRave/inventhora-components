@@ -2,8 +2,8 @@ import { CircularProgress } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import { Autocomplete, createFilterOptions } from '@material-ui/lab'
 import { useField } from 'formik'
+import { generateSlug, getErrorMessage } from 'inventhora-utils'
 import React, { FC, ReactNode } from 'react'
-import { generateSlug, getErrorMessage } from '../../lib/utils'
 
 const filter = createFilterOptions()
 

@@ -7,12 +7,12 @@ import {
   DialogTitle,
 } from '@material-ui/core'
 import { Formik, FormikProps } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import Form from './FormItems/Basic/Form'
 import SubmitButton from './FormItems/Basic/SubmitButton'
-import { generateSlug } from './lib/utils'
 
 const StyledDialogContent = styled(DialogContent)`
   @media (min-width: 767px) {

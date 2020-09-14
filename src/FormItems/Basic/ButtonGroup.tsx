@@ -6,10 +6,10 @@ import {
   FormLabel,
 } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Option } from '../../lib/types'
-import { generateSlug } from '../../lib/utils'
 
 const ButtonWrapper = styled(MuiButtonGroup)`
   margin: 10px 0;

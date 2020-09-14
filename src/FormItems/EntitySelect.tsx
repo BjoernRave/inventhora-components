@@ -7,11 +7,11 @@ import {
   FormLabel,
 } from '@material-ui/core'
 import { useField } from 'formik'
+import { removeFromArray } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Option } from '../lib/types'
-import { removeFromArray } from '../lib/utils'
 
 const EntityField = styled.div`
   display: flex;

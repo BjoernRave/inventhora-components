@@ -14,10 +14,10 @@ import PlusIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
 import { useField, useFormikContext } from 'formik'
+import { generateSlug, getErrorMessage } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { generateSlug, getErrorMessage } from '../lib/utils'
 import Table from '../Table'
 import SubmitButton from './Basic/SubmitButton'
 
@@ -61,6 +61,7 @@ const CreateButton = styled(Button)`
 
   @media (max-width: 767px) {
     padding: 20px;
+    width: 100% !important;
   }
 `
 
@@ -121,7 +122,7 @@ const MultiCreate: FC<Props> = ({
   }
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <FormControl
         required={required}
         style={{ alignSelf: 'flex-start', margin: '20px 0' }}>

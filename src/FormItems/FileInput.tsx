@@ -1,11 +1,11 @@
 import { FormControl, FormLabel } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { useMutation } from 'urql'
 import DocumentViewer from '../DocumentViewer'
 import ImageViewer from '../ImageViewer'
-import { generateSlug } from '../lib/utils'
 import FileUpload from './FileUpload'
 
 const UploadWrapper = styled(FormControl)`

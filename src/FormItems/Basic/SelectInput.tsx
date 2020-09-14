@@ -7,9 +7,9 @@ import {
   SelectProps,
 } from '@material-ui/core'
 import { useField } from 'formik'
+import { generateSlug } from 'inventhora-utils'
 import React, { FC, ReactNode } from 'react'
 import { Option } from '../../lib/types'
-import { generateSlug } from '../../lib/utils'
 
 const SelectInput: FC<Props> = ({
   options,

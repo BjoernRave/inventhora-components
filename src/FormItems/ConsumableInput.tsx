@@ -8,9 +8,9 @@ import {
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { useField } from 'formik'
+import { generateSlug, getObjectKeyByString } from 'inventhora-utils'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { generateSlug, getObjectKeyByString } from '../lib/utils'
 import Table from '../Table'
 
 const AccordionsWrapper = styled.div`

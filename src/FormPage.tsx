@@ -1,5 +1,6 @@
 import { Button, Paper } from '@material-ui/core'
 import { Formik, FormikHelpers } from 'formik'
+import { isDev } from 'inventhora-utils'
 import Link from 'next-translate/Link'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
@@ -7,7 +8,6 @@ import styled, { css } from 'styled-components'
 import Form from './FormItems/Basic/Form'
 import SubmitButton from './FormItems/Basic/SubmitButton'
 import { Title } from './lib/styles'
-import { isDev } from './lib/utils'
 
 const leftAlignedStyles = css`
   width: calc(100% / 3 * 2);
