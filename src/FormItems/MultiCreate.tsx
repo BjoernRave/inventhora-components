@@ -121,54 +121,54 @@ const MultiCreate: FC<Props> = ({
   }
 
   return (
-    <>
-      {tableData.length > 0 && (
-        <>
-          <Table
-            columns={fields.map((field) => ({
-              accessor: field.name,
-              Header: field.label,
-            }))}
-            data={formatFunction ? formatFunction(tableData) : tableData}
-            actions={[
-              {
-                id: 'actions',
-                Header: t('forms:actions'),
-                Cell: ({ row }) => (
-                  <>
-                    <Tooltip title={t('forms:edit')}>
-                      <IconButton
-                        onClick={() => {
-                          setIsUpdating(row.index)
-                        }}>
-                        <EditIcon />
-                      </IconButton>
-                    </Tooltip>
-                    <Tooltip title={t('forms:delete')}>
-                      <IconButton
-                        onClick={() => {
-                          if (tableData[row.index]?.id) {
-                            onDelete(tableData[row.index].id)
-                          } else {
-                            const updatedData = Array.from(tableData)
-                            updatedData.splice(row.index, 1)
-                            helper.setValue(updatedData)
-                          }
-                        }}>
-                        <DeleteIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </>
-                ),
-              },
-            ]}
-          />
-        </>
-      )}
+    <div>
       <FormControl
         required={required}
         style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
         <FormLabel>{label}</FormLabel>
+        {tableData.length > 0 && (
+          <>
+            <Table
+              columns={fields.map((field) => ({
+                accessor: field.name,
+                Header: field.label,
+              }))}
+              data={formatFunction ? formatFunction(tableData) : tableData}
+              actions={[
+                {
+                  id: 'actions',
+                  Header: t('forms:actions'),
+                  Cell: ({ row }) => (
+                    <>
+                      <Tooltip title={t('forms:edit')}>
+                        <IconButton
+                          onClick={() => {
+                            setIsUpdating(row.index)
+                          }}>
+                          <EditIcon />
+                        </IconButton>
+                      </Tooltip>
+                      <Tooltip title={t('forms:delete')}>
+                        <IconButton
+                          onClick={() => {
+                            if (tableData[row.index]?.id) {
+                              onDelete(tableData[row.index].id)
+                            } else {
+                              const updatedData = Array.from(tableData)
+                              updatedData.splice(row.index, 1)
+                              helper.setValue(updatedData)
+                            }
+                          }}>
+                          <DeleteIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </>
+                  ),
+                },
+              ]}
+            />
+          </>
+        )}
         <CreateButton
           variant='contained'
           color='secondary'
@@ -215,7 +215,9 @@ const MultiCreate: FC<Props> = ({
           {children}
         </StyledDialogContent>
         <DialogActions>
-          <StyledButton onClick={handleClose}>{t('forms:cancel')}</StyledButton>
+          <StyledButton type='button' onClick={handleClose}>
+            {t('forms:cancel')}
+          </StyledButton>
           <StyledSubmit
             onClick={() => {
               const index = isCreating ? meta.value.length - 1 : isUpdating
@@ -244,7 +246,7 @@ const MultiCreate: FC<Props> = ({
           </StyledSubmit>
         </DialogActions>
       </Dialog>
-    </>
+    </div>
   )
 }
 

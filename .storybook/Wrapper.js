@@ -6,7 +6,7 @@ import { Form } from 'formik'
 import { getTheme } from '../src/lib/styles'
 
 const Wrapper = styled.div`
-  margin: 50px 20px;
+
 
   form {
     > *:not(label) {

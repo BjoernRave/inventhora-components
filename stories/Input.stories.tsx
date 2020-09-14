@@ -14,6 +14,7 @@ import {
   Checkbox,
   ComboBox,
   ConsumableInput,
+  createProductFullName,
   DateInput,
   DateTimeInput,
   DimensionsInput,
@@ -359,7 +360,13 @@ export const TableInputStory = (props) => {
       filterWith={boolean('With Filter', false) && 'supplier.id'}
       columns={[
         {
-          accessor: 'product.fullName',
+          accessor: (val) =>
+            createProductFullName({
+              product: val.product,
+              lengthUnit: 'cm',
+              weightUnit: 'gr',
+              t: null,
+            }),
           Header: 'product',
         },
         { accessor: 'amount', Header: 'amount' },
@@ -462,7 +469,13 @@ export const ConsumableInputStory = (props) => {
       helperText='Consumables Helper'
       columns={[
         {
-          accessor: 'product.fullName',
+          accessor: (val) =>
+            createProductFullName({
+              product: val.product,
+              lengthUnit: 'cm',
+              weightUnit: 'gr',
+              t: null,
+            }),
           Header: 'product',
         },
         { accessor: 'amount', Header: 'amount' },

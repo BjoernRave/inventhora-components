@@ -73,6 +73,7 @@ const FormModal: FC<Props> = ({
                 <DialogActions>
                   <StyledButton
                     size='large'
+                    type='button'
                     onClick={() => onClose()}
                     color='primary'>
                     {t('common:cancel')}

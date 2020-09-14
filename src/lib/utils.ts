@@ -328,3 +328,61 @@ export const getObjectKeyByString = (o: any, s: string) => {
   }
   return o
 }
+
+export const constructDimensionString = (
+  dimensions: any,
+  lengthUnit: string
+) => {
+  if (!dimensions.width && !dimensions.depth) {
+    return `${dimensions.height}${lengthUnit}.`
+  }
+
+  if (!dimensions.depth) {
+    return `${dimensions.height}x${dimensions.width}${lengthUnit}.`
+  }
+
+  return `${dimensions.height}x${dimensions.width}x${dimensions.depth}${lengthUnit}.`
+}
+
+export const createProductFullName = ({
+  product,
+  weightUnit,
+  lengthUnit,
+  t,
+}: {
+  product: Partial<{ dimensions: any } & any>
+  weightUnit: string
+  lengthUnit: string
+  t: any
+}) => {
+  const { name, material, color, weight, dimensions, quantity } = product
+
+  let baseString = name
+
+  if (material) {
+    baseString = `${baseString} ${material}`
+  }
+
+  if (color) {
+    baseString = `${baseString} ${color}`
+  }
+
+  if (weight) {
+    baseString = `${baseString} ${weight}${weightUnit}`
+  }
+
+  if (dimensions) {
+    baseString = `${baseString} ${constructDimensionString(
+      dimensions,
+      lengthUnit
+    )}`
+  }
+
+  if (quantity) {
+    baseString = `${baseString} ${quantity}${t('common:pieces', {
+      count: quantity,
+    })}`
+  }
+
+  return baseString
+}
