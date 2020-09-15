@@ -17,7 +17,7 @@ import React, { FC, ReactNode, useState } from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
-  ${({ hasinput }) => hasinput && 'color: #3c9f80 !important'};
+  ${({ hasinput }) => (hasinput ? 'color: #3c9f80 !important' : undefined)};
   padding: 0;
 `
 

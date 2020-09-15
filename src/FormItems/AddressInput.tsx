@@ -2,7 +2,6 @@ import { Tab, Tabs } from '@material-ui/core'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { countries } from '../lib/countries.json'
 import { SameLine } from '../lib/styles'
 import ComboBox from './Basic/ComboBox'
 import TextInput from './Basic/TextInput'
@@ -24,7 +23,7 @@ const ZipInput = styled(TextInput)`
   }
 `
 
-const AddressInput: FC<Props> = ({ withBilling = true }) => {
+const AddressInput: FC<Props> = ({ withBilling = true, countries }) => {
   const { t, lang } = useTranslation()
   const [currentPage, setCurrentPage] = useState(0)
 
@@ -117,4 +116,5 @@ export default AddressInput
 
 export interface Props {
   withBilling?: boolean
+  countries: any[]
 }
