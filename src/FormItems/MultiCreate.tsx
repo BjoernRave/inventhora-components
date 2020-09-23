@@ -125,7 +125,7 @@ const MultiCreate: FC<Props> = ({
     <div style={{ width: '100%' }}>
       <FormControl
         required={required}
-        style={{ alignSelf: 'flex-start', margin: '20px 0' }}>
+        style={{ alignSelf: 'flex-start', margin: '20px 0', width: '100%' }}>
         <FormLabel>{label}</FormLabel>
         {tableData.length > 0 && (
           <>

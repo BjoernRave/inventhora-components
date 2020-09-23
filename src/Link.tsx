@@ -7,9 +7,9 @@ const ABlank = styled.a`
   color: inherit;
 `
 
-const Link: FC<Props> = ({ href, as, children, ...props }) => {
+const Link: FC<Props> = ({ href, as, children, noLang, ...props }) => {
   return (
-    <LocalizedLink passHref href={href} as={as}>
+    <LocalizedLink noLang={noLang} passHref href={href} as={as}>
       <ABlank {...(props as any)}>{children}</ABlank>
     </LocalizedLink>
   )
@@ -23,4 +23,5 @@ interface Props {
   target?: string
   className?: string
   style?: CSSProperties
+  noLang?: boolean
 }
