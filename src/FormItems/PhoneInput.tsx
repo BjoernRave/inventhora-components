@@ -42,6 +42,7 @@ const PhoneInput: FC<Props> = ({
         value={prefixMeta.value}
         onChange={(e) => prefixHelper.setValue(e.target.value)}
         fullWidth
+        id={generateSlug(prefixFormName)}
         label={t('forms:prefix')}
         placeholder='+'
         error={Boolean(meta.error)}
@@ -68,7 +69,7 @@ const PhoneInput: FC<Props> = ({
         }}
       />
       <TextField
-        id={formName}
+        id={generateSlug(formName)}
         inputMode='numeric'
         type='text'
         variant='outlined'
