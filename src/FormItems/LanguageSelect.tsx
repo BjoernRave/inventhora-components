@@ -1,5 +1,4 @@
 import { MenuItem, Select } from '@material-ui/core'
-import Router from 'next-translate/Router'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'
@@ -30,7 +29,7 @@ const LanguageSelect: FC<Props> = ({ allLanguages }) => {
 
   const changeLanguage = (lng: string) => {
     if (router.asPath === '/') {
-      Router.pushI18n('/', '/', { lang: lng })
+      router.push('/', '/', { locale: lng })
     } else {
       const routes = router.asPath.split('/')
       if (allLanguages.includes(routes[1])) {
@@ -39,7 +38,7 @@ const LanguageSelect: FC<Props> = ({ allLanguages }) => {
 
       const route = routes.join('/') ? routes.join('/') : '/'
 
-      Router.pushI18n(route, route, { lang: lng })
+      router.push(route, route, { locale: lng })
     }
   }
 

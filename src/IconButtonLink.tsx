@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from '@material-ui/core'
-import Link from 'next-translate/Link'
+import Link from 'next/link'
 import React, { FC } from 'react'
 import { ABlank } from './lib/styles'
 

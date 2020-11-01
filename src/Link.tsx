@@ -1,4 +1,4 @@
-import LocalizedLink from 'next-translate/Link'
+import NextLink from 'next/link'
 import React, { FC } from 'react'
 import styled, { CSSProperties } from 'styled-components'
 
@@ -7,11 +7,11 @@ const ABlank = styled.a`
   color: inherit;
 `
 
-const Link: FC<Props> = ({ href, as, children, noLang, ...props }) => {
+const Link: FC<Props> = ({ href, as, children, ...props }) => {
   return (
-    <LocalizedLink noLang={noLang} passHref href={href} as={as}>
+    <NextLink passHref href={href} as={as}>
       <ABlank {...(props as any)}>{children}</ABlank>
-    </LocalizedLink>
+    </NextLink>
   )
 }
 
@@ -23,5 +23,4 @@ interface Props {
   target?: string
   className?: string
   style?: CSSProperties
-  noLang?: boolean
 }
