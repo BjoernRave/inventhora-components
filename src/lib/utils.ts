@@ -91,9 +91,12 @@ export const handleResponse = ({
       }
     )
 
-    errors.forEach(({ message, trigger }) => {
+    errors.forEach(({ message, trigger, callback }) => {
       if (response?.error?.message.indexOf(trigger) !== -1) {
         result = { state: 'error', message }
+        if (callback) {
+          callback()
+        }
       }
     })
     setNotification(result as any)

@@ -17,7 +17,7 @@ export interface ResponseHandle {
   response: OperationResult<any>
   success?: string
   error: string
-  errors?: { message: string; trigger: string }[]
+  errors?: { message: string; trigger: string; callback?: any }[]
   t: any
 }
 
