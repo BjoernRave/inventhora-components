@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "2.2.3",
+  "version": "3.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -24,8 +24,8 @@
     "deploy:storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "inventhora-utils": "^0.1.10",
-    "react-dropzone": "^11.2.3"
+    "inventhora-utils": "^0.2.2",
+    "react-dropzone": "^11.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -48,19 +48,19 @@
     "@storybook/theming": "^6.0.28",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.11.0",
-    "@types/node": "^14.14.6",
-    "@types/react": "^16.9.55",
+    "@types/node": "^14.14.7",
+    "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "@types/styled-components": "^5.1.4",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.1",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "formik": "^2.2.1",
+    "formik": "3.0.0-next.6",
     "graphql": "^15.4.0",
     "husky": "^4.3.0",
-    "next": "^10.0.0",
-    "next-translate": "^0.19.1",
+    "next": "^10.0.1",
+    "next-translate": "^0.19.5",
     "prettier": "^2.1.2",
     "prettier-plugin-organize-imports": "^1.1.1",
     "react": ">=16",
@@ -68,16 +68,16 @@
     "react-dom": "^16.13.1",
     "react-is": "^17.0.1",
     "react-markdown": "4.3.1",
-    "react-table": "^7.6.1",
+    "react-table": "^7.6.2",
     "rollup-plugin-analyzer": "^3.3.0",
-    "rollup-plugin-visualizer": "^4.1.2",
+    "rollup-plugin-visualizer": "^4.2.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.21",
     "storybook-formik": "^2.1.2",
     "styled-components": "^5.2.1",
-    "ts-loader": "^8.0.7",
+    "ts-loader": "^8.0.11",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^4.0.5",
-    "urql": "^1.10.3"
+    "urql": "^1.11.2"
   }
 }

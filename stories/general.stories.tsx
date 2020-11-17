@@ -3,7 +3,7 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import StorybookWrapper from '../.storybook/Wrapper'
-import { DocumentViewer, getTheme, StripeLogo, SubmitButton } from '../src'
+import { DocumentViewer, getTheme, SubmitButton } from '../src'
 export default {
   title: 'General',
   decorators: [
@@ -30,5 +30,3 @@ export const DocumentViewerStory = (props) => (
     documents={exampleFiles}
   />
 )
-
-export const StripeLogoStory = (props) => <StripeLogo />
