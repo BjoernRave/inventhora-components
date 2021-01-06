@@ -97,11 +97,10 @@ const MultiCreate: FC<Props> = ({
 
   const handleClose = () => {
     if (isCreating) {
-      setIsCreating(false)
       const newArray = Array.from(meta.value)
       newArray.pop()
       helper.setValue(newArray, true)
-      validateField(name)
+      setIsCreating(false)
     } else {
       const validateRes = validate && validate(meta.value[isUpdating])
 

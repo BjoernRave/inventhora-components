@@ -1,3 +1,4 @@
+export { default as BooleanIcon } from './BooleanIcon'
 export { default as DarkmodeSwitch } from './DarkmodeSwitch'
 export { default as DocumentViewer } from './DocumentViewer'
 export { default as Footer } from './Footer'

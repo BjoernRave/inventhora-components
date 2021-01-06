@@ -3,7 +3,7 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import StorybookWrapper from '../.storybook/Wrapper'
-import { DocumentViewer, getTheme, SubmitButton } from '../src'
+import { BooleanIcon, DocumentViewer, getTheme, SubmitButton } from '../src'
 export default {
   title: 'General',
   decorators: [
@@ -29,4 +29,8 @@ export const DocumentViewerStory = (props) => (
     onDelete={boolean('With Delete', true) ? () => {} : null}
     documents={exampleFiles}
   />
+)
+
+export const BooleanIconStory = (props) => (
+  <BooleanIcon value={boolean('True?', true)} />
 )
