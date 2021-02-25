@@ -28,18 +28,7 @@ const LanguageSelect: FC<Props> = ({ allLanguages }) => {
   const { t, lang } = useTranslation()
 
   const changeLanguage = (lng: string) => {
-    if (router.asPath === '/') {
-      router.push('/', '/', { locale: lng })
-    } else {
-      const routes = router.asPath.split('/')
-      if (allLanguages.includes(routes[1])) {
-        routes.splice(1, 1)
-      }
-
-      const route = routes.join('/') ? routes.join('/') : '/'
-
-      router.push(route, route, { locale: lng })
-    }
+    router.push(router.pathname, router.asPath, { locale: lng })
   }
 
   return (
