@@ -37,7 +37,7 @@ const SelectInput: FC<Props> = ({
       style={{ width: '100%' }}>
       <InputLabel id={`${generateSlug(formName)}-label`}>{label}</InputLabel>
       <Select
-        margin='none'
+        margin='dense'
         variant='outlined'
         label={label}
         labelId={`${generateSlug(formName)}-label`}

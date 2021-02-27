@@ -53,7 +53,7 @@ const TextListInput: FC<Props> = ({
           {label}
         </InputLabel>
         <OutlinedInput
-          margin='none'
+          margin='dense'
           label={label}
           {...rest}
           endAdornment={

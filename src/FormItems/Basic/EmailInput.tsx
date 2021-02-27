@@ -19,7 +19,7 @@ const EmailInput: FC<Props> = ({
 
   return (
     <TextField
-      margin='none'
+      margin='dense'
       id={generateSlug(formName)}
       style={{ width: '100%' }}
       {...rest}

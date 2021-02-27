@@ -25,7 +25,7 @@ const TextInput: FC<Props> = ({
       {...rest}
       {...field}
       type='text'
-      margin='none'
+      margin='dense'
       onChange={(e) => {
         field.onChange(e)
         onChange && onChange(e)

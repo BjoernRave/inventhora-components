@@ -21,7 +21,7 @@ const NumberInput: FC<Props> = ({
   const [, meta, helper] = useField(formName)
   return (
     <TextField
-      margin='none'
+      margin='dense'
       id={generateSlug(formName)}
       {...rest}
       value={meta.value || ''}

@@ -24,7 +24,7 @@ const TextAreaInput: FC<Props> = ({
       {...rest}
       {...field}
       type='text'
-      margin='none'
+      margin='dense'
       style={{ width: '100%' }}
       multiline
       rows={String(rows)}

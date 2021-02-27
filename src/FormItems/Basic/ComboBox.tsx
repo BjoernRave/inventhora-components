@@ -71,7 +71,7 @@ const ComboBox: FC<Props> = ({
       getOptionLabel={(option) => option?.inputTitle ?? getOptionLabel(option)}
       renderInput={(params) => (
         <TextField
-          margin='none'
+          margin='dense'
           variant='outlined'
           {...params}
           autoFocus={autoFocus}

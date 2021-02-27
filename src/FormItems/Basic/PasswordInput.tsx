@@ -29,7 +29,7 @@ const PasswordInput: FC<Props> = ({
 
   return (
     <TextField
-      margin='none'
+      margin='dense'
       id={generateSlug(formName)}
       {...rest}
       {...field}

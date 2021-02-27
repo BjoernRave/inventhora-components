@@ -35,7 +35,7 @@ const TimeInput: FC<Props> = ({
         label={label}
         renderInput={(props) => (
           <TextField
-            margin='none'
+            margin='dense'
             {...props}
             variant='outlined'
             error={Boolean(meta.error)}

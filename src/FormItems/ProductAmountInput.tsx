@@ -82,6 +82,7 @@ const ProductAmountInput: FC<Props> = ({
               helperText={meta.error ?? helperText}
               required={required}
               value={unit.amount}
+              margin='dense'
               onChange={(e) => {
                 const newUnits = Array.from(meta.value)
 
@@ -142,6 +143,7 @@ const ProductAmountInput: FC<Props> = ({
                 <Select
                   label={t('forms:unit')}
                   labelId={`unit-label`}
+                  margin='dense'
                   value={unit.id}
                   onChange={(e) =>
                     helpers.setValue([

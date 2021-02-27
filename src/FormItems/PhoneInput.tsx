@@ -49,6 +49,7 @@ const PhoneInput: FC<Props> = ({
         inputMode='numeric'
         type='text'
         variant='outlined'
+        margin='dense'
         onKeyDown={(e) => {
           //delete, tab, etc
           if ([8, 9, 37, 39].includes(e.keyCode)) {
@@ -73,6 +74,7 @@ const PhoneInput: FC<Props> = ({
         inputMode='numeric'
         type='text'
         variant='outlined'
+        margin='dense'
         onKeyDown={(e) => {
           //delete, tab, etc
           if ([8, 9, 37, 39].includes(e.keyCode)) {

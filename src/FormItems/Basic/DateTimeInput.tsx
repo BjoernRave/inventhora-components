@@ -36,7 +36,7 @@ const DateTimeInput: FC<Props> = ({
         renderInput={(props) => {
           return (
             <TextField
-              margin='none'
+              margin='dense'
               {...props}
               variant='outlined'
               error={Boolean(meta.error)}
