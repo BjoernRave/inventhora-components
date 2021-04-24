@@ -3,7 +3,6 @@ import { useField } from 'formik'
 import { generateSlug } from 'inventhora-utils'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { useMutation } from 'urql'
 import DocumentViewer from '../DocumentViewer'
 import ImageViewer from '../ImageViewer'
 import FileUpload from './FileUpload'
@@ -19,18 +18,15 @@ const FileInput: FC<Props> = ({
   label,
   index,
   subName,
-  deleteMutation,
+  onDelete,
   isImages,
-  orderMutation,
   required,
+  onReOrder,
 }) => {
   const formName =
     typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
 
   const [, meta, helpers] = useField(formName)
-
-  const [, deleteImage] = useMutation(deleteMutation)
-  const [, updateImageOrder] = useMutation(orderMutation)
 
   const handleDelete = async (file: { name?: string; id?: string }) => {
     if (file?.name) {
@@ -43,7 +39,7 @@ const FileInput: FC<Props> = ({
         helpers.setValue(undefined)
       }
     } else {
-      await deleteImage({ id: file.id })
+      await onDelete(file.id)
 
       if (multiple) {
         const newFiles = Array.from(meta.value)
@@ -61,9 +57,7 @@ const FileInput: FC<Props> = ({
     helpers.setValue(files)
 
     if (!files.every((file) => file.name)) {
-      await updateImageOrder({
-        orders: files.map(({ order, id }) => ({ order, id })),
-      })
+      await onReOrder(files.map(({ order, id }) => ({ order, id })))
     }
   }
 
@@ -110,8 +104,8 @@ interface Props {
   subName?: string
   multiple?: boolean
   label: string
-  deleteMutation: any
-  orderMutation?: any
   isImages?: boolean
   required?: boolean
+  onDelete: (id: string) => any
+  onReOrder: (items: { order: number; id: string }[]) => any
 }

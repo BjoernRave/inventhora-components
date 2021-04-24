@@ -16,8 +16,9 @@ import useTranslation from 'next-translate/useTranslation'
 import React, { FC, ReactNode, useState } from 'react'
 import styled from 'styled-components'
 
-const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
-  ${({ hasinput }) => (hasinput ? 'color: #3c9f80 !important' : undefined)};
+const StyledButton = styled(IconButton)<{ hasInput: number }>`
+  ${({ hasInput }) =>
+    hasInput === 1 ? 'color: #3c9f80 !important' : undefined};
   padding: 0;
 `
 
@@ -64,7 +65,7 @@ const TextListInput: FC<Props> = ({
                 arrow
                 title={t('forms:add')}>
                 <StyledButton
-                  hasinput={Boolean(input)}
+                  hasInput={Boolean(input) ? 1 : 0}
                   onClick={() => {
                     if (input) {
                       helper.setValue([...value, input])

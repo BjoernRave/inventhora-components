@@ -49,6 +49,7 @@ const FormModal: FC<Props> = ({
   const { t } = useTranslation()
   return (
     <Dialog
+      disableEnforceFocus
       maxWidth='xl'
       open={isOpen}
       onClose={() => onClose()}

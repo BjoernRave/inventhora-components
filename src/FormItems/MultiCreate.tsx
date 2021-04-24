@@ -78,6 +78,7 @@ const MultiCreate: FC<Props> = ({
   validate,
   label,
   required,
+  initialValues,
 }) => {
   const { t } = useTranslation()
   const [isCreating, setIsCreating] = useState(false)
@@ -186,7 +187,10 @@ const MultiCreate: FC<Props> = ({
             if (onOpen) {
               onOpen(meta.value.length)
             } else {
-              helper.setValue([...meta.value, {}])
+              helper.setValue([
+                ...meta.value,
+                initialValues ? { ...initialValues } : {},
+              ])
             }
           }}>
           <PlusIcon style={{ margin: '0 5px 0 -5px' }} />
@@ -264,4 +268,5 @@ export interface Props {
   validate?: (values: any) => any
   label: string
   required?: boolean
+  initialValues?: any
 }

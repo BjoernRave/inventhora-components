@@ -30,12 +30,15 @@ const SelectInput: FC<Props> = ({
 
   return (
     <FormControl
+      margin='dense'
       error={Boolean(meta.error)}
       required={required}
       variant='outlined'
       id={generateSlug(formName)}
       style={{ width: '100%' }}>
-      <InputLabel id={`${generateSlug(formName)}-label`}>{label}</InputLabel>
+      <InputLabel margin='dense' id={`${generateSlug(formName)}-label`}>
+        {label}
+      </InputLabel>
       <Select
         margin='dense'
         variant='outlined'
@@ -58,7 +61,7 @@ const SelectInput: FC<Props> = ({
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText variant='outlined'>
+      <FormHelperText margin='dense' variant='outlined'>
         {meta.error ?? helperText}
       </FormHelperText>
     </FormControl>

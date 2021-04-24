@@ -15,7 +15,7 @@ import ClearIcon from '@material-ui/icons/Clear'
 import SearchIcon from '@material-ui/icons/Search'
 import { Skeleton } from '@material-ui/lab'
 import useTranslation from 'next-translate/useTranslation'
-import React, { CSSProperties, FC } from 'react'
+import React, { CSSProperties, FC, useMemo } from 'react'
 import { Column, Row, useGlobalFilter, useSortBy, useTable } from 'react-table'
 import styled from 'styled-components'
 
@@ -87,7 +87,7 @@ const Table: FC<Props> = ({
     }
   )
 
-  const array = new Array(10).fill('blah')
+  const array = useMemo(() => new Array(10).fill('blah'), [])
 
   return (
     <>

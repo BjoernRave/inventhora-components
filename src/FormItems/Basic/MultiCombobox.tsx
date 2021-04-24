@@ -8,8 +8,9 @@ import useTranslation from 'next-translate/useTranslation'
 import React, { FC, ReactNode, useState } from 'react'
 import styled from 'styled-components'
 
-const StyledButton = styled(IconButton)<{ hasinput: boolean }>`
-  ${({ hasinput }) => (hasinput ? 'color: #3c9f80 !important' : undefined)};
+const StyledButton = styled(IconButton)<{ hasInput: number }>`
+  ${({ hasInput }) =>
+    hasInput === 1 ? 'color: #3c9f80 !important' : undefined};
 `
 
 const MultiCombobox: FC<Props> = ({
@@ -24,6 +25,7 @@ const MultiCombobox: FC<Props> = ({
   disabled,
   autoFocus,
   loading,
+  canCreate = true,
   ...rest
 }) => {
   const { t } = useTranslation()
@@ -45,7 +47,7 @@ const MultiCombobox: FC<Props> = ({
       value={meta.value || null}
       selectOnFocus
       disabled={disabled}
-      freeSolo
+      freeSolo={canCreate}
       onChange={(_, value) => helper.setValue(value || [])}
       options={
         isLoading || !options
@@ -83,10 +85,10 @@ const MultiCombobox: FC<Props> = ({
                 {params.InputProps.endAdornment}
                 {isLoading ? (
                   <CircularProgress color='inherit' size={20} />
-                ) : (
+                ) : canCreate ? (
                   <Tooltip open={Boolean(input)} arrow title={t('forms:add')}>
                     <StyledButton
-                      hasinput={Boolean(input)}
+                      hasInput={Boolean(input) ? 1 : 0}
                       onClick={() => {
                         if (input) {
                           helper.setValue([...value, input])
@@ -96,7 +98,7 @@ const MultiCombobox: FC<Props> = ({
                       <PlusIcon />
                     </StyledButton>
                   </Tooltip>
-                )}
+                ) : null}
               </>
             ),
           }}
@@ -120,4 +122,5 @@ export interface Props {
   disabled?: boolean
   autoFocus?: boolean
   loading?: boolean
+  canCreate?: boolean
 }

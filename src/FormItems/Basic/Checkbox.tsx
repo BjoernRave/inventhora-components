@@ -13,9 +13,13 @@ const Checkbox: FC<Props> = ({
   label,
   helperText,
   required,
+  index,
+  subName,
   ...rest
 }) => {
-  const [field, meta] = useField(name)
+  const formName =
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+  const [field, meta] = useField(formName)
 
   return (
     <FormControlLabel
@@ -41,6 +45,8 @@ export default Checkbox
 
 export interface Props extends CheckboxProps {
   name: string
+  index?: number
+  subName?: string
   label: ReactNode
   helperText?: string
 }

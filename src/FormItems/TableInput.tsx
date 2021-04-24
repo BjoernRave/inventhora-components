@@ -16,7 +16,7 @@ import {
   removeFromObjectArray,
 } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useMemo } from 'react'
 import styled from 'styled-components'
 import Infos from '../Infos'
 import Table from '../Table'
@@ -123,6 +123,25 @@ const TableInput: FC<Props> = ({
     }
   }, [])
 
+  const data = useMemo(() => {
+    if (!meta.value) return []
+
+    return multiple
+      ? options?.filter((option) => {
+          if (
+            filterWith &&
+            meta.value.length > 0 &&
+            getObjectKeyByString(option, filterWith) !==
+              getObjectKeyByString(meta.value[0], filterWith)
+          ) {
+            return false
+          }
+
+          return !Boolean(meta.value.find((val) => val.id === option.id))
+        })
+      : options
+  }, [multiple, options, meta.value])
+
   return (
     <FormControl
       style={{ width: '100%', display: 'grid' }}
@@ -159,24 +178,7 @@ const TableInput: FC<Props> = ({
               multiple ? [...meta.value, row.original] : row.original
             )
           }
-          data={
-            multiple
-              ? options?.filter((option) => {
-                  if (
-                    filterWith &&
-                    meta.value.length > 0 &&
-                    getObjectKeyByString(option, filterWith) !==
-                      getObjectKeyByString(meta.value[0], filterWith)
-                  ) {
-                    return false
-                  }
-
-                  return !Boolean(
-                    meta.value.find((val) => val.id === option.id)
-                  )
-                })
-              : options
-          }
+          data={data}
           columns={columns}
         />
       )}
