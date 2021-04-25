@@ -2,7 +2,7 @@
   "name": "inventhora-components",
   "author": "BjoernRave",
   "module": "dist/test.esm.js",
-  "version": "3.3.0",
+  "version": "3.3.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

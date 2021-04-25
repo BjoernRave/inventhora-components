@@ -1,4 +1,5 @@
 import {
+  CircularProgress,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -121,10 +122,10 @@ const TableInput: FC<Props> = ({
     if (options?.length === 1) {
       helpers.setValue(options[1])
     }
-  }, [])
+  }, [options])
 
   const data = useMemo(() => {
-    if (!meta.value) return []
+    // if (!meta.value) return []
 
     return multiple
       ? options?.filter((option) => {
@@ -167,20 +168,32 @@ const TableInput: FC<Props> = ({
             columns={columns}
           />
         ))}
-      {(multiple || !meta.value) && (
-        <Table
-          labelledBy={`${generateSlug(name)}-input`}
-          withSearch={withSearch}
-          style={{ margin: '10px 0' }}
-          maxHeight={400}
-          onRowClick={(row: any) =>
-            helpers.setValue(
-              multiple ? [...meta.value, row.original] : row.original
-            )
-          }
-          data={data}
-          columns={columns}
-        />
+      {!Boolean(options) ? (
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            alignItems: 'center',
+            margin: '10px 0',
+          }}>
+          <CircularProgress />
+        </div>
+      ) : (
+        (multiple || !meta.value) && (
+          <Table
+            labelledBy={`${generateSlug(name)}-input`}
+            withSearch={withSearch}
+            style={{ margin: '10px 0' }}
+            maxHeight={400}
+            onRowClick={(row: any) =>
+              helpers.setValue(
+                multiple ? [...meta.value, row.original] : row.original
+              )
+            }
+            data={data}
+            columns={columns}
+          />
+        )
       )}
       {helperText && (
         <FormHelperText>
