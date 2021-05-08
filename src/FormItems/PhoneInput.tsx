@@ -1,3 +1,4 @@
+import { InputAdornment } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import { useField } from 'formik'
 import { generateSlug } from 'inventhora-utils'
@@ -44,7 +45,9 @@ const PhoneInput: FC<Props> = ({
         fullWidth
         id={generateSlug(prefixFormName)}
         label={t('forms:prefix')}
-        placeholder='+'
+        InputProps={{
+          startAdornment: <InputAdornment position='start'>+</InputAdornment>,
+        }}
         error={Boolean(meta.error)}
         inputMode='numeric'
         type='text'

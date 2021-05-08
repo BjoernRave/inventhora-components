@@ -16,7 +16,7 @@ import EditIcon from '@material-ui/icons/Edit'
 import { useField, useFormikContext } from 'formik'
 import { generateSlug, getErrorMessage } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC, useState } from 'react'
+import React, { FC, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import Table from '../Table'
 import SubmitButton from './Basic/SubmitButton'
@@ -86,15 +86,16 @@ const MultiCreate: FC<Props> = ({
 
   const { setFieldError, validateField } = useFormikContext()
   const [, meta, helper] = useField(name)
-  let tableData
 
-  if (isCreating) {
-    const data = Array.from(meta.value)
-    data.pop()
-    tableData = data
-  } else {
-    tableData = meta.value
-  }
+  const tableData = useMemo(() => {
+    if (isCreating) {
+      const data = Array.from(meta.value)
+      data.pop()
+      return data
+    } else {
+      return meta.value
+    }
+  }, [isCreating, meta.value])
 
   const handleClose = () => {
     if (isCreating) {
@@ -126,7 +127,7 @@ const MultiCreate: FC<Props> = ({
       <FormControl
         required={required}
         style={{ alignSelf: 'flex-start', margin: '20px 0', width: '100%' }}>
-        <FormLabel>{label}</FormLabel>
+        <FormLabel style={{ marginBottom: 10 }}>{label}</FormLabel>
         {tableData.length > 0 && (
           <>
             <Table
@@ -144,6 +145,14 @@ const MultiCreate: FC<Props> = ({
                       <Tooltip title={t('forms:edit')}>
                         <IconButton
                           onClick={() => {
+                            const newArray = Array.from(tableData)
+
+                            const item = newArray.splice(row.index, 1)
+
+                            newArray.push(item[0])
+
+                            helper.setValue(newArray)
+
                             setIsUpdating(row.index)
                           }}>
                           <EditIcon />
@@ -204,6 +213,7 @@ const MultiCreate: FC<Props> = ({
         )}
       </FormControl>
       <Dialog
+        disableEnforceFocus
         open={isCreating || isUpdating !== ''}
         onClose={handleClose}
         id={generateSlug(title)}

@@ -63,7 +63,13 @@ const FormModal: FC<Props> = ({
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}>
-        {({ isSubmitting }) => {
+        {({ isSubmitting, errors }) => {
+          if (
+            process.env.NODE_ENV === 'development' &&
+            Object.keys(errors).length > 0
+          ) {
+            console.log('FormModalErrors: ', errors)
+          }
           return (
             <StyledDialogContent id={`${generateSlug(title)}-content`}>
               <Form>

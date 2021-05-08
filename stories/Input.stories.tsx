@@ -1,10 +1,12 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, withKnobs } from '@storybook/addon-knobs'
+import { useField } from 'formik'
 import { createProductFullName, formatDate } from 'inventhora-utils'
 import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import withFormik from 'storybook-formik'
+import * as Yup from 'yup'
 import StorybookWrapper from '../.storybook/Wrapper'
 import {
   ButtonGroup,
@@ -241,7 +243,8 @@ export const PhoneInputStory = (props) => (
 export const FileInputStory = (props) => (
   <FileInput
     label='FileInputStory'
-    deleteMutation={null}
+    onDelete={() => {}}
+    onReOrder={() => {}}
     isImages={boolean('Is Image Upload?', false)}
     name='FileInputStory'
     multiple={boolean('Multiple Files?', true)}
@@ -299,12 +302,41 @@ export const MultiComboboxStory = (props) => (
   />
 )
 
+const MultiCrateForm = () => {
+  const [_, meta] = useField('MultiCreateStory')
+
+  return (
+    <>
+      <TextInput
+        autoFocus
+        name={'MultiCreateStory'}
+        index={meta.value.length - 1}
+        subName='name'
+        required
+        label={'unitName'}
+        helperText={'unitNameHelper'}
+      />
+      <NumberInput
+        name={'MultiCreateStory'}
+        index={meta.value.length - 1}
+        subName='baseAmount'
+        required
+        label={'baseAmount'}
+        helperText={'baseAmountHelper'}
+      />
+    </>
+  )
+}
+
 export const MultiCreateStory = (props) => {
   return (
     <>
       <MultiCreate
         label='MultiCreate'
-        schema={null}
+        schema={Yup.object({
+          name: Yup.string(),
+          baseAmount: Yup.string().required(),
+        })}
         name={'MultiCreateStory'}
         fields={[
           {
@@ -321,23 +353,7 @@ export const MultiCreateStory = (props) => {
         helperText={
           'unitExplanation super duper long so long wow is this long who even reads this'
         }>
-        <TextInput
-          autoFocus
-          name={'MultiCreateStory'}
-          index={0}
-          subName='name'
-          required
-          label={'unitName'}
-          helperText={'unitNameHelper'}
-        />
-        <NumberInput
-          name={'MultiCreateStory'}
-          index={0}
-          subName='baseAmount'
-          required
-          label={'baseAmount'}
-          helperText={'baseAmountHelper'}
-        />
+        <MultiCrateForm />
       </MultiCreate>
     </>
   )
