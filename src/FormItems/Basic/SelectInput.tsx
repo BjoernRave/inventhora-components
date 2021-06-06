@@ -50,6 +50,9 @@ const SelectInput: FC<Props> = ({
           field.onChange(e)
           onChange && onChange(e.target.value)
         }}>
+        <MenuItem value=''>
+          <em>--</em>
+        </MenuItem>
         {options.map(({ value, label }, ind) => (
           <MenuItem
             disabled={Boolean(

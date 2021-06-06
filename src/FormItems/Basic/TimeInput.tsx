@@ -15,6 +15,7 @@ const TimeInput: FC<Props> = ({
   helperText,
   required,
   disabled,
+  inputFormat,
 }) => {
   const { lang } = useTranslation()
 
@@ -31,7 +32,7 @@ const TimeInput: FC<Props> = ({
         disabled={disabled}
         clearable
         ampm={false}
-        inputFormat={timeFormat}
+        inputFormat={inputFormat ?? timeFormat}
         label={label}
         renderInput={(props) => (
           <TextField
@@ -60,4 +61,5 @@ export interface Props {
   helperText?: ReactNode
   required?: boolean
   disabled?: boolean
+  inputFormat?: string
 }

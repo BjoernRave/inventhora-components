@@ -107,6 +107,8 @@ const Selection = ({ columns, onDelete, value }) => {
 
 const TableInput: FC<Props> = ({
   name,
+  subName,
+  index,
   required,
   label,
   helperText,
@@ -116,7 +118,10 @@ const TableInput: FC<Props> = ({
   filterWith,
   withSearch,
 }) => {
-  const [, meta, helpers] = useField(name)
+  const formName =
+    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
+
+  const [, meta, helpers] = useField(formName)
 
   useEffect(() => {
     if (options?.length === 1) {
@@ -208,6 +213,8 @@ export default TableInput
 
 interface Props {
   name: string
+  subName?: string
+  index?: number
   required?: boolean
   label: string
   helperText?: string

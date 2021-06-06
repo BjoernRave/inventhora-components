@@ -15,6 +15,7 @@ const DateTimeInput: FC<Props> = ({
   helperText,
   required,
   disabled,
+  inputFormat,
 }) => {
   const { lang } = useTranslation()
 
@@ -31,7 +32,7 @@ const DateTimeInput: FC<Props> = ({
         disabled={disabled}
         clearable
         ampm={false}
-        inputFormat={dateTimeFormat}
+        inputFormat={inputFormat ?? dateTimeFormat}
         label={label}
         renderInput={(props) => {
           return (
@@ -62,4 +63,5 @@ export interface Props {
   helperText?: ReactNode
   required?: boolean
   disabled?: boolean
+  inputFormat?: string
 }

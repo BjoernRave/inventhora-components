@@ -30,8 +30,8 @@ const AddressInput: FC<Props> = ({ withBilling = true, countries }) => {
   if (!withBilling) {
     return (
       <Wrapper>
-        <TextInput name='addressLine1' label={t('forms:addressLine1')} />
-        <TextInput name='addressLine2' label={t('forms:addressLine2')} />
+        <TextInput name='address1' label={t('forms:address1')} />
+        <TextInput name='address2' label={t('forms:address2')} />
         <SameLine>
           <TextInput name='city' label={t('forms:city')} />
           <ZipInput name='zip' label={t('forms:zip')} />
@@ -62,8 +62,8 @@ const AddressInput: FC<Props> = ({ withBilling = true, countries }) => {
       </Tabs>
       {currentPage === 0 && (
         <>
-          <TextInput name='addressLine1' label={t('forms:addressLine1')} />
-          <TextInput name='addressLine2' label={t('forms:addressLine2')} />
+          <TextInput name='address1' label={t('forms:address1')} />
+          <TextInput name='address2' label={t('forms:address2')} />
           <SameLine>
             <TextInput name='city' label={t('forms:city')} />
             <ZipInput name='zip' label={t('forms:zip')} />
@@ -83,14 +83,8 @@ const AddressInput: FC<Props> = ({ withBilling = true, countries }) => {
       )}
       {currentPage === 1 && (
         <>
-          <TextInput
-            name='billingAddressLine1'
-            label={t('forms:addressLine1')}
-          />
-          <TextInput
-            name='billingAddressLine2'
-            label={t('forms:addressLine2')}
-          />
+          <TextInput name='billingAddressLine1' label={t('forms:address1')} />
+          <TextInput name='billingAddressLine2' label={t('forms:address2')} />
           <SameLine>
             <TextInput name='billingCity' label={t('forms:city')} />
             <ZipInput name='billingZip' label={t('forms:zip')} />

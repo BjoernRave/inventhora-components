@@ -15,6 +15,7 @@ const DateInput: FC<Props> = ({
   helperText,
   required,
   disabled,
+  inputFormat,
 }) => {
   const { lang } = useTranslation()
 
@@ -41,7 +42,7 @@ const DateInput: FC<Props> = ({
           helper.setValue(date)
         }}
         clearable
-        inputFormat={dateFormat}
+        inputFormat={inputFormat ?? dateFormat}
         label={label}
         renderInput={(props) => (
           <TextField
@@ -70,4 +71,5 @@ export interface Props {
   helperText?: ReactNode
   required?: boolean
   disabled?: boolean
+  inputFormat?: string
 }

@@ -122,6 +122,27 @@ const MultiCreate: FC<Props> = ({
     }
   }
 
+  const handleSubmit = () => {
+    const index = isCreating ? meta.value.length - 1 : isUpdating
+
+    const validateRes = validate && validate(meta.value[index])
+
+    if (validateRes) {
+      return setFieldError(`${name}[${index}]`, validateRes)
+    }
+    schema
+      .validate(meta.value[index])
+      .then(() => {
+        isCreating ? setIsCreating(false) : setIsUpdating('')
+        validateField(name)
+      })
+      .catch((error) => {
+        console.log(error)
+
+        setFieldError(`${name}[${index}].${error.path}`, error.message)
+      })
+  }
+
   return (
     <div style={{ width: '100%' }}>
       <FormControl
@@ -232,30 +253,7 @@ const MultiCreate: FC<Props> = ({
           <StyledButton type='button' onClick={handleClose}>
             {t('forms:cancel')}
           </StyledButton>
-          <StyledSubmit
-            onClick={() => {
-              const index = isCreating ? meta.value.length - 1 : isUpdating
-
-              const validateRes = validate && validate(meta.value[index])
-
-              if (validateRes) {
-                return setFieldError(`${name}[${index}]`, validateRes)
-              }
-              schema
-                .validate(meta.value[index])
-                .then(() => {
-                  isCreating ? setIsCreating(false) : setIsUpdating('')
-                  validateField(name)
-                })
-                .catch((error) => {
-                  console.log(error)
-
-                  setFieldError(
-                    `${name}[${index}].${error.path}`,
-                    error.message
-                  )
-                })
-            }}>
+          <StyledSubmit onClick={handleSubmit}>
             {t('forms:submit')}
           </StyledSubmit>
         </DialogActions>

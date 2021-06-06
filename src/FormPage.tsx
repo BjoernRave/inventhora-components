@@ -3,7 +3,7 @@ import { Formik, FormikHelpers } from 'formik'
 import { isDev } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import Form from './FormItems/Basic/Form'
 import SubmitButton from './FormItems/Basic/SubmitButton'
@@ -67,6 +67,8 @@ const FormPage: FC<Props> = ({
   style,
   enableReinitialize,
   hideSubmit,
+  submitText,
+  withRequiredNotice = true,
 }) => {
   const { t } = useTranslation()
 
@@ -86,9 +88,11 @@ const FormPage: FC<Props> = ({
             </Link>
           )}
         </Header>
-        <span style={{ display: 'block', padding: '10px 0' }}>
-          {t('forms:requiredNotice')}
-        </span>
+        {withRequiredNotice && (
+          <span style={{ display: 'block', padding: '10px 0' }}>
+            {t('forms:requiredNotice')}
+          </span>
+        )}
         <Formik
           enableReinitialize={enableReinitialize}
           validateOnChange={false}
@@ -110,7 +114,11 @@ const FormPage: FC<Props> = ({
                     type='submit'
                     loading={isSubmitting}
                     size='large'>
-                    {edit ? t('common:update') : t('common:create')}
+                    {Boolean(submitText)
+                      ? submitText
+                      : edit
+                      ? t('common:update')
+                      : t('common:create')}
                   </StyledSubmit>
                 )}
               </Form>
@@ -139,4 +147,6 @@ interface Props {
   style?: any
   enableReinitialize?: boolean
   hideSubmit?: boolean
+  submitText?: ReactNode
+  withRequiredNotice?: boolean
 }
