@@ -1,6 +1,6 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
-import { boolean, number, withKnobs } from '@storybook/addon-knobs'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { useField } from 'formik'
 import { createProductFullName, formatDate } from 'inventhora-utils'
 import React from 'react'
@@ -15,7 +15,6 @@ import {
   ConsumableInput,
   DateInput,
   DateTimeInput,
-  DimensionsInput,
   EmailInput,
   FileInput,
   getTheme,
@@ -25,7 +24,6 @@ import {
   Option,
   PasswordInput,
   PhoneInput,
-  ProductAmountInput,
   SelectInput,
   TableInput,
   TextAreaInput,
@@ -47,9 +45,6 @@ export default {
   parameters: {
     formik: {
       initialValues: {
-        ProductAmountInput: [
-          { id: '1', name: 'unit', baseAmount: 1, amount: null },
-        ],
         MultiCreateStory: [],
         DimensionsInput: {},
         FileInputStory: boolean('Multiple Files?', true) ? [] : null,
@@ -227,9 +222,9 @@ export const WithCreationOptionStory = (props) => (
   </WithCreationOption>
 )
 
-export const DimensionsInputStory = (props) => (
-  <DimensionsInput name='DimensionsInput' lengthUnit='cm' />
-)
+// export const DimensionsInputStory = (props) => (
+//   <DimensionsInput name='DimensionsInput' lengthUnit='cm' />
+// )
 
 export const PhoneInputStory = (props) => (
   <PhoneInput
@@ -270,27 +265,6 @@ export const FileInputStory = (props) => (
 // export const AddressInputStory = (props) => (
 //   <AddressInput withBilling={boolean('With Billing Address', true)} />
 // )
-
-export const ProductAmountInputStory = (props) => (
-  <ProductAmountInput
-    label='ProductAmountLabel'
-    helperText='ProductAmountHelper'
-    required={boolean('Required', false)}
-    type={boolean('Is Outgoing', true) ? 'outgoing' : 'incoming'}
-    max={number('Max Amount', 100)}
-    name='ProductAmountInput'
-    product={
-      boolean('With Units', true)
-        ? {
-            units: [
-              { id: '2', name: 'Palette', baseAmount: 32 },
-              { id: '3', name: 'Palette', baseAmount: 100 },
-            ],
-          }
-        : null
-    }
-  />
-)
 
 export const MultiComboboxStory = (props) => (
   <MultiCombobox

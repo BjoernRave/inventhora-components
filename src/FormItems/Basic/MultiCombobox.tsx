@@ -44,7 +44,7 @@ const MultiCombobox: FC<Props> = ({
       id={generateSlug(formName)}
       style={{ width: '100%' }}
       {...rest}
-      value={meta.value || null}
+      value={meta.value || []}
       selectOnFocus
       disabled={disabled}
       freeSolo={canCreate}
@@ -55,7 +55,7 @@ const MultiCombobox: FC<Props> = ({
           : options.filter(
               (val) =>
                 !Boolean(
-                  meta.value.find(
+                  meta?.value?.find(
                     (metaVal) => getOptionLabel(val) === getOptionLabel(metaVal)
                   )
                 )

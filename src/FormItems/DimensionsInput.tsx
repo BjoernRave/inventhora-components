@@ -1,10 +1,5 @@
-import {
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  InputAdornment,
-} from '@material-ui/core'
-import { useField } from 'formik'
+import { FormControl, FormLabel, InputAdornment } from '@material-ui/core'
+import { useFormikContext } from 'formik'
 import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
 import React, { FC } from 'react'
@@ -14,37 +9,37 @@ import NumberInput from './Basic/NumberInput'
 const DimensionsInput: FC<Props> = ({
   lengthUnit,
   name,
-  subName,
   index,
   required,
   helperText,
 }) => {
   const { t } = useTranslation()
 
-  const formName =
-    typeof index === 'number' && subName ? `${name}[${index}].${subName}` : name
-
-  const [, meta, helper] = useField(formName)
+  const { values, setFieldValue } = useFormikContext<any>()
 
   return (
-    <FormControl
-      required={required}
-      error={Boolean(meta.error)}
-      style={{ width: '100%' }}>
+    <FormControl required={required} style={{ width: '100%' }}>
       <FormLabel htmlFor={generateSlug(name)} style={{ marginBottom: 20 }}>
         {t('table:dimensions')}
       </FormLabel>
       <SameLine id={generateSlug(name)}>
         <NumberInput
           allowDecimals
-          error={Boolean(meta.error)}
           index={index}
-          subName={typeof index === 'number' && `${subName}.height`}
-          name={typeof index === 'number' ? name : `${name}.height`}
-          onChange={(e) =>
-            e.target.value === '' &&
-            helper.setValue({ ...meta.value, depth: '', width: '' })
-          }
+          subName={typeof index === 'number' && 'height'}
+          name={typeof index === 'number' ? name : 'height'}
+          onChange={(e) => {
+            if (e.target.value === '') {
+              setFieldValue(
+                typeof index === 'number' ? `${name}.${index}.depth` : 'depth',
+                ''
+              )
+              setFieldValue(
+                typeof index === 'number' ? `${name}.${index}.width` : 'width',
+                ''
+              )
+            }
+          }}
           label={t('table:height')}
           InputProps={{
             endAdornment: (
@@ -54,15 +49,24 @@ const DimensionsInput: FC<Props> = ({
         />
         <NumberInput
           index={index}
-          error={Boolean(meta.error)}
-          disabled={!Boolean(meta?.value?.height)}
-          allowDecimals
-          onChange={(e) =>
-            e.target.value === '' &&
-            helper.setValue({ ...meta.value, depth: '' })
+          disabled={
+            !Boolean(
+              typeof index === 'number'
+                ? values[name][index].height
+                : values.height
+            )
           }
-          subName={typeof index === 'number' && `${subName}.width`}
-          name={typeof index === 'number' ? name : `${name}.width`}
+          allowDecimals
+          onChange={(e) => {
+            if (e.target.value === '') {
+              setFieldValue(
+                typeof index === 'number' ? `${name}.${index}.depth` : 'depth',
+                ''
+              )
+            }
+          }}
+          subName={typeof index === 'number' && 'width'}
+          name={typeof index === 'number' ? name : 'width'}
           label={t('table:width')}
           InputProps={{
             endAdornment: (
@@ -72,11 +76,16 @@ const DimensionsInput: FC<Props> = ({
         />
         <NumberInput
           index={index}
-          error={Boolean(meta.error)}
-          disabled={!Boolean(meta?.value?.width)}
+          disabled={
+            !Boolean(
+              typeof index === 'number'
+                ? values[name][index].width
+                : values.width
+            )
+          }
           allowDecimals
-          subName={typeof index === 'number' && `${subName}.depth`}
-          name={typeof index === 'number' ? name : `${name}.depth`}
+          subName={typeof index === 'number' && 'depth'}
+          name={typeof index === 'number' ? name : 'depth'}
           label={t('table:depth')}
           InputProps={{
             endAdornment: (
@@ -85,9 +94,6 @@ const DimensionsInput: FC<Props> = ({
           }}
         />
       </SameLine>
-      {(meta.error || helperText) && (
-        <FormHelperText>{meta.error ?? helperText}</FormHelperText>
-      )}
     </FormControl>
   )
 }
@@ -97,7 +103,6 @@ export default DimensionsInput
 export interface Props {
   lengthUnit: string
   name: string
-  subName?: string
   index?: number
   required?: boolean
   helperText?: string

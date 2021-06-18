@@ -9,7 +9,7 @@ import {
 import { Formik, FormikProps } from 'formik'
 import { generateSlug } from 'inventhora-utils'
 import useTranslation from 'next-translate/useTranslation'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 import Form from './FormItems/Basic/Form'
 import SubmitButton from './FormItems/Basic/SubmitButton'
@@ -45,6 +45,7 @@ const FormModal: FC<Props> = ({
   enableReinitialize,
   validate,
   edit,
+  submitText,
 }) => {
   const { t } = useTranslation()
   return (
@@ -89,7 +90,11 @@ const FormModal: FC<Props> = ({
                     size='large'
                     loading={isSubmitting}
                     disabled={disabled}>
-                    {edit ? t('common:update') : t('common:create')}
+                    {submitText
+                      ? submitText
+                      : edit
+                      ? t('common:update')
+                      : t('common:create')}
                   </StyledSubmit>
                 </DialogActions>
               </Form>
@@ -115,4 +120,5 @@ interface Props {
   enableReinitialize?: boolean
   validate?: (values: any) => void
   edit?: boolean
+  submitText?: ReactNode
 }
